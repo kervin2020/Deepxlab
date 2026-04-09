@@ -2,57 +2,76 @@ export default function CTA() {
   return (
     <section
       id="cta"
-      className="relative py-40 md:py-64 border-t border-white/5 bg-[#070708] overflow-hidden"
+      className="relative py-40 md:py-56 border-t border-[var(--border)] bg-[var(--bg-elev)] overflow-hidden"
     >
       <div className="absolute inset-0 spotlight pointer-events-none" />
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 text-center">
-        <div className="font-mono text-[11px] text-ash uppercase tracking-widest mb-12 inline-flex items-center gap-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00FF94] pulse-dot" />
-          <span>07 / Contact</span>
-        </div>
-
-        <h2 className="text-5xl md:text-8xl tracking-[-0.04em] leading-[0.9] font-medium max-w-5xl mx-auto">
-          Vous avez un problème
-          <br />
-          <span className="text-ash">que personne n&apos;arrive</span>
-          <br />
-          à résoudre<span className="text-[#00FF94]">?</span>
-        </h2>
-
-        <p className="mt-12 text-xl md:text-2xl text-ash">
-          Nous, c&apos;est ce qu&apos;on préfère.
-        </p>
-
-        <div className="mt-16 flex justify-center">
-          <a
-            href="mailto:contact@deepxlab.com"
-            className="group relative inline-flex items-center gap-4 px-10 py-6 bg-[#00FF94] text-black font-mono text-[13px] uppercase tracking-wider hover:bg-bone transition-all duration-300"
-          >
-            <span>Parler à DeepXlab</span>
-            <span className="group-hover:translate-x-2 transition-transform">
-              →
-            </span>
-          </a>
-        </div>
-
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto font-mono text-[10px] text-ash uppercase tracking-widest">
-          <div>
-            <div className="text-bone mb-1">Email</div>
-            contact@deepxlab.com
+      <div className="relative max-w-[1440px] mx-auto px-6 md:px-10">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-px bg-[var(--accent)]" />
+              <span>Contact</span>
+            </div>
           </div>
-          <div>
-            <div className="text-bone mb-1">Bases</div>
-            HT — US
-          </div>
-          <div>
-            <div className="text-bone mb-1">Langues</div>
-            FR · EN · ES · HT
-          </div>
-          <div>
-            <div className="text-bone mb-1">Réponse</div>
-            ≤ 24h
+
+          <div className="md:col-span-9">
+            <h2 className="text-5xl md:text-8xl tracking-[-0.04em] leading-[0.92] font-medium max-w-4xl">
+              Travaillons ensemble
+              <br />
+              <span className="text-ash">sur ce qui vient ensuite.</span>
+            </h2>
+
+            <p className="mt-10 text-lg md:text-xl text-bone max-w-xl leading-relaxed">
+              Nos équipes accompagnent les organisations qui opèrent dans des
+              environnements exigeants et qui attendent d&apos;un partenaire
+              technologique rigueur, autonomie et engagement long terme.
+            </p>
+
+            <div className="mt-14 flex flex-wrap gap-6 items-center">
+              <a
+                href="mailto:contact@deepxlab.com"
+                className="group relative inline-flex items-center gap-4 px-8 py-5 bg-[var(--accent)] text-black hover:bg-[var(--text)] transition-all duration-300"
+              >
+                <span className="text-[14px] font-medium">
+                  contact@deepxlab.com
+                </span>
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </a>
+              <a
+                href="#divisions"
+                className="group inline-flex items-center gap-3 text-bone hover:text-bone transition-colors"
+              >
+                <span className="text-[14px] relative">
+                  Consulter nos expertises
+                  <span className="absolute -bottom-1 left-0 w-full h-px bg-current scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </span>
+              </a>
+            </div>
+
+            <div className="mt-20 pt-10 border-t border-[var(--border)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl">
+              {[
+                { label: "Contact commercial", email: "contact@deepxlab.com" },
+                { label: "Partenariats", email: "partners@deepxlab.com" },
+                { label: "Carrières", email: "careers@deepxlab.com" },
+                { label: "Presse", email: "press@deepxlab.com" },
+              ].map((c) => (
+                <a
+                  key={c.email}
+                  href={`mailto:${c.email}`}
+                  className="group block p-5 border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
+                >
+                  <div className="text-[11px] text-ash uppercase tracking-[0.18em] mb-2">
+                    {c.label}
+                  </div>
+                  <div className="text-bone text-[14px] break-all group-hover:text-[var(--accent)] transition-colors">
+                    {c.email}
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

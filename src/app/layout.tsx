@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const inter = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const mono = DM_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#0A0A0B] text-[#E8E8E3] font-sans selection:bg-[#00FF94] selection:text-black">
+      <body className="min-h-full bg-[#0B0B0D] text-[#F2F0EA] font-sans selection:bg-[#00FF94] selection:text-black">
         {children}
       </body>
     </html>

@@ -1,11 +1,38 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const rotating = [
+  "Logiciel sur mesure",
+  "Infrastructure IT",
+  "Sécurité intelligente",
+  "Recherche & R&D",
+  "Plateformes SaaS",
+  "Hardware industriel",
+];
+
+const headlines = [
+  "Concevoir la technologie critique.",
+  "Résoudre vos problèmes complexes.",
+  "Opérer ce que d'autres n'osent pas.",
+  "Bâtir des systèmes de confiance.",
+];
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [active, setActive] = useState(0);
+  const [headline, setHeadline] = useState(0);
 
-  // Particle field animated on canvas — reactive to mouse
+  useEffect(() => {
+    const id = setInterval(() => setActive((a) => (a + 1) % rotating.length), 2200);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setHeadline((h) => (h + 1) % headlines.length), 3600);
+    return () => clearInterval(id);
+  }, []);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -47,11 +74,11 @@ export default function Hero() {
         p.x = p.ox + (dx / (dist || 1)) * force * 30 + wave;
         p.y = p.oy + (dy / (dist || 1)) * force * 30 + wave;
 
-        const alpha = 0.15 + force * 0.85;
+        const alpha = 0.12 + force * 0.8;
         ctx.fillStyle =
           force > 0.3
             ? `rgba(0, 255, 148, ${alpha})`
-            : `rgba(232, 232, 227, ${alpha * 0.4})`;
+            : `rgba(242, 240, 234, ${alpha * 0.3})`;
         ctx.fillRect(p.x - 1, p.y - 1, 2, 2);
       }
       raf = requestAnimationFrame(draw);
@@ -81,90 +108,153 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden grid-bg">
+    <section className="relative min-h-screen overflow-hidden grid-bg pt-[68px]">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <div className="absolute inset-0 spotlight pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A0A0B] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-10 pt-32 md:pt-40">
-        {/* Status bar */}
-        <div className="font-mono text-[11px] text-ash mb-16 md:mb-24 flex items-center gap-3 flex-wrap">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00FF94] pulse-dot" />
-          <span className="typewriter">
-            DXL/SYS — STATUS: OPERATIONAL — 06 DIVISIONS — 04 LANGUES — 02 PAYS
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10 pt-20 md:pt-28 pb-16">
+        {/* Top meta */}
+        <div className="flex items-center gap-4 mb-12 md:mb-20 reveal">
+          <span className="w-2 h-2 rounded-full bg-[var(--accent)] pulse-dot" />
+          <span className="text-[11px] uppercase tracking-[0.2em] shimmer-text">
+            Groupe technologique multidisciplinaire en solutions technologiques
           </span>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-10 items-end">
-          {/* Title */}
-          <h1 className="md:col-span-8 text-[14vw] md:text-[8.5vw] leading-[0.9] tracking-[-0.04em] font-medium">
-            <span className="block reveal" style={{ animationDelay: "0.2s" }}>
-              Nous construisons
-            </span>
+        {/* Title — rotating headline */}
+        <h1 className="relative text-[clamp(2.5rem,7.6vw,7rem)] leading-[0.95] tracking-[-0.04em] font-medium max-w-[16ch] min-h-[1.9em] md:min-h-[2em]">
+          {headlines.map((line, i) => (
             <span
-              className="block reveal"
-              style={{ animationDelay: "0.5s" }}
+              key={line}
+              className={`block transition-all duration-700 ${
+                i === headline
+                  ? "opacity-100 translate-y-0 blur-0"
+                  : "absolute opacity-0 translate-y-4 blur-sm pointer-events-none"
+              }`}
+              style={{ position: i === headline ? "relative" : "absolute" }}
             >
-              ce qui n&apos;existe pas
+              {line.slice(0, -1)}
+              <span className="text-[var(--accent)] inline-block glow-pulse">.</span>
             </span>
-            <span
-              className="block reveal"
-              style={{ animationDelay: "0.8s" }}
-            >
-              encore<span className="text-[#00FF94] blink">.</span>
-            </span>
-          </h1>
+          ))}
+        </h1>
 
-          {/* Side text */}
+        {/* Body grid */}
+        <div className="mt-12 md:mt-20 grid md:grid-cols-12 gap-8 md:gap-10">
+          {/* Description */}
           <div
-            className="md:col-span-4 font-mono text-[12px] leading-relaxed text-ash space-y-4 reveal"
-            style={{ animationDelay: "1.2s" }}
+            className="md:col-span-7 reveal"
+            style={{ animationDelay: "0.85s" }}
           >
-            <div className="border-l border-[#00FF94] pl-4">
-              <div className="text-bone mb-1">DEEPXLAB</div>
-              Groupe technologique intégré.
-              <br />
-              Né des Caraïbes.
-              <br />
-              Déployé partout.
+            <p className="text-base md:text-xl text-bone leading-relaxed max-w-2xl">
+              Six expertises intégrées. Une seule équipe. Une seule
+              responsabilité contractuelle — du premier prototype à
+              l&apos;exploitation continue.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4 items-center">
+              <a
+                href="#cta"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[var(--accent)] text-black hover:bg-[var(--text)] transition-all duration-300"
+              >
+                <span className="text-[14px] font-medium">Prendre contact</span>
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </a>
+              <a
+                href="#divisions"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 border border-[var(--border-strong)] hover:border-[var(--accent)] text-bone transition-colors"
+              >
+                <span className="text-[14px]">Découvrir nos expertises</span>
+              </a>
             </div>
-            <div className="text-[10px] uppercase tracking-widest">
-              [ EST. — KERSON × KERVIN ]
+          </div>
+
+          {/* Capabilities ticker panel */}
+          <div
+            className="md:col-span-5 reveal"
+            style={{ animationDelay: "1.05s" }}
+          >
+            <div className="relative overflow-hidden border border-[var(--border-strong)] bg-[var(--bg)]/60 backdrop-blur-sm p-6 md:p-8 hover-lift">
+              <div className="scan-line" />
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]">
+                <span className="text-[10px] text-ash uppercase tracking-[0.2em]">
+                  Capacités opérationnelles
+                </span>
+                <span className="text-[10px] text-[var(--accent)] uppercase tracking-[0.2em]">
+                  Live
+                </span>
+              </div>
+              <div className="space-y-3">
+                {rotating.map((r, i) => (
+                  <div
+                    key={r}
+                    className={`flex items-center gap-4 transition-all duration-700 ${
+                      i === active
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-70 translate-x-0"
+                    }`}
+                  >
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                        i === active ? "bg-[var(--accent)]" : "bg-[var(--text-muted)]"
+                      }`}
+                    />
+                    <span
+                      className={`text-[14px] md:text-[15px] tracking-tight transition-colors ${
+                        i === active ? "text-bone" : "text-ash"
+                      }`}
+                    >
+                      {r}
+                    </span>
+                    <span className="ml-auto text-[10px] text-ash tracking-[0.2em]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 pt-4 border-t border-[var(--border)] flex items-center justify-between">
+                <span className="text-[11px] text-ash">
+                  06 expertises actives
+                </span>
+                <span className="text-[11px] text-ash">
+                  4 langues · 2 bases
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* CTAs */}
-        <div
-          className="mt-16 md:mt-24 flex flex-wrap gap-4 reveal"
-          style={{ animationDelay: "1.4s" }}
-        >
-          <a
-            href="#divisions"
-            className="group relative inline-flex items-center gap-3 px-6 py-4 border border-bone/30 hover:border-[#00FF94] hover:bg-[#00FF94] hover:text-black transition-all duration-300"
-          >
-            <span className="font-mono text-[12px] uppercase tracking-wider">
-              Explorer les divisions
-            </span>
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </a>
-          <a
-            href="#cta"
-            className="group inline-flex items-center gap-3 px-6 py-4 text-bone hover:text-[#00FF94] transition-colors"
-          >
-            <span className="font-mono text-[12px] uppercase tracking-wider relative">
-              Démarrer un projet
-              <span className="absolute -bottom-1 left-0 w-full h-px bg-current scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-            </span>
-          </a>
-        </div>
-
-        {/* Scroll cue */}
-        <div className="mt-32 mb-12 flex items-center justify-between font-mono text-[10px] text-ash uppercase tracking-widest">
-          <span>↓ Scroll pour entrer</span>
-          <span>N 18°32&apos;Ø — W 72°20&apos;Ø</span>
+        {/* Bottom strip */}
+        <div className="mt-16 md:mt-28 pt-8 border-t border-[var(--border-strong)] grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+          {[
+            {
+              k: "Software",
+              v: "Plateformes SaaS, applications métier, intégration IA",
+            },
+            {
+              k: "Hardware",
+              v: "Serveurs, réseaux, capteurs IoT, audiovisuel",
+            },
+            {
+              k: "Sécurité",
+              v: "Vidéosurveillance, biométrie, supervision",
+            },
+            {
+              k: "Recherche",
+              v: "Robotique, prototypage, propriété intellectuelle",
+            },
+          ].map((b) => (
+            <div key={b.k}>
+              <div className="flex items-center gap-2 text-[11px] text-[var(--accent)] uppercase tracking-[0.2em] mb-2">
+                <span className="w-1 h-1 rounded-full bg-[var(--accent)] float-y" />
+                {b.k}
+              </div>
+              <p className="text-[13px] text-bone leading-relaxed">{b.v}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
