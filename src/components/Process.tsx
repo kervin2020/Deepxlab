@@ -1,47 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const steps = [
-  {
-    n: "01",
-    title: "Prise de contact",
-    desc: "Qualification initiale des besoins, du périmètre et des contraintes opérationnelles. Signature d'un accord de confidentialité.",
-    duration: "J+1",
-  },
-  {
-    n: "02",
-    title: "Discovery & Audit",
-    desc: "Analyse approfondie de l'environnement existant, des flux métiers et de l'infrastructure. Restitution écrite et cartographie technique.",
-    duration: "1 à 3 semaines",
-  },
-  {
-    n: "03",
-    title: "Architecture & Proposition",
-    desc: "Conception d'une solution sur mesure, choix de la stack, estimation budgétaire détaillée et calendrier d'exécution.",
-    duration: "2 semaines",
-  },
-  {
-    n: "04",
-    title: "Développement & Intégration",
-    desc: "Implémentation par sprints supervisés. Revues hebdomadaires, environnements de staging et documentation continue.",
-    duration: "6 à 24 semaines",
-  },
-  {
-    n: "05",
-    title: "Déploiement & Mise en production",
-    desc: "Installation hardware, bascule logicielle, formation des équipes et procédures de reprise. Exécution contrôlée et réversible.",
-    duration: "2 à 6 semaines",
-  },
-  {
-    n: "06",
-    title: "Supervision & Évolution",
-    desc: "Maintenance préventive et corrective, SLA contractuels, évolutions fonctionnelles continues. Engagement long terme.",
-    duration: "Continu",
-  },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Process() {
+  const { t } = useT();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -67,13 +30,11 @@ export default function Process() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Processus</span>
+              <span>{t.proc_section}</span>
             </div>
           </div>
           <h2 className="md:col-span-9 text-5xl md:text-7xl tracking-[-0.035em] leading-[0.95] font-medium">
-            Du premier échange
-            <br />
-            <span className="text-ash">à la mise en production.</span>
+            {t.proc_title}
           </h2>
         </div>
 
@@ -87,9 +48,9 @@ export default function Process() {
           />
 
           <div className="space-y-10 md:space-y-12">
-            {steps.map((s, i) => (
+            {t.proc_steps.map((s, i) => (
               <div
-                key={s.n}
+                key={s.num}
                 className={`relative grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-start transition-all duration-700 ${
                   visible
                     ? "opacity-100 translate-x-0"
@@ -101,7 +62,7 @@ export default function Process() {
                 <div className="relative">
                   <div className="w-11 h-11 md:w-16 md:h-16 rounded-full bg-[var(--bg)] border border-[var(--border-strong)] flex items-center justify-center relative z-10">
                     <span className="text-[11px] md:text-[13px] font-medium text-bone">
-                      {s.n}
+                      {s.num}
                     </span>
                   </div>
                 </div>
@@ -119,7 +80,7 @@ export default function Process() {
                 {/* Duration badge */}
                 <div className="col-span-2 md:col-span-1 md:pt-4 md:text-right">
                   <span className="inline-block text-[10px] text-ash uppercase tracking-[0.2em] border border-[var(--border-strong)] px-3 py-1.5">
-                    {s.duration}
+                    {s.dur}
                   </span>
                 </div>
               </div>

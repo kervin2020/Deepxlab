@@ -1,36 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const principles = [
-  {
-    index: "I",
-    roman: "I",
-    title: "Intégration verticale",
-    desc: "Nous concevons, fabriquons et opérons nos propres plateformes, produits et systèmes. Aucune sous-traitance sur les composants critiques.",
-  },
-  {
-    index: "II",
-    roman: "II",
-    title: "Chaîne complète",
-    desc: "Du matériel à l'interface utilisateur, de l'architecture réseau au SaaS. Une seule responsabilité contractuelle pour l'ensemble du cycle technologique.",
-  },
-  {
-    index: "III",
-    roman: "III",
-    title: "Propriété intellectuelle",
-    desc: "Chaque plateforme déployée est née dans nos laboratoires. Brevets, firmware, code et architecture demeurent la propriété du groupe.",
-  },
-  {
-    index: "IV",
-    roman: "IV",
-    title: "Continuité opérationnelle",
-    desc: "Nos contrats incluent la maintenance, la supervision et l'évolution long terme. Nous restons engagés bien après la mise en production.",
-  },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Flywheel() {
+  const { t } = useT();
   const [active, setActive] = useState(0);
+
+  const principles = t.fly_principles;
 
   useEffect(() => {
     const id = setInterval(
@@ -38,7 +15,9 @@ export default function Flywheel() {
       2800
     );
     return () => clearInterval(id);
-  }, []);
+  }, [principles.length]);
+
+  const romans = ["I", "II", "III", "IV"];
 
   return (
     <section
@@ -50,13 +29,11 @@ export default function Flywheel() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Approche</span>
+              <span>{t.fly_section}</span>
             </div>
           </div>
           <h2 className="md:col-span-9 text-5xl md:text-7xl tracking-[-0.035em] leading-[0.95] font-medium">
-            Une architecture opérationnelle
-            <br />
-            <span className="text-ash">pensée pour durer.</span>
+            {t.fly_title}
           </h2>
         </div>
 
@@ -192,7 +169,7 @@ export default function Flywheel() {
                       fill={isActive ? "#00FF94" : "#7A7A75"}
                       style={{ transition: "fill 0.6s" }}
                     >
-                      {p.roman}
+                      {romans[i]}
                     </text>
                   </g>
                 );
@@ -216,7 +193,7 @@ export default function Flywheel() {
                 fontSize="9"
                 fill="#7A7A75"
               >
-                OPERATING MODEL
+                {t.fly_center.replace("DEEPXLAB / ", "")}
               </text>
             </svg>
           </div>
@@ -237,7 +214,7 @@ export default function Flywheel() {
                     i === active ? "text-[var(--accent)]" : "text-ash"
                   }`}
                 >
-                  {p.roman}
+                  {romans[i]}
                 </div>
                 <div>
                   <h3

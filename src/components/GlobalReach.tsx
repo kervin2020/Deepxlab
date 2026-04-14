@@ -1,6 +1,8 @@
 "use client";
 
-// Simple equirectangular projection (lon/lat → x/y in a 800x400 box)
+import { useT } from "@/i18n/provider";
+
+// Simple equirectangular projection (lon/lat -> x/y in a 800x400 box)
 const project = (lon: number, lat: number) => ({
   x: ((lon + 180) / 360) * 800,
   y: ((90 - lat) / 180) * 400,
@@ -32,6 +34,7 @@ const cities: {
 const projected = cities.map((c) => ({ ...c, ...project(c.lon, c.lat) }));
 
 export default function GlobalReach() {
+  const { t } = useT();
   const origin = projected[0]; // Port-au-Prince
 
   return (
@@ -44,13 +47,11 @@ export default function GlobalReach() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Présence</span>
+              <span>{t.global_section}</span>
             </div>
           </div>
           <h2 className="md:col-span-9 text-5xl md:text-7xl tracking-[-0.035em] leading-[0.95] font-medium">
-            Une infrastructure conçue
-            <br />
-            <span className="text-ash">pour opérer à l&apos;échelle mondiale.</span>
+            {t.global_title}
           </h2>
         </div>
 

@@ -1,3 +1,6 @@
+"use client";
+
+import { I18nProvider } from "@/i18n/provider";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
@@ -17,25 +20,27 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="grain relative overflow-x-hidden">
-      <Header />
-      <main>
-        <Hero />
-        <Marquee />
-        <Divisions />
-        <Capabilities />
-        <Sectors />
-        <Flywheel />
-        <Process />
-        <Products />
-        <Stats />
-        <Manifesto />
-        <Signature />
-        <GlobalReach />
-        <Problem />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <I18nProvider>
+      <div className="grain relative overflow-x-hidden">
+        <Header />
+        <main>
+          <Hero />
+          <Marquee />
+          <Divisions />
+          <Capabilities />
+          <Sectors />
+          <Flywheel />
+          <Process />
+          <Products />
+          <Stats />
+          <Manifesto />
+          <Signature />
+          <GlobalReach />
+          <Problem />
+          <CTA />
+        </main>
+        <Footer />
+      </div>
+    </I18nProvider>
   );
 }

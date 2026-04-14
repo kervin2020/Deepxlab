@@ -1,28 +1,10 @@
 "use client";
 
-const software = [
-  "Applications web et mobiles sur mesure",
-  "Plateformes SaaS multi-tenant",
-  "ERP et systèmes de gestion métier",
-  "Intégration d'intelligence artificielle",
-  "Architectures cloud hybrides",
-  "Audit, refonte et migration de systèmes",
-  "API et middlewares d'intégration",
-  "Tableaux de bord et analytique",
-];
-
-const hardware = [
-  "Postes de travail et serveurs d'entreprise",
-  "Réseaux structurés et Wi-Fi industriel",
-  "Caméras IP, NVR et centres de supervision",
-  "Lecteurs biométriques et contrôle d'accès",
-  "Capteurs IoT et passerelles edge",
-  "Téléphonie IP et PBX propriétaires",
-  "Audiovisuel et salles de conférence",
-  "Laboratoires informatiques clé en main",
-];
+import { useT } from "@/i18n/provider";
 
 export default function Capabilities() {
+  const { t } = useT();
+
   return (
     <section
       id="capacites"
@@ -33,13 +15,13 @@ export default function Capabilities() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Capacités</span>
+              <span>{t.cap_section}</span>
             </div>
           </div>
           <h2 className="md:col-span-9 text-5xl md:text-7xl tracking-[-0.035em] leading-[0.95] font-medium">
-            Software et hardware,
+            {t.cap_title.split(",")[0]},
             <br />
-            <span className="text-ash">conçus sur mesure.</span>
+            <span className="text-ash">{t.cap_title.split(",")[1]?.trim()}</span>
           </h2>
         </div>
 
@@ -50,10 +32,10 @@ export default function Capabilities() {
             <div className="relative">
               <div className="flex items-center justify-between mb-12">
                 <span className="text-[11px] text-ash tracking-[0.2em]">/ A</span>
-                <span className="text-[11px] text-ash tracking-[0.2em]">SOFTWARE</span>
+                <span className="text-[11px] text-ash tracking-[0.2em]">{t.cap_software.toUpperCase()}</span>
               </div>
               <h3 className="text-3xl md:text-[40px] font-medium tracking-[-0.02em] mb-4">
-                Logiciel & plateformes
+                {t.cap_software}
               </h3>
               <p className="text-[15px] text-ash leading-relaxed mb-10 max-w-md">
                 Nos équipes conçoivent des produits logiciels sur mesure ou
@@ -62,7 +44,7 @@ export default function Capabilities() {
                 garantie d&apos;évolution.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-                {software.map((s) => (
+                {t.cap_sw_items.map((s) => (
                   <li
                     key={s}
                     className="text-[13px] text-bone flex items-start gap-3"
@@ -81,10 +63,10 @@ export default function Capabilities() {
             <div className="relative">
               <div className="flex items-center justify-between mb-12">
                 <span className="text-[11px] text-ash tracking-[0.2em]">/ B</span>
-                <span className="text-[11px] text-ash tracking-[0.2em]">HARDWARE</span>
+                <span className="text-[11px] text-ash tracking-[0.2em]">{t.cap_hardware.toUpperCase()}</span>
               </div>
               <h3 className="text-3xl md:text-[40px] font-medium tracking-[-0.02em] mb-4">
-                Matériel & infrastructure
+                {t.cap_hardware}
               </h3>
               <p className="text-[15px] text-ash leading-relaxed mb-10 max-w-md">
                 Nous fournissons, installons et maintenons l&apos;ensemble
@@ -93,7 +75,7 @@ export default function Capabilities() {
                 centre de supervision.
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-                {hardware.map((s) => (
+                {t.cap_hw_items.map((s) => (
                   <li
                     key={s}
                     className="text-[13px] text-bone flex items-start gap-3"

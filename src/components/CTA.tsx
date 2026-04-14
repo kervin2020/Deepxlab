@@ -1,4 +1,10 @@
+"use client";
+
+import { useT } from "@/i18n/provider";
+
 export default function CTA() {
+  const { t } = useT();
+
   return (
     <section
       id="cta"
@@ -11,21 +17,19 @@ export default function CTA() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Contact</span>
+              <span>{t.cta_section}</span>
             </div>
           </div>
 
           <div className="md:col-span-9">
             <h2 className="text-5xl md:text-8xl tracking-[-0.04em] leading-[0.92] font-medium max-w-4xl">
-              Travaillons ensemble
+              {t.cta_title_1}
               <br />
-              <span className="text-ash">sur ce qui vient ensuite.</span>
+              <span className="text-ash">{t.cta_title_2}</span>
             </h2>
 
             <p className="mt-10 text-lg md:text-xl text-bone max-w-xl leading-relaxed">
-              Nos équipes accompagnent les organisations qui opèrent dans des
-              environnements exigeants et qui attendent d&apos;un partenaire
-              technologique rigueur, autonomie et engagement long terme.
+              {t.cta_desc}
             </p>
 
             <div className="mt-14 flex flex-wrap gap-6 items-center">
@@ -34,7 +38,7 @@ export default function CTA() {
                 className="group relative inline-flex items-center gap-4 px-8 py-5 bg-[var(--accent)] text-black hover:bg-[var(--text)] transition-all duration-300"
               >
                 <span className="text-[14px] font-medium">
-                  contact@deepxlab.com
+                  {t.cta_btn}
                 </span>
                 <span className="group-hover:translate-x-1 transition-transform">
                   →
@@ -45,19 +49,14 @@ export default function CTA() {
                 className="group inline-flex items-center gap-3 text-bone hover:text-bone transition-colors"
               >
                 <span className="text-[14px] relative">
-                  Consulter nos expertises
+                  {t.cta_link}
                   <span className="absolute -bottom-1 left-0 w-full h-px bg-current scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
                 </span>
               </a>
             </div>
 
             <div className="mt-20 pt-10 border-t border-[var(--border)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl">
-              {[
-                { label: "Contact commercial", email: "contact@deepxlab.com" },
-                { label: "Partenariats", email: "partners@deepxlab.com" },
-                { label: "Carrières", email: "careers@deepxlab.com" },
-                { label: "Presse", email: "press@deepxlab.com" },
-              ].map((c) => (
+              {t.cta_contacts.map((c) => (
                 <a
                   key={c.email}
                   href={`mailto:${c.email}`}

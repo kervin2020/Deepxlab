@@ -1,49 +1,10 @@
 "use client";
 
-const sectors = [
-  {
-    name: "Banque & Finance",
-    desc: "Sécurité physique, audit forensique, plateformes de gestion et conformité.",
-    cases: "Banques · Coopératives · Microfinance",
-  },
-  {
-    name: "Santé",
-    desc: "Infrastructure hospitalière, dossiers patients, vidéosurveillance médicale et IoT clinique.",
-    cases: "Hôpitaux · Cliniques · Laboratoires",
-  },
-  {
-    name: "Éducation",
-    desc: "Laboratoires STEM, plateformes d'apprentissage, infrastructure réseau scolaire et identité numérique.",
-    cases: "Écoles · Universités · ONG éducatives",
-  },
-  {
-    name: "Gouvernement & Institutions",
-    desc: "Systèmes de contrôle d'accès, archives numériques, infrastructure souveraine et identification.",
-    cases: "Ministères · Mairies · Agences",
-  },
-  {
-    name: "Industrie & Logistique",
-    desc: "Automatisation, capteurs IoT, suivi de flotte GPS, supervision à distance et tableaux de bord.",
-    cases: "Manufactures · Transport · Énergie",
-  },
-  {
-    name: "Commerce & Retail",
-    desc: "Caisses connectées, gestion d'inventaire, vidéosurveillance et expérience client digitale.",
-    cases: "Distribution · Hôtellerie · Restauration",
-  },
-  {
-    name: "Sécurité privée",
-    desc: "Centres de supervision, biométrie, immobilisation à distance et plateformes propriétaires.",
-    cases: "Sociétés de sécurité · Résidences",
-  },
-  {
-    name: "ONG & Coopération",
-    desc: "Outils terrain bilingues, déploiements low-bandwidth, formation et impact mesurable.",
-    cases: "ONG · Bailleurs · Organisations internationales",
-  },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Sectors() {
+  const { t } = useT();
+
   return (
     <section
       id="secteurs"
@@ -54,14 +15,14 @@ export default function Sectors() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Secteurs</span>
+              <span>{t.sec_section}</span>
             </div>
           </div>
           <div className="md:col-span-9">
             <h2 className="text-5xl md:text-7xl tracking-[-0.035em] leading-[0.95] font-medium">
-              Tous les secteurs.
+              {t.sec_title.split(".")[0]}.
               <br />
-              <span className="text-ash">Un seul partenaire technologique.</span>
+              <span className="text-ash">{t.sec_title.split(".")[1]?.trim()}</span>
             </h2>
             <p className="mt-8 text-lg text-bone max-w-2xl leading-relaxed">
               Nos équipes interviennent dans des environnements aux contraintes
@@ -73,7 +34,7 @@ export default function Sectors() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--bg-elev-2)]">
-          {sectors.map((s, i) => (
+          {t.sec_items.map((s, i) => (
             <div
               key={s.name}
               className="group relative bg-[var(--bg)] p-8 min-h-[280px] flex flex-col justify-between hover:bg-[#10101a] transition-colors duration-500"
@@ -91,7 +52,7 @@ export default function Sectors() {
               </div>
               <div className="mt-6 pt-4 border-t border-[var(--border)]">
                 <p className="text-[11px] text-ash uppercase tracking-[0.15em]">
-                  {s.cases}
+                  {s.clients}
                 </p>
               </div>
             </div>

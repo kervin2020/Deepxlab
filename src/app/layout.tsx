@@ -16,9 +16,9 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DeepXlab — Nous construisons ce qui n'existe pas encore.",
+  title: "DeepXlab — Groupe technologique multidisciplinaire en solutions technologiques",
   description:
-    "DeepXlab est un groupe technologique intégré né des Caraïbes. 6 divisions spécialisées : Éducation STEM, Solutions Entreprises, Sécurité, Design, Médias, R&D.",
+    "DeepXlab conçoit, développe et opère des plateformes logicielles, des infrastructures matérielles et des systèmes de sécurité sur mesure. Six expertises intégrées.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#0B0B0D] text-[#F2F0EA] font-sans selection:bg-[#00FF94] selection:text-black">
+      <body className="min-h-full bg-[var(--bg)] text-[var(--text)] font-sans selection:bg-[var(--accent)] selection:text-black">
         {children}
       </body>
     </html>

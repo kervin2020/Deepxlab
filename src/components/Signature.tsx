@@ -1,24 +1,10 @@
 "use client";
 
-const pillars = [
-  {
-    letter: "Deep",
-    title: "Profondeur technique",
-    desc: "Nous intervenons au niveau de l'architecture, du code, du matériel et du réseau. Nos équipes maîtrisent la chaîne technologique complète, sans dépendance aveugle aux fournisseurs tiers.",
-  },
-  {
-    letter: "X",
-    title: "Recherche appliquée",
-    desc: "Nos laboratoires développent les plateformes et prototypes qui alimentent nos déploiements. Chaque capacité que nous proposons a été conçue, testée et validée en interne.",
-  },
-  {
-    letter: "Lab",
-    title: "Excellence d'exécution",
-    desc: "Nous livrons aux standards des meilleures entreprises technologiques mondiales. Chaque projet fait l'objet d'une supervision continue, d'une documentation rigoureuse et d'un engagement long terme.",
-  },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Signature() {
+  const { t } = useT();
+
   return (
     <section
       id="signature"
@@ -42,7 +28,7 @@ export default function Signature() {
         </div>
 
         <div className="space-y-24 md:space-y-40">
-          {pillars.map((p, i) => (
+          {t.sig_pillars.map((p, i) => (
             <div
               key={i}
               className="grid md:grid-cols-12 gap-8 md:gap-10 items-end"
@@ -61,10 +47,10 @@ export default function Signature() {
                   / {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-medium tracking-[-0.02em] mb-5">
-                  {p.title}
+                  {p.sub}
                 </h3>
                 <p className="text-[15px] md:text-base text-bone leading-relaxed max-w-md">
-                  {p.desc}
+                  {p.sub}
                 </p>
               </div>
             </div>

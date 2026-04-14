@@ -1,4 +1,10 @@
+"use client";
+
+import { useT } from "@/i18n/provider";
+
 export default function Manifesto() {
+  const { t } = useT();
+
   return (
     <section className="relative py-32 md:py-48 border-t border-[var(--border)] bg-[var(--bg-elev)] overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-[0.06] pointer-events-none" />
@@ -9,52 +15,30 @@ export default function Manifesto() {
           <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
             <div className="flex items-center gap-3">
               <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>Qui sommes-nous</span>
+              <span>{t.man_section}</span>
             </div>
           </div>
 
           <div className="md:col-span-9">
             <p className="text-3xl md:text-[44px] tracking-[-0.025em] leading-[1.15] font-medium text-bone">
-              DeepXlab conçoit, développe et opère des plateformes logicielles,
-              des infrastructures matérielles et des systèmes de sécurité
-              sur mesure. Une seule équipe pluridisciplinaire, du premier
-              prototype à l&apos;exploitation continue.
+              {t.man_text_1}
               <span className="text-ash">
                 {" "}
-                Nous travaillons pour les organisations qui exigent de la
-                technologie qu&apos;elle tienne sous contrainte réelle —
-                réglementaire, opérationnelle, géographique.
+                {t.man_text_2}
               </span>
             </p>
 
             <div className="mt-16 grid md:grid-cols-3 gap-10 pt-10 border-t border-[var(--border-strong)]">
-              <div>
-                <div className="text-[11px] text-ash uppercase tracking-[0.2em] mb-3">
-                  Rigueur
+              {t.man_pillars.map((pillar, i) => (
+                <div key={i}>
+                  <div className="text-[11px] text-ash uppercase tracking-[0.2em] mb-3">
+                    {pillar.title}
+                  </div>
+                  <p className="text-[14px] text-bone leading-relaxed">
+                    {pillar.desc}
+                  </p>
                 </div>
-                <p className="text-[14px] text-bone leading-relaxed">
-                  Chaque livrable est documenté, testé et signé. La qualité
-                  n&apos;est pas un objectif, c&apos;est une condition.
-                </p>
-              </div>
-              <div>
-                <div className="text-[11px] text-ash uppercase tracking-[0.2em] mb-3">
-                  Autonomie
-                </div>
-                <p className="text-[14px] text-bone leading-relaxed">
-                  Nos clients ne dépendent pas d&apos;une boîte noire. Nous
-                  formons leurs équipes et transmettons la maîtrise.
-                </p>
-              </div>
-              <div>
-                <div className="text-[11px] text-ash uppercase tracking-[0.2em] mb-3">
-                  Engagement
-                </div>
-                <p className="text-[14px] text-bone leading-relaxed">
-                  Nous restons aux côtés de nos clients sur le long terme.
-                  Un déploiement n&apos;est jamais une fin de relation.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>

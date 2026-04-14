@@ -1,4 +1,9 @@
+"use client";
+
+import { useT } from "@/i18n/provider";
+
 export default function Footer() {
+  const { t } = useT();
   const year = new Date().getFullYear();
   return (
     <footer className="relative border-t border-[var(--border)] bg-[#0A0A0B] py-16">
@@ -53,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] text-ash uppercase tracking-widest">
-          <span>© {year} DEEPXLAB — All rights reserved</span>
+          <span>© {year} DEEPXLAB — {t.foot_rights}</span>
           <span>Built in HT — Deployed worldwide</span>
         </div>
       </div>

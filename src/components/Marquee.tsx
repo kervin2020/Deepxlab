@@ -1,18 +1,10 @@
+"use client";
+
+import { useT } from "@/i18n/provider";
+
 export default function Marquee() {
-  const items = [
-    "Software sur mesure",
-    "Hardware industriel",
-    "Infrastructure réseau",
-    "Sécurité intelligente",
-    "Plateformes SaaS",
-    "Recherche appliquée",
-    "Intelligence artificielle",
-    "Internet des objets",
-    "Téléphonie IP",
-    "Audiovisuel professionnel",
-    "Robotique éducative",
-    "Cloud hybride",
-  ];
+  const { t } = useT();
+  const items = t.marquee_items;
   const repeat = [...items, ...items];
 
   return (

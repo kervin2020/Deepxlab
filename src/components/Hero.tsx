@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/provider";
 
 const rotating = [
   "Logiciel sur mesure",
@@ -11,17 +12,13 @@ const rotating = [
   "Hardware industriel",
 ];
 
-const headlines = [
-  "Concevoir la technologie critique.",
-  "Résoudre vos problèmes complexes.",
-  "Opérer ce que d'autres n'osent pas.",
-  "Bâtir des systèmes de confiance.",
-];
-
 export default function Hero() {
+  const { t } = useT();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [active, setActive] = useState(0);
   const [headline, setHeadline] = useState(0);
+
+  const headlines = t.hero_lines;
 
   useEffect(() => {
     const id = setInterval(() => setActive((a) => (a + 1) % rotating.length), 2200);
@@ -31,7 +28,7 @@ export default function Hero() {
   useEffect(() => {
     const id = setInterval(() => setHeadline((h) => (h + 1) % headlines.length), 3600);
     return () => clearInterval(id);
-  }, []);
+  }, [headlines.length]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -118,7 +115,7 @@ export default function Hero() {
         <div className="flex items-center gap-4 mb-12 md:mb-20 reveal">
           <span className="w-2 h-2 rounded-full bg-[var(--accent)] pulse-dot" />
           <span className="text-[11px] uppercase tracking-[0.2em] shimmer-text">
-            Groupe technologique multidisciplinaire en solutions technologiques
+            {t.hero_tag}
           </span>
         </div>
 
@@ -148,9 +145,7 @@ export default function Hero() {
             style={{ animationDelay: "0.85s" }}
           >
             <p className="text-base md:text-xl text-bone leading-relaxed max-w-2xl">
-              Six expertises intégrées. Une seule équipe. Une seule
-              responsabilité contractuelle — du premier prototype à
-              l&apos;exploitation continue.
+              {t.hero_desc}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 items-center">
@@ -158,7 +153,7 @@ export default function Hero() {
                 href="#cta"
                 className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[var(--accent)] text-black hover:bg-[var(--text)] transition-all duration-300"
               >
-                <span className="text-[14px] font-medium">Prendre contact</span>
+                <span className="text-[14px] font-medium">{t.nav_contact}</span>
                 <span className="group-hover:translate-x-1 transition-transform">
                   →
                 </span>
@@ -167,7 +162,7 @@ export default function Hero() {
                 href="#divisions"
                 className="group inline-flex items-center gap-3 px-6 py-3.5 border border-[var(--border-strong)] hover:border-[var(--accent)] text-bone transition-colors"
               >
-                <span className="text-[14px]">Découvrir nos expertises</span>
+                <span className="text-[14px]">{t.nav_expertises}</span>
               </a>
             </div>
           </div>
@@ -181,7 +176,7 @@ export default function Hero() {
               <div className="scan-line" />
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]">
                 <span className="text-[10px] text-ash uppercase tracking-[0.2em]">
-                  Capacités opérationnelles
+                  {t.cap_section}
                 </span>
                 <span className="text-[10px] text-[var(--accent)] uppercase tracking-[0.2em]">
                   Live
@@ -231,19 +226,19 @@ export default function Hero() {
         <div className="mt-16 md:mt-28 pt-8 border-t border-[var(--border-strong)] grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
           {[
             {
-              k: "Software",
+              k: t.hero_software,
               v: "Plateformes SaaS, applications métier, intégration IA",
             },
             {
-              k: "Hardware",
+              k: t.hero_hardware,
               v: "Serveurs, réseaux, capteurs IoT, audiovisuel",
             },
             {
-              k: "Sécurité",
+              k: t.hero_security,
               v: "Vidéosurveillance, biométrie, supervision",
             },
             {
-              k: "Recherche",
+              k: t.hero_research,
               v: "Robotique, prototypage, propriété intellectuelle",
             },
           ].map((b) => (

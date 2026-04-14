@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: "06", label: "Expertises\nintégrées" },
-  { value: "04", label: "Langues\nopérationnelles" },
-  { value: "24/7", label: "Continuité\nopérationnelle" },
-  { value: "∞", label: "Déploiements\nsans frontière" },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Stats() {
+  const { t } = useT();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -32,11 +27,11 @@ export default function Stats() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-10">
         <div className="text-[11px] text-ash uppercase tracking-[0.2em] mb-12 flex items-center gap-3">
           <span className="w-8 h-px bg-[var(--accent)]" />
-          <span>Capacités</span>
+          <span>{t.cap_section}</span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[var(--bg-elev-2)]">
-          {stats.map((s, i) => (
+          {t.stat_items.map((s, i) => (
             <div
               key={i}
               className="bg-[#0A0A0B] p-8 md:p-10 min-h-[260px] flex flex-col justify-between group hover:bg-[var(--bg-elev-2)] transition-colors"
@@ -50,7 +45,7 @@ export default function Stats() {
                 }`}
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
-                {s.value}
+                {s.val}
               </div>
               <div className="text-[11px] text-ash uppercase tracking-[0.2em] whitespace-pre-line">
                 {s.label}

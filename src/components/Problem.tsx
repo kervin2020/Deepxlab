@@ -1,4 +1,10 @@
+"use client";
+
+import { useT } from "@/i18n/provider";
+
 export default function Problem() {
+  const { t } = useT();
+
   return (
     <section className="relative py-32 md:py-56 border-t border-[var(--border)] bg-[var(--bg-elev)] overflow-hidden">
       <div className="absolute inset-0 spotlight pointer-events-none" />
@@ -15,14 +21,14 @@ export default function Problem() {
 
           <div className="md:col-span-9">
             <h2 className="text-5xl md:text-[88px] leading-[0.92] tracking-[-0.04em] font-medium max-w-4xl">
-              Vous avez un problème
+              {t.prob_title.split(" ").slice(0, 5).join(" ")}
               <br />
-              <span className="text-ash">que personne n&apos;arrive</span>
-              <br />à résoudre<span className="text-[var(--accent)]">.</span>
+              <span className="text-ash">{t.prob_title.split(" ").slice(5, 9).join(" ")}</span>
+              <br />{t.prob_title.split(" ").slice(9).join(" ").replace(".", "")}<span className="text-[var(--accent)]">.</span>
             </h2>
 
             <p className="mt-12 text-xl md:text-2xl text-bone leading-relaxed max-w-2xl">
-              C&apos;est précisément ce que nous préférons.
+              {t.prob_sub}
             </p>
 
             <p className="mt-6 text-[15px] md:text-base text-ash leading-relaxed max-w-2xl">

@@ -2,24 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { useT } from "@/i18n/provider";
+import type { Lang } from "@/i18n/translations";
 
-const links = [
-  { label: "Expertises", href: "#divisions" },
-  { label: "Capacités", href: "#capacites" },
-  { label: "Secteurs", href: "#secteurs" },
-  { label: "Approche", href: "#approche" },
-  { label: "Produits", href: "#produits" },
-  { label: "Présence", href: "#global" },
-];
-
-const languages = ["FR", "EN", "ES", "HT"];
+const languages: Lang[] = ["FR", "EN", "ES", "HT"];
 
 export default function Header() {
+  const { t, lang, setLang } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [langOpen, setLangOpen] = useState(false);
-  const [lang, setLang] = useState("FR");
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const links = [
+    { label: t.nav_expertises, href: "#divisions" },
+    { label: t.nav_capacites, href: "#capacites" },
+    { label: t.nav_secteurs, href: "#secteurs" },
+    { label: t.nav_approche, href: "#approche" },
+    { label: t.nav_produits, href: "#produits" },
+    { label: t.nav_presence, href: "#global" },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -71,7 +73,7 @@ export default function Header() {
               onClick={() => setLangOpen((o) => !o)}
               onBlur={() => setTimeout(() => setLangOpen(false), 150)}
               className="flex items-center gap-1.5 px-2.5 py-2 text-[12px] text-bone hover:text-bone border border-transparent hover:border-[var(--border-strong)] transition-colors"
-              aria-label="Langue"
+              aria-label={t.lang_label}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                 <circle cx="12" cy="12" r="9" />
@@ -86,7 +88,7 @@ export default function Header() {
                   <button
                     key={l}
                     onMouseDown={() => {
-                      setLang(l);
+                      setLang(l as Lang);
                       setLangOpen(false);
                     }}
                     className={`w-full text-left px-3 py-1.5 text-[12px] hover:bg-[var(--bg-elev-2)] transition-colors ${
@@ -122,7 +124,7 @@ export default function Header() {
             href="#cta"
             className="hidden sm:inline-flex group items-center gap-2 px-4 py-2 text-[12px] border border-[var(--border-strong)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
           >
-            Prendre contact
+            {t.nav_contact}
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
 
@@ -161,12 +163,12 @@ export default function Header() {
 
             <div className="mt-8 pt-6 border-t border-[var(--border)] flex flex-col gap-6">
               <div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-ash mb-3">Langue</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-ash mb-3">{t.lang_label}</div>
                 <div className="flex gap-2 flex-wrap">
                   {languages.map((l) => (
                     <button
                       key={l}
-                      onClick={() => setLang(l)}
+                      onClick={() => setLang(l as Lang)}
                       className={`px-4 py-2 text-[13px] border transition-colors ${
                         l === lang
                           ? "border-[var(--accent)] text-[var(--accent)]"
@@ -185,7 +187,7 @@ export default function Header() {
                   onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
                   className="px-4 py-2 text-[13px] border border-[var(--border-strong)] text-bone hover:border-[var(--accent)] transition-colors"
                 >
-                  {theme === "dark" ? "Mode clair" : "Mode sombre"}
+                  {theme === "dark" ? t.theme_light : t.theme_dark}
                 </button>
               </div>
 
@@ -194,7 +196,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[14px] bg-[var(--accent)] text-black font-medium hover:bg-[var(--text)] transition-colors"
               >
-                Prendre contact →
+                {t.nav_contact} →
               </a>
             </div>
           </nav>
