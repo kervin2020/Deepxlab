@@ -22,6 +22,11 @@ export default function CTA() {
           </div>
 
           <div className="md:col-span-9">
+            <p className="text-2xl md:text-[32px] leading-tight tracking-[-0.02em] font-medium text-ash mb-10 max-w-3xl">
+              {t.prob_title}{" "}
+              <span className="text-bone">{t.prob_sub}</span>
+            </p>
+
             <h2 className="text-5xl md:text-8xl tracking-[-0.04em] leading-[0.92] font-medium max-w-4xl">
               {t.cta_title_1}
               <br />

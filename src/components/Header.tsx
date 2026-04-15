@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { useT } from "@/i18n/provider";
 import type { Lang } from "@/i18n/translations";
@@ -12,16 +13,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [langOpen, setLangOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const links = [
-    { label: t.nav_expertises, href: "#divisions" },
-    { label: t.nav_capacites, href: "#capacites" },
-    { label: t.nav_secteurs, href: "#secteurs" },
-    { label: t.nav_approche, href: "#approche" },
-    { label: t.nav_produits, href: "#produits" },
-    { label: t.nav_presence, href: "#global" },
-  ];
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -49,21 +43,67 @@ export default function Header() {
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-[68px] flex items-center justify-between gap-6">
-        <a href="#" className="text-bone hover:text-[var(--accent)] transition-colors">
+        <Link
+          href="/"
+          className="text-bone hover:text-[var(--accent)] transition-colors"
+        >
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              onClick={() => setServicesOpen((o) => !o)}
+              className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2 flex items-center gap-1.5"
+              aria-expanded={servicesOpen}
             >
-              {link.label}
+              {t.svc_section}
+              <span className="text-[9px] opacity-60">▾</span>
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
-            </a>
-          ))}
+            </button>
+            {servicesOpen && (
+              <div className="absolute left-0 top-full pt-2">
+                <div className="bg-[var(--bg)] border border-[var(--border-strong)] min-w-[320px] py-2">
+                  {t.svc_items.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-5 py-3 hover:bg-[var(--bg-elev-2)] transition-colors group"
+                    >
+                      <div className="text-[11px] font-mono text-[var(--accent)] tracking-[0.2em] mb-1">
+                        {s.tag}
+                      </div>
+                      <div className="text-[14px] text-bone group-hover:text-[var(--accent)] transition-colors">
+                        {s.name}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link
+            href="/#manifesto"
+            className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
+          >
+            {t.nav_approche}
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
+          </Link>
+
+          <Link
+            href="/#cases"
+            className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
+          >
+            {t.cases_section}
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
@@ -120,13 +160,13 @@ export default function Header() {
             )}
           </button>
 
-          <a
-            href="#cta"
+          <Link
+            href="/#cta"
             className="hidden sm:inline-flex group items-center gap-2 px-4 py-2 text-[12px] border border-[var(--border-strong)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
           >
             {t.nav_contact}
             <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+          </Link>
 
           {/* Mobile hamburger */}
           <button
@@ -150,16 +190,56 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 top-[68px] z-40 bg-[var(--bg)] border-t border-[var(--border)] overflow-y-auto">
           <nav className="flex flex-col px-5 py-8 gap-1">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
+            {/* Services accordion */}
+            <button
+              onClick={() => setMobileServicesOpen((o) => !o)}
+              className="flex items-center justify-between text-[18px] text-bone py-4 border-b border-[var(--border)] transition-colors"
+              aria-expanded={mobileServicesOpen}
+            >
+              <span>{t.svc_section}</span>
+              <span
+                className={`text-[var(--accent)] transition-transform ${
+                  mobileServicesOpen ? "rotate-45" : ""
+                }`}
               >
-                {link.label}
-              </a>
-            ))}
+                +
+              </span>
+            </button>
+            {mobileServicesOpen && (
+              <div className="flex flex-col border-b border-[var(--border)] bg-[var(--bg-elev)]">
+                {t.svc_items.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="px-5 py-4 text-[15px] text-bone hover:text-[var(--accent)] transition-colors border-t border-[var(--border)] first:border-t-0"
+                  >
+                    <span className="text-[11px] font-mono text-[var(--accent)] tracking-[0.2em] mr-3">
+                      {s.tag}
+                    </span>
+                    {s.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <Link
+              href="/#manifesto"
+              onClick={() => setMobileOpen(false)}
+              className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
+            >
+              {t.nav_approche}
+            </Link>
+            <Link
+              href="/#cases"
+              onClick={() => setMobileOpen(false)}
+              className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
+            >
+              {t.cases_section}
+            </Link>
 
             <div className="mt-8 pt-6 border-t border-[var(--border)] flex flex-col gap-6">
               <div>
@@ -191,13 +271,13 @@ export default function Header() {
                 </button>
               </div>
 
-              <a
-                href="#cta"
+              <Link
+                href="/#cta"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[14px] bg-[var(--accent)] text-black font-medium hover:bg-[var(--text)] transition-colors"
               >
                 {t.nav_contact} →
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

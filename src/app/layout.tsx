@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
+import ClientShell from "@/components/ClientShell";
 
 const inter = DM_Sans({
   variable: "--font-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
       className={`${inter.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[var(--bg)] text-[var(--text)] font-sans selection:bg-[var(--accent)] selection:text-black">
-        {children}
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );
