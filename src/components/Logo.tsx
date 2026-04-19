@@ -1,32 +1,34 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 export default function Logo({ className = "" }: { className?: string }) {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const update = () => {
+      setIsDark(document.documentElement.dataset.theme !== "light");
+    };
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="shrink-0"
-      >
-        <rect x="1" y="1" width="30" height="30" rx="6" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M9 9 H15 a7 7 0 0 1 0 14 H9 Z"
-          fill="currentColor"
-        />
-        <path
-          d="M19 9 L23 16 L19 23"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        <circle cx="26" cy="6" r="2" fill="#00FF94" className="glow-pulse" />
-      </svg>
-      <span className="text-[17px] tracking-[-0.02em] font-medium">
-        DeepXlab
-      </span>
+    <span className={`inline-flex items-center ${className}`}>
+      <Image
+        src={isDark ? "/logo-white.png" : "/logo-dark.png"}
+        alt="DeepXlab"
+        width={3686}
+        height={1034}
+        className="h-8 w-auto"
+        priority
+      />
     </span>
   );
 }
