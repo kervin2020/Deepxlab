@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { useT } from "@/i18n/provider";
 import MagneticButton from "./MagneticButton";
 
-/* Word-by-word animated title — staggered y/blur entrance */
+/* Word-by-word animated title — staggered y/blur entrance.
+   Uses flex with explicit gap so word spacing is GUARANTEED
+   (avoids the inline-block whitespace-collapsing bug that was
+   rendering "FROMUNKNOWN" as a single token). */
 function AnimatedTitle({
   lines,
 }: {
@@ -19,20 +22,24 @@ function AnimatedTitle({
   let wordIndex = 0;
   return (
     <h1
-      className="text-[clamp(2.6rem,8.4vw,9rem)] leading-[0.9] tracking-[-0.035em] font-bold uppercase"
+      className="text-[clamp(2.4rem,8.2vw,8.5rem)] leading-[0.95] tracking-[-0.02em] font-bold uppercase"
       style={{ fontFamily: '"Clash Display", sans-serif' }}
     >
       {lines.map((line, li) => (
-        <span key={li} className="block overflow-hidden">
+        <span
+          key={li}
+          className="flex flex-wrap items-end overflow-hidden"
+          style={{ columnGap: "0.28em", rowGap: "0.05em" }}
+        >
           {line.map((segment, si) => {
-            const words = segment.text.split(" ").filter(Boolean);
+            const words = segment.text.split(/\s+/).filter(Boolean);
             return words.map((word) => {
               const wi = wordIndex++;
               const delay = wi * 0.08 + 0.4;
               return (
                 <span
                   key={`${li}-${si}-${wi}`}
-                  className="inline-block mr-[0.22em] overflow-hidden align-top"
+                  className="inline-block overflow-hidden align-bottom"
                 >
                   <span
                     className="inline-block"

@@ -402,6 +402,9 @@ const fr = {
   ],
 
   // Cinematic redesign — additional copy
+  slogan_l1: "DE L'INCONNU",
+  slogan_l2: "AU POSSIBLE.",
+  slogan_sub: "Solutions Technologiques sur Mesure.",
   tagline_lines: ["SIX EXPERTISES.", "UNE ÉQUIPE.", "ZÉRO COMPROMIS."],
   stat_subs: [
     "Plateforme caribéenne · PCI-DSS",
