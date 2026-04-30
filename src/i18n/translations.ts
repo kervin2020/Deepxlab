@@ -400,6 +400,28 @@ const fr = {
     { name: "Hardware & IoT", items: ["Arduino", "ESP32", "Raspberry Pi", "STM32", "LoRa", "MQTT"] },
     { name: "Sécurité", items: ["Zero Trust", "mTLS", "Vault", "SIEM", "WAF", "SOC"] },
   ],
+
+  // Cinematic redesign — additional copy
+  tagline_lines: ["SIX EXPERTISES.", "UNE ÉQUIPE.", "ZÉRO COMPROMIS."],
+  stat_subs: [
+    "Plateforme caribéenne · PCI-DSS",
+    "Interopérabilité HL7/FHIR",
+    "Portail services publics",
+    "STEM · 3 pays",
+  ],
+  cta_giant_1: "Si nous pouvons moderniser l'infrastructure d'une nation,",
+  cta_giant_2: "imaginez ce que nous pouvons faire",
+  cta_giant_3: "pour votre entreprise.",
+  cta_btn_primary: "Démarrer un projet",
+  cta_btn_secondary: "Consulter nos expertises",
+  hero_cta_primary: "Découvrir DeepXLab",
+  hero_cta_secondary: "Nos expertises",
+  scroll_label: "Scroll",
+  impact_section: "Impact mesurable",
+  depts_section: "Nos départements",
+  depts_title: "Six expertises intégrées",
+  cases_confidential: "Noms clients confidentiels — impacts vérifiables",
+  values_section: "Nos valeurs",
 };
 
 // ─── ENGLISH ────────────────────────────────────────────────────
@@ -750,6 +772,28 @@ const en: Dict = {
     { name: "Hardware & IoT", items: ["Arduino", "ESP32", "Raspberry Pi", "STM32", "LoRa", "MQTT"] },
     { name: "Security", items: ["Zero Trust", "mTLS", "Vault", "SIEM", "WAF", "SOC"] },
   ],
+
+  // Cinematic redesign — additional copy
+  tagline_lines: ["SIX EXPERTISES.", "ONE TEAM.", "ZERO COMPROMISE."],
+  stat_subs: [
+    "Caribbean platform · PCI-DSS",
+    "HL7/FHIR interoperability",
+    "Public services portal",
+    "STEM · 3 countries",
+  ],
+  cta_giant_1: "If we can modernise the infrastructure of a nation,",
+  cta_giant_2: "imagine what we can do",
+  cta_giant_3: "for your business.",
+  cta_btn_primary: "Start a project",
+  cta_btn_secondary: "Explore our expertise",
+  hero_cta_primary: "Discover DeepXLab",
+  hero_cta_secondary: "Our expertise",
+  scroll_label: "Scroll",
+  impact_section: "Measurable impact",
+  depts_section: "Our departments",
+  depts_title: "Six integrated areas of expertise",
+  cases_confidential: "Client names confidential — verifiable impact",
+  values_section: "Our values",
 };
 
 // ─── SPANISH ────────────────────────────────────────────────────
@@ -1100,6 +1144,28 @@ const es: Dict = {
     { name: "Hardware e IoT", items: ["Arduino", "ESP32", "Raspberry Pi", "STM32", "LoRa", "MQTT"] },
     { name: "Seguridad", items: ["Zero Trust", "mTLS", "Vault", "SIEM", "WAF", "SOC"] },
   ],
+
+  // Cinematic redesign — additional copy
+  tagline_lines: ["SEIS EXPERTICIAS.", "UN EQUIPO.", "CERO COMPROMISO."],
+  stat_subs: [
+    "Plataforma caribeña · PCI-DSS",
+    "Interoperabilidad HL7/FHIR",
+    "Portal de servicios públicos",
+    "STEM · 3 países",
+  ],
+  cta_giant_1: "Si podemos modernizar la infraestructura de una nación,",
+  cta_giant_2: "imagina lo que podemos hacer",
+  cta_giant_3: "por su empresa.",
+  cta_btn_primary: "Iniciar un proyecto",
+  cta_btn_secondary: "Conocer nuestra experiencia",
+  hero_cta_primary: "Descubrir DeepXLab",
+  hero_cta_secondary: "Nuestra experiencia",
+  scroll_label: "Scroll",
+  impact_section: "Impacto medible",
+  depts_section: "Nuestros departamentos",
+  depts_title: "Seis experticias integradas",
+  cases_confidential: "Nombres de clientes confidenciales — impacto verificable",
+  values_section: "Nuestros valores",
 };
 
 // ─── HAITIAN CREOLE ─────────────────────────────────────────────
@@ -1450,6 +1516,28 @@ const ht: Dict = {
     { name: "Materyèl ak IoT", items: ["Arduino", "ESP32", "Raspberry Pi", "STM32", "LoRa", "MQTT"] },
     { name: "Sekirite", items: ["Zero Trust", "mTLS", "Vault", "SIEM", "WAF", "SOC"] },
   ],
+
+  // Cinematic redesign — additional copy
+  tagline_lines: ["SIS EKSPÈTIZ.", "YON EKIP.", "ZEWO KONPWOMI."],
+  stat_subs: [
+    "Platfòm Karayib · PCI-DSS",
+    "Entewopèrabilite HL7/FHIR",
+    "Pòtay sèvis piblik",
+    "STEM · 3 peyi",
+  ],
+  cta_giant_1: "Si nou ka modènize enfrastrikti yon nasyon,",
+  cta_giant_2: "imajine sa nou ka fè",
+  cta_giant_3: "pou biznis ou.",
+  cta_btn_primary: "Lanse yon pwojè",
+  cta_btn_secondary: "Eksplore ekspètiz nou",
+  hero_cta_primary: "Dekouvri DeepXLab",
+  hero_cta_secondary: "Ekspètiz nou",
+  scroll_label: "Defile",
+  impact_section: "Enpak mezirab",
+  depts_section: "Depatman nou yo",
+  depts_title: "Sis ekspètiz entegre",
+  cases_confidential: "Non kliyan konfidansyèl — enpak verifyab",
+  values_section: "Valè nou yo",
 };
 
 export const dictionaries: Record<Lang, Dict> = { FR: fr, EN: en, ES: es, HT: ht };

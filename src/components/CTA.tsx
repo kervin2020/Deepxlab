@@ -8,7 +8,8 @@ export default function CTA() {
   return (
     <section
       id="cta"
-      className="relative py-40 md:py-56 border-t border-[var(--border)] bg-[var(--bg-elev)] overflow-hidden"
+      className="relative py-40 md:py-56 border-t border-[var(--border)] overflow-hidden"
+      style={{ background: "rgba(5,5,5,0.65)" }}
     >
       <div className="absolute inset-0 spotlight pointer-events-none" />
 

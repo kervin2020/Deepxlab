@@ -42,7 +42,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-[68px] flex items-center justify-between gap-6">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-[76px] md:h-[80px] flex items-center justify-between gap-6">
         <Link
           href="/"
           className="text-bone hover:text-[var(--accent)] transition-colors"
@@ -188,7 +188,7 @@ export default function Header() {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-[68px] z-40 bg-[var(--bg)] border-t border-[var(--border)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-[76px] md:top-[80px] z-40 bg-[var(--bg)] border-t border-[var(--border)] overflow-y-auto">
           <nav className="flex flex-col px-5 py-8 gap-1">
             {/* Services accordion */}
             <button

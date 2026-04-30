@@ -26,7 +26,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         alt="DeepXlab"
         width={3686}
         height={1034}
-        className="h-8 w-auto"
+        className="h-9 md:h-10 w-auto"
         priority
       />
     </span>
