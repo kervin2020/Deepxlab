@@ -454,6 +454,10 @@ const en: Dict = {
   hero_security: "Security",
   hero_research: "Research",
 
+  slogan_l1: "FROM UNKNOWN",
+  slogan_l2: "TO POSSIBLE.",
+  slogan_sub: "Custom technology solutions.",
+
   marquee_items: [
     "Custom software",
     "Network infrastructure",
@@ -826,6 +830,10 @@ const es: Dict = {
   hero_security: "Seguridad",
   hero_research: "Investigación",
 
+  slogan_l1: "DEL DESCONOCIDO",
+  slogan_l2: "AL POSIBLE.",
+  slogan_sub: "Soluciones tecnológicas a medida.",
+
   marquee_items: [
     "Software a medida",
     "Infraestructura de red",
@@ -1197,6 +1205,10 @@ const ht: Dict = {
   hero_hardware: "Materyèl",
   hero_security: "Sekirite",
   hero_research: "Rechèch",
+
+  slogan_l1: "SOTI NAN ENKONN",
+  slogan_l2: "AL POSSIB.",
+  slogan_sub: "Solisyon teknoloji sou mezi.",
 
   marquee_items: [
     "Lojisyèl sou mezi",
