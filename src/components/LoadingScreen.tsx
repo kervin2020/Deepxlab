@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useT } from "@/i18n/provider";
 
 function useIsLight() {
   const [light, setLight] = useState(false);
@@ -29,6 +30,7 @@ type Phase = "init" | "fade-in" | "sweep" | "hold" | "fade-out" | "gone";
 export default function LoadingScreen() {
   const [phase, setPhase] = useState<Phase>("init");
   const isLight = useIsLight();
+  const { t } = useT();
 
   useEffect(() => {
     const timeline = [
@@ -146,7 +148,7 @@ export default function LoadingScreen() {
         }}
       >
         <p className="text-[10px] uppercase tracking-[0.4em] text-[var(--text-muted)]">
-          Groupe technologique multidisciplinaire
+          {t.hero_tag.split(" en ")[0]}
         </p>
         <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)] opacity-60">
           Boston · Port-au-Prince

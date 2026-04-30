@@ -1,89 +1,57 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/provider";
 
-const departments = [
-  {
-    num: "01",
-    name: "Logiciel sur mesure",
-    desc: "Applications métier, plateformes SaaS, intégration IA, développement web & mobile pour des organisations qui ne tolèrent pas les pannes.",
-    services: ["SaaS & Plateformes", "Apps mobiles iOS/Android", "Intégration IA/ML", "E-commerce & paiement"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="4" y="6" width="24" height="20" rx="2" />
-        <path d="M10 13l4 4-4 4M17 21h5" />
-      </svg>
-    ),
-  },
-  {
-    num: "02",
-    name: "Infrastructure IT",
-    desc: "Architectures cloud, réseaux d'entreprise, déploiement et supervision 24/7 d'infrastructures critiques.",
-    services: ["Cloud & Serveurs", "Réseaux & IoT", "Audiovisuel", "Supervision & monitoring"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="4" y="8" width="24" height="6" rx="1" />
-        <rect x="4" y="18" width="24" height="6" rx="1" />
-        <circle cx="26" cy="11" r="1.5" fill="currentColor" stroke="none" />
-        <circle cx="26" cy="21" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    num: "03",
-    name: "Sécurité intelligente",
-    desc: "Vidéosurveillance, biométrie, cybersécurité et systèmes de contrôle d'accès pour environnements à haute exigence.",
-    services: ["Cybersécurité", "Vidéosurveillance", "Biométrie", "Audit & conformité"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M16 4l10 4v8c0 6-4 10-10 12C10 26 6 22 6 16V8l10-4z" />
-        <path d="M12 16l3 3 5-5" />
-      </svg>
-    ),
-  },
-  {
-    num: "04",
-    name: "Recherche & R&D",
-    desc: "Prototypage, robotique, propriété intellectuelle. Nous construisons ce qui n'existe pas encore.",
-    services: ["Robotique & prototypage", "IA appliquée", "Propriété intellectuelle", "Recherche terrain"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <circle cx="16" cy="16" r="3" />
-        <circle cx="16" cy="16" r="8" />
-        <path d="M16 4v4M16 24v4M4 16h4M24 16h4" />
-      </svg>
-    ),
-  },
-  {
-    num: "05",
-    name: "Plateformes SaaS",
-    desc: "Développement et opération de produits SaaS scalables, de la conception au déploiement multi-tenant.",
-    services: ["Architecture multi-tenant", "APIs & intégrations", "Analytics & reporting", "Maintenance évolutive"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M8 20c0-4 3-7 8-7s8 3 8 7" />
-        <path d="M6 22h20M10 26h12" />
-        <path d="M16 13V8" />
-        <circle cx="16" cy="6" r="2" />
-      </svg>
-    ),
-  },
-  {
-    num: "06",
-    name: "Hardware & STEM",
-    desc: "Kits pédagogiques Arduino/ESP32 propriétaires, déploiement de labs STEM et formation des enseignants.",
-    services: ["Kits Maker & Arduino", "Cours robotique", "Labs clé en main", "Guides pédagogiques"],
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="8" y="8" width="16" height="16" rx="2" />
-        <rect x="12" y="12" width="8" height="8" rx="1" />
-        <path d="M8 12H4M8 20H4M24 12h4M24 20h4M12 8V4M20 8V4M12 24v4M20 24v4" />
-      </svg>
-    ),
-  },
+// SVG icons for the 6 departments — kept in code (not i18n) since they're visual
+const departmentIcons = [
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <rect x="4" y="6" width="24" height="20" rx="2" />
+      <path d="M10 13l4 4-4 4M17 21h5" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <rect x="4" y="8" width="24" height="6" rx="1" />
+      <rect x="4" y="18" width="24" height="6" rx="1" />
+      <circle cx="26" cy="11" r="1.5" fill="currentColor" stroke="none" />
+      <circle cx="26" cy="21" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <path d="M16 4l10 4v8c0 6-4 10-10 12C10 26 6 22 6 16V8l10-4z" />
+      <path d="M12 16l3 3 5-5" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <circle cx="16" cy="16" r="3" />
+      <circle cx="16" cy="16" r="8" />
+      <path d="M16 4v4M16 24v4M4 16h4M24 16h4" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <path d="M8 20c0-4 3-7 8-7s8 3 8 7" />
+      <path d="M6 22h20M10 26h12" />
+      <path d="M16 13V8" />
+      <circle cx="16" cy="6" r="2" />
+    </svg>
+  ),
+  (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <rect x="8" y="8" width="16" height="16" rx="2" />
+      <rect x="12" y="12" width="8" height="8" rx="1" />
+      <path d="M8 12H4M8 20H4M24 12h4M24 20h4M12 8V4M20 8V4M12 24v4M20 24v4" />
+    </svg>
+  ),
 ];
 
-function DeptCard({ dept, delay }: { dept: typeof departments[0]; delay: number }) {
+type Dept = { num: string; name: string; desc: string; services: string[]; icon: React.ReactNode };
+
+function DeptCard({ dept, delay }: { dept: Dept; delay: number }) {
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -166,6 +134,16 @@ function DeptCard({ dept, delay }: { dept: typeof departments[0]; delay: number 
 }
 
 export default function Departments() {
+  const { t } = useT();
+  // Build department list from i18n div_items + visual icons
+  const departments: Dept[] = (t.div_items || []).slice(0, 6).map((d, i) => ({
+    num: String(i + 1).padStart(2, "0"),
+    name: d.name,
+    desc: d.desc,
+    services: d.services,
+    icon: departmentIcons[i] || departmentIcons[0],
+  }));
+
   return (
     <section id="departments" className="relative py-24 md:py-40">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--section-veil)" }} />
@@ -175,18 +153,18 @@ export default function Departments() {
           <div className="flex items-center gap-4 mb-6">
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">03</span>
             <span className="w-12 h-px bg-[var(--border-strong)]" />
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">Nos départements</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{t.depts_section}</span>
           </div>
           <h2
             className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase tracking-[-0.02em] text-[var(--text)]"
             style={{ fontFamily: '"Clash Display", sans-serif' }}
           >
-            Six expertises intégrées
+            {t.depts_title}
           </h2>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(255,255,255,0.05)]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
           {departments.map((d, i) => (
             <DeptCard key={d.num} dept={d} delay={i * 0.08} />
           ))}

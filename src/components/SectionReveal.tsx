@@ -8,11 +8,12 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/* SectionReveal — wraps any section content. Plays a cinematic reveal
-   when scrolled into view:
-     - A horizontal accent line draws across the top
-     - The content lifts in with a clip-path mask + slight blur
-   The wrapper is purely visual; layout comes from children.
+/* SectionReveal — visible cinematic transition when each section enters:
+   1. A glowing horizontal accent line draws across (1.4s, blue + glow)
+   2. The section index (e.g. "/02") fades in from the right
+   3. A scanning sweep moves from top to bottom of the section
+   4. The content lifts in with clip-path mask + blur
+   This is meant to be NOTICEABLE — every section feels like a new scene.
 */
 export default function SectionReveal({
   children,
@@ -23,7 +24,7 @@ export default function SectionReveal({
   children: React.ReactNode;
   className?: string;
   id?: string;
-  index?: string; // e.g. "02", "03"
+  index?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -32,49 +33,64 @@ export default function SectionReveal({
     if (!el) return;
 
     const line = el.querySelector<HTMLElement>("[data-reveal-line]");
+    const idx = el.querySelector<HTMLElement>("[data-reveal-index]");
+    const sweep = el.querySelector<HTMLElement>("[data-reveal-sweep]");
     const inner = el.querySelector<HTMLElement>("[data-reveal-inner]");
 
     const ctx = gsap.context(() => {
-      // Line draws across
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          once: true,
+        },
+      });
+
       if (line) {
-        gsap.fromTo(
+        tl.fromTo(
           line,
           { scaleX: 0, transformOrigin: "left center" },
-          {
-            scaleX: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              once: true,
-            },
-          }
+          { scaleX: 1, duration: 1.2, ease: "power3.out" },
+          0
         );
       }
-      // Content lifts in with mask reveal
+      if (idx) {
+        tl.fromTo(
+          idx,
+          { x: 30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+          0.3
+        );
+      }
+      if (sweep) {
+        // Vertical sweep: glowing line travels top→bottom of the section
+        tl.fromTo(
+          sweep,
+          { top: "0%", opacity: 0 },
+          { opacity: 1, duration: 0.2, ease: "none" },
+          0.1
+        )
+          .to(sweep, { top: "100%", duration: 1.4, ease: "power2.inOut" }, 0.3)
+          .to(sweep, { opacity: 0, duration: 0.3, ease: "none" }, 1.6);
+      }
       if (inner) {
-        gsap.fromTo(
+        tl.fromTo(
           inner,
           {
-            clipPath: "inset(40% 0 40% 0)",
+            clipPath: "inset(50% 0 50% 0)",
             opacity: 0,
+            filter: "blur(10px)",
             y: 30,
-            filter: "blur(8px)",
           },
           {
             clipPath: "inset(0% 0 0% 0)",
             opacity: 1,
-            y: 0,
             filter: "blur(0px)",
+            y: 0,
             duration: 1.4,
             ease: "power3.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 80%",
-              once: true,
-            },
-          }
+          },
+          0.4
         );
       }
     }, el);
@@ -84,26 +100,47 @@ export default function SectionReveal({
 
   return (
     <div ref={ref} id={id} className={`relative ${className}`}>
-      {/* Top divider line */}
+      {/* Scanning sweep — vertical line that crosses the section once */}
+      <div
+        data-reveal-sweep
+        aria-hidden
+        className="absolute left-0 right-0 z-30 pointer-events-none h-[2px]"
+        style={{
+          top: "0%",
+          opacity: 0,
+          background:
+            "linear-gradient(90deg, transparent, var(--accent), transparent)",
+          boxShadow: "0 0 18px 2px rgba(0,102,255,0.6)",
+        }}
+      />
+
+      {/* Top accent line + index label */}
       <div className="relative">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-12">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-12 flex items-center gap-4 pt-3">
           <div
             data-reveal-line
-            className="h-px bg-[var(--accent)] origin-left"
-            style={{ transform: "scaleX(0)" }}
+            className="flex-1 h-px bg-[var(--accent)] origin-left"
+            style={{
+              transform: "scaleX(0)",
+              boxShadow: "0 0 8px rgba(0,102,255,0.5)",
+            }}
           />
+          {index && (
+            <span
+              data-reveal-index
+              className="text-[10px] uppercase tracking-[0.3em] text-[var(--accent)]"
+              style={{
+                fontFamily: '"Clash Display", sans-serif',
+                opacity: 0,
+              }}
+            >
+              {index}
+            </span>
+          )}
         </div>
       </div>
-      {/* Optional index label */}
-      {index && (
-        <div className="absolute top-4 right-5 md:right-12 z-10 text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)]"
-          style={{ fontFamily: '"Clash Display", sans-serif' }}>
-          {index}
-        </div>
-      )}
-      <div data-reveal-inner>
-        {children}
-      </div>
+
+      <div data-reveal-inner>{children}</div>
     </div>
   );
 }
