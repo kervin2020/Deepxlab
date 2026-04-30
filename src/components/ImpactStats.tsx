@@ -1,40 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/provider";
 
-const stats = [
-  {
-    value: 4000000,
-    suffix: "+",
-    display: "4,000,000+",
-    label: "Transactions bancaires / mois",
-    sub: "Plateforme caribéenne · PCI-DSS",
-    color: "var(--accent)",
-  },
-  {
-    value: 120,
-    suffix: "+",
-    display: "120+",
-    label: "Établissements de santé connectés",
-    sub: "Interopérabilité HL7/FHIR",
-    color: "var(--accent-2)",
-  },
-  {
-    value: 800000,
-    suffix: "+",
-    display: "800 000+",
-    label: "Citoyens actifs",
-    sub: "Portail services publics",
-    color: "var(--accent)",
-  },
-  {
-    value: 45,
-    suffix: "",
-    display: "45",
-    label: "Écoles équipées",
-    sub: "STEM · 3 pays",
-    color: "var(--accent-2)",
-  },
+// Numeric metrics tied to verifiable case studies. Labels come from i18n
+// (cases_items metric/title) so language changes propagate automatically.
+const numericTargets = [
+  { value: 4000000, suffix: "+", color: "var(--accent)", caseIdx: 0 },
+  { value: 120, suffix: "+", color: "var(--accent-2)", caseIdx: 1 },
+  { value: 800000, suffix: "+", color: "var(--accent)", caseIdx: 2 },
+  { value: 45, suffix: "", color: "var(--accent-2)", caseIdx: 3 },
 ];
 
 function Counter({ target, suffix, triggered }: { target: number; suffix: string; triggered: boolean }) {
@@ -68,8 +43,19 @@ function Counter({ target, suffix, triggered }: { target: number; suffix: string
 }
 
 export default function ImpactStats() {
+  const { t } = useT();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
+
+  // Compose stats from i18n: cases provide the metric label/title, stat_subs the sub-label
+  const stats = numericTargets.map((nt, i) => {
+    const c = t.cases_items?.[nt.caseIdx];
+    return {
+      ...nt,
+      label: c?.metric || "",
+      sub: t.stat_subs?.[i] || "",
+    };
+  });
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -92,10 +78,7 @@ export default function ImpactStats() {
       {/* Subtle dark veil so numbers read clearly over the 3D scene */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(5,5,5,0.65) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.65) 100%)",
-        }}
+        style={{ background: "var(--section-veil)" }}
       />
 
       <div className="relative max-w-[1440px] mx-auto px-5 md:px-12">

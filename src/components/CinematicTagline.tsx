@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const lines = [
-  { text: "SIX EXPERTISES.", dir: "left" as const },
-  { text: "UNE ÉQUIPE.", dir: "right" as const },
-  { text: "ZÉRO COMPROMIS.", dir: "up" as const, accent: true },
-];
+import { useT } from "@/i18n/provider";
 
 export default function CinematicTagline() {
+  const { t } = useT();
+  const taglineLines = t.tagline_lines || ["SIX EXPERTISES.", "UNE ÉQUIPE.", "ZÉRO COMPROMIS."];
+  const lines = taglineLines.map((text, i) => ({
+    text,
+    dir: i === 0 ? ("left" as const) : i === 1 ? ("right" as const) : ("up" as const),
+    accent: i === taglineLines.length - 1,
+  }));
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 

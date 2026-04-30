@@ -538,15 +538,19 @@ function getSceneState(progress: number, states: Float32Array[], breakpoints: nu
 function ParticleCloud({
   scrollRef,
   mouseRef,
+  isLight,
 }: {
   scrollRef: React.MutableRefObject<number>;
   mouseRef: React.MutableRefObject<{ x: number; y: number }>;
+  isLight: boolean;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
   const lineRef = useRef<THREE.LineSegments>(null);
   const groupRef = useRef<THREE.Group>(null);
 
   const { states, breakpoints } = useMemo(() => buildStates(), []);
+  const isLightRef = useRef(isLight);
+  useEffect(() => { isLightRef.current = isLight; }, [isLight]);
 
   const positions = useMemo(() => new Float32Array(N * 3), []);
   const phases = useMemo(() => {
@@ -571,12 +575,15 @@ function ParticleCloud({
     const { from, to, t, idx } = getSceneState(progress, states, breakpoints);
     const time = state.clock.elapsedTime;
 
-    // Lerp positions with subtle jitter
+    // Lerp positions with very subtle jitter — kept small so shapes
+    // stay crisp/readable. Jitter shrinks during morph transitions.
+    const stability = 1 - Math.abs(t - 0.5) * 2; // 1 at midpoint, 0 at extremes
+    const jitterAmp = 0.012 + stability * 0.018; // 0.012 when locked, 0.030 mid-morph
     for (let i = 0; i < N; i++) {
       const i3 = i * 3;
-      const jx = Math.sin(time * 0.7 + phases[i]) * 0.035;
-      const jy = Math.cos(time * 0.6 + phases[i] * 1.3) * 0.035;
-      const jz = Math.sin(time * 0.8 + phases[i] * 0.9) * 0.035;
+      const jx = Math.sin(time * 0.7 + phases[i]) * jitterAmp;
+      const jy = Math.cos(time * 0.6 + phases[i] * 1.3) * jitterAmp;
+      const jz = Math.sin(time * 0.8 + phases[i] * 0.9) * jitterAmp;
       positions[i3 + 0] = from[i3 + 0] * (1 - t) + to[i3 + 0] * t + jx;
       positions[i3 + 1] = from[i3 + 1] * (1 - t) + to[i3 + 1] * t + jy;
       positions[i3 + 2] = from[i3 + 2] * (1 - t) + to[i3 + 2] * t + jz;
@@ -613,12 +620,15 @@ function ParticleCloud({
             linePositions[k + 5] = positions[j * 3 + 2];
             const ratio = Math.sqrt(d2) / RADIUS;
             const baseAlpha = 1 - ratio;
-            lineColors[k + 0] = 0.0;
-            lineColors[k + 1] = 0.4 * baseAlpha;
-            lineColors[k + 2] = 1.0 * baseAlpha;
-            lineColors[k + 3] = 0.0;
-            lineColors[k + 4] = 1.0 * baseAlpha;
-            lineColors[k + 5] = 0.7 * baseAlpha;
+            if (isLightRef.current) {
+              // Dark blue lines on light theme
+              lineColors[k + 0] = 0.0; lineColors[k + 1] = 0.27 * baseAlpha; lineColors[k + 2] = 0.8 * baseAlpha;
+              lineColors[k + 3] = 0.0; lineColors[k + 4] = 0.72 * baseAlpha; lineColors[k + 5] = 0.42 * baseAlpha;
+            } else {
+              // Bright blue/teal on dark theme
+              lineColors[k + 0] = 0.0; lineColors[k + 1] = 0.4 * baseAlpha; lineColors[k + 2] = 1.0 * baseAlpha;
+              lineColors[k + 3] = 0.0; lineColors[k + 4] = 1.0 * baseAlpha; lineColors[k + 5] = 0.7 * baseAlpha;
+            }
             segCount++;
           }
         }
@@ -637,13 +647,25 @@ function ParticleCloud({
       }
     }
 
-    // Rotation speeds per state
-    const rotSpeeds = [0.06, 0.04, 0.18, 0.04, 0.04, 0.04, 0.05, 0.04, 0.04, 0.05, 0.05, 0.04, 0.04, 0.03, 0.0];
-    const rotSpeed = rotSpeeds[idx] * (1 - t) + rotSpeeds[Math.min(idx + 1, rotSpeeds.length - 1)] * t;
+    // Shapes stay facing the camera so they're always readable.
+    // Rotation only on:
+    //   - Hero (organic cloud, idx 0)         — slow gentle drift
+    //   - Tagline (unity knot, idx 2)         — moderate spin (knot needs motion)
+    //   - CTA singularity (idx 14)            — slow zoom-in feel via dampening
+    // All department/case shapes are LOCKED facing camera with subtle mouse parallax.
     if (groupRef.current) {
-      groupRef.current.rotation.y += delta * rotSpeed;
-      const targetTilt = mouseRef.current.y * 0.18;
-      groupRef.current.rotation.x += (targetTilt - groupRef.current.rotation.x) * 0.04;
+      const isCloud = idx === 0;
+      const isKnot = idx === 2;
+      let targetRotY = 0;
+      if (isCloud) targetRotY = groupRef.current.rotation.y + delta * 0.05;
+      else if (isKnot) targetRotY = groupRef.current.rotation.y + delta * 0.12;
+      else targetRotY = mouseRef.current.x * 0.14;
+
+      groupRef.current.rotation.y =
+        isCloud || isKnot ? targetRotY : groupRef.current.rotation.y + (targetRotY - groupRef.current.rotation.y) * 0.06;
+
+      const targetTiltX = isCloud ? 0 : mouseRef.current.y * 0.10;
+      groupRef.current.rotation.x += (targetTiltX - groupRef.current.rotation.x) * 0.05;
     }
   });
 
@@ -660,13 +682,12 @@ function ParticleCloud({
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.06}
-          color="#F5F5F0"
+          size={0.045}
+          color={isLight ? "#0B0B0D" : "#F5F5F0"}
           transparent
-          opacity={0.85}
+          opacity={isLight ? 0.85 : 0.95}
           sizeAttenuation
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
         />
       </points>
       <lineSegments ref={lineRef}>
@@ -689,9 +710,8 @@ function ParticleCloud({
         <lineBasicMaterial
           vertexColors
           transparent
-          opacity={0.55}
+          opacity={0.35}
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
         />
       </lineSegments>
       <mesh>
@@ -718,9 +738,22 @@ export default function LivingScene() {
   const scrollRef = useRef(0);
   const mouseRef = useRef({ x: 0, y: 0 });
   const [mounted, setMounted] = useState(false);
+  const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    // Watch theme attribute changes
+    const updateTheme = () => {
+      setIsLight(document.documentElement.dataset.theme === "light");
+    };
+    updateTheme();
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight || 1;
       scrollRef.current = Math.max(0, Math.min(1, window.scrollY / max));
@@ -735,6 +768,7 @@ export default function LivingScene() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("mousemove", onMove);
+      observer.disconnect();
     };
   }, []);
 
@@ -756,7 +790,7 @@ export default function LivingScene() {
         <pointLight position={[-4, -2, -3]} intensity={0.3} color="#00FFB2" />
         <Suspense fallback={null}>
           <CameraRig mouseRef={mouseRef} />
-          <ParticleCloud scrollRef={scrollRef} mouseRef={mouseRef} />
+          <ParticleCloud scrollRef={scrollRef} mouseRef={mouseRef} isLight={isLight} />
         </Suspense>
       </Canvas>
     </div>

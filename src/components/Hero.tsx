@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/i18n/provider";
+import MagneticButton from "./MagneticButton";
 
 /* Word-by-word animated title — staggered y/blur entrance */
 function AnimatedTitle({
@@ -171,27 +172,31 @@ export default function Hero() {
                 <span className="text-[var(--text-muted)]">{t.hero_desc}</span>
               </p>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="#impact"
-                  className="group relative inline-flex items-center gap-3 px-7 py-4 border border-[var(--text)] text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase font-medium overflow-hidden"
-                  data-cursor
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
-                  <span className="absolute inset-0 bg-[var(--text)] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                  <span className="relative group-hover:text-black transition-colors duration-300">
-                    Découvrir DeepXLab
-                  </span>
-                  <span className="relative group-hover:text-black group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </a>
-                <a
-                  href="#departements"
-                  className="group inline-flex items-center gap-3 px-7 py-4 text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase"
-                  data-cursor
-                >
-                  Nos expertises
-                </a>
+                <MagneticButton strength={0.32} radius={120}>
+                  <a
+                    href="#impact"
+                    className="group relative inline-flex items-center gap-3 px-7 py-4 border border-[var(--text)] text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase font-medium overflow-hidden"
+                    data-cursor
+                    style={{ fontFamily: "Inter, sans-serif" }}
+                  >
+                    <span className="absolute inset-0 bg-[var(--text)] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                    <span className="relative group-hover:text-[var(--bg)] transition-colors duration-300">
+                      {t.hero_cta_primary}
+                    </span>
+                    <span className="relative group-hover:text-[var(--bg)] group-hover:translate-x-1 transition-all duration-300">
+                      →
+                    </span>
+                  </a>
+                </MagneticButton>
+                <MagneticButton strength={0.25} radius={90}>
+                  <a
+                    href="#departements"
+                    className="group inline-flex items-center gap-3 px-7 py-4 text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase"
+                    data-cursor
+                  >
+                    {t.hero_cta_secondary}
+                  </a>
+                </MagneticButton>
               </div>
             </div>
           </div>
