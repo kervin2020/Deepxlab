@@ -71,7 +71,7 @@ function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
       style={{ background: "transparent" }}
     >
       {/* Translucent veil tinted with case accent */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(5,5,5,0.6)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--section-veil)" }} />
       <div className="absolute inset-0 pointer-events-none opacity-50" style={{ background: c.bg }} />
 
       {/* Subtle grid */}
@@ -156,7 +156,7 @@ export default function CinematicCases() {
   return (
     <section id="references">
       {/* Header */}
-      <div className="relative border-t border-[var(--border)] px-5 md:px-12 py-20" style={{ background: "rgba(5,5,5,0.6)" }}>
+      <div className="relative border-t border-[var(--border)] px-5 md:px-12 py-20" style={{ background: "var(--section-veil)" }}>
         <div className="max-w-[1440px] mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">04</span>

@@ -38,9 +38,10 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-[var(--bg)]/80 border-b border-[var(--border)]"
+          ? "backdrop-blur-2xl border-b border-[var(--border)]"
           : "bg-transparent"
       }`}
+      style={scrolled ? { background: "var(--soft-veil)" } : undefined}
     >
       <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-[76px] md:h-[80px] flex items-center justify-between gap-6">
         <Link

@@ -3,6 +3,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+function useIsLight() {
+  const [light, setLight] = useState(false);
+  useEffect(() => {
+    const update = () => setLight(document.documentElement.dataset.theme === "light");
+    update();
+    const obs = new MutationObserver(update);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => obs.disconnect();
+  }, []);
+  return light;
+}
+
 /* ─────────────────────────────────────────────────────────────────────
    LoadingScreen — 4-stage cinematic reveal:
      1. fade-in (0.8s)  : logo emerges from black, slightly blurred
@@ -16,6 +28,7 @@ type Phase = "init" | "fade-in" | "sweep" | "hold" | "fade-out" | "gone";
 
 export default function LoadingScreen() {
   const [phase, setPhase] = useState<Phase>("init");
+  const isLight = useIsLight();
 
   useEffect(() => {
     const timeline = [
@@ -39,8 +52,9 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className="fixed inset-0 z-[9998] flex items-center justify-center bg-[#050505]"
+      className="fixed inset-0 z-[9998] flex items-center justify-center"
       style={{
+        background: isLight ? "#F5F5F0" : "#050505",
         opacity: fadingOut ? 0 : 1,
         transition: "opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         pointerEvents: fadingOut ? "none" : "auto",
@@ -82,7 +96,7 @@ export default function LoadingScreen() {
           }}
         >
           <Image
-            src="/logo-white.png"
+            src={isLight ? "/logo-dark.png" : "/logo-white.png"}
             alt="DeepXlab"
             fill
             sizes="72vw"

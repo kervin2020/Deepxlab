@@ -1,83 +1,64 @@
 "use client";
 
 import { useT } from "@/i18n/provider";
+import MagneticButton from "./MagneticButton";
+import RevealText from "./RevealText";
 
+/* CTA — cinematic hook before the contact form. Just the giant slogan
+   "If we can modernise the infrastructure of a nation, imagine what
+   we can do for your business." + a single magnetic button that
+   anchors down to the contact form. No duplicated email cards. */
 export default function CTA() {
   const { t } = useT();
 
   return (
     <section
       id="cta"
-      className="relative py-40 md:py-56 border-t border-[var(--border)] overflow-hidden"
-      style={{ background: "rgba(5,5,5,0.65)" }}
+      className="relative py-32 md:py-44 overflow-hidden"
+      style={{ background: "var(--section-veil)" }}
     >
       <div className="absolute inset-0 spotlight pointer-events-none" />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-3 text-[11px] text-ash uppercase tracking-[0.2em]">
-            <div className="flex items-center gap-3">
-              <span className="w-8 h-px bg-[var(--accent)]" />
-              <span>{t.cta_section}</span>
-            </div>
-          </div>
-
-          <div className="md:col-span-9">
-            <p className="text-2xl md:text-[32px] leading-tight tracking-[-0.02em] font-medium text-ash mb-10 max-w-3xl">
-              {t.prob_title}{" "}
-              <span className="text-bone">{t.prob_sub}</span>
-            </p>
-
-            <h2 className="text-5xl md:text-8xl tracking-[-0.04em] leading-[0.92] font-medium max-w-4xl">
-              {t.cta_title_1}
-              <br />
-              <span className="text-ash">{t.cta_title_2}</span>
-            </h2>
-
-            <p className="mt-10 text-lg md:text-xl text-bone max-w-xl leading-relaxed">
-              {t.cta_desc}
-            </p>
-
-            <div className="mt-14 flex flex-wrap gap-6 items-center">
-              <a
-                href="mailto:contact@deepxlab.com"
-                className="group relative inline-flex items-center gap-4 px-8 py-5 bg-[var(--accent)] text-black hover:bg-[var(--text)] transition-all duration-300"
-              >
-                <span className="text-[14px] font-medium">
-                  {t.cta_btn}
-                </span>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </a>
-              <a
-                href="#divisions"
-                className="group inline-flex items-center gap-3 text-bone hover:text-bone transition-colors"
-              >
-                <span className="text-[14px] relative">
-                  {t.cta_link}
-                  <span className="absolute -bottom-1 left-0 w-full h-px bg-current scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-                </span>
-              </a>
-            </div>
-
-            <div className="mt-20 pt-10 border-t border-[var(--border)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl">
-              {t.cta_contacts.map((c) => (
-                <a
-                  key={c.email}
-                  href={`mailto:${c.email}`}
-                  className="group block p-5 border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
-                >
-                  <div className="text-[11px] text-ash uppercase tracking-[0.18em] mb-2">
-                    {c.label}
-                  </div>
-                  <div className="text-bone text-[14px] break-all group-hover:text-[var(--accent)] transition-colors">
-                    {c.email}
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
+      <div className="relative max-w-[1440px] mx-auto px-5 md:px-12 text-center">
+        <RevealText
+          as="h2"
+          text={t.cta_giant_1}
+          className="block text-[clamp(1.6rem,3.2vw,3rem)] tracking-[-0.02em] leading-[1.1] font-medium text-[var(--text-muted)] mb-3 max-w-5xl mx-auto"
+        />
+        <RevealText
+          as="h2"
+          text={t.cta_giant_2}
+          className="block text-[clamp(2rem,5vw,5rem)] tracking-[-0.03em] leading-[1.0] font-bold uppercase text-[var(--text)] mb-2 max-w-5xl mx-auto"
+        />
+        <RevealText
+          as="h2"
+          text={t.cta_giant_3}
+          className="block text-[clamp(2rem,5vw,5rem)] tracking-[-0.03em] leading-[1.0] font-bold uppercase mb-12 max-w-5xl mx-auto"
+        />
+        <p className="text-[15px] md:text-[17px] text-[var(--text-muted)] max-w-2xl mx-auto leading-[1.7] mb-12">
+          {t.prob_title} <span className="text-[var(--text)]">{t.prob_sub}</span>
+        </p>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <MagneticButton strength={0.3} radius={120}>
+            <a
+              href="#contact"
+              data-cursor
+              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--accent)] text-white text-[13px] uppercase tracking-[0.05em] font-medium hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all duration-300"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              {t.cta_btn_primary}
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.22} radius={90}>
+            <a
+              href="#departments"
+              data-cursor
+              className="group inline-flex items-center gap-3 px-8 py-4 border border-[var(--text)] text-[var(--text)] text-[13px] uppercase tracking-[0.05em] hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all duration-300"
+            >
+              {t.cta_btn_secondary}
+            </a>
+          </MagneticButton>
         </div>
       </div>
     </section>

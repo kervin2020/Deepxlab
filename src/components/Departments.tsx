@@ -168,7 +168,7 @@ function DeptCard({ dept, delay }: { dept: typeof departments[0]; delay: number 
 export default function Departments() {
   return (
     <section id="departments" className="relative py-24 md:py-40">
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(5,5,5,0.6)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--section-veil)" }} />
       <div className="max-w-[1440px] mx-auto px-5 md:px-12">
         {/* Header */}
         <div className="mb-16 md:mb-24">

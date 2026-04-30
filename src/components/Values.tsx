@@ -37,7 +37,7 @@ export default function Values() {
 
   return (
     <section ref={ref} className="relative py-24 md:py-40 border-t border-[rgba(255,255,255,0.06)]" style={{ background: "transparent" }}>
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(5,5,5,0.55)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--card-veil)" }} />
       <div className="max-w-[1440px] mx-auto px-5 md:px-12">
         <div className="flex items-center gap-4 mb-16">
           <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">05</span>
@@ -50,10 +50,10 @@ export default function Values() {
             <div
               key={v.title}
               className="relative p-8 md:p-12 group transition-colors duration-300"
-              onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(7,7,15,0.7)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(5,5,5,0.55)")}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--card-veil-hover)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--card-veil)")}
               style={{
-                background: "rgba(5,5,5,0.55)",
+                background: "var(--card-veil)",
                 backdropFilter: "blur(2px)",
                 WebkitBackdropFilter: "blur(2px)",
                 opacity: visible ? 1 : 0,

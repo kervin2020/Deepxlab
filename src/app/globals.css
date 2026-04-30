@@ -23,6 +23,9 @@
   --accent-glow: rgba(0, 102, 255, 0.2);
   --accent-2-glow: rgba(0, 255, 178, 0.15);
   --section-veil: rgba(5, 5, 5, 0.6);
+  --card-veil: rgba(5, 5, 5, 0.55);
+  --card-veil-hover: rgba(7, 7, 15, 0.75);
+  --soft-veil: rgba(5, 5, 5, 0.55);
 }
 
 html[data-theme="light"] {
@@ -40,7 +43,10 @@ html[data-theme="light"] {
   --accent-2: #00B86B;
   --accent-glow: rgba(0, 68, 204, 0.15);
   --accent-2-glow: rgba(0, 184, 107, 0.10);
-  --section-veil: rgba(245, 245, 240, 0.6);
+  --section-veil: rgba(245, 245, 240, 0.65);
+  --card-veil: rgba(251, 250, 246, 0.7);
+  --card-veil-hover: rgba(255, 255, 255, 0.9);
+  --soft-veil: rgba(245, 245, 240, 0.55);
 }
 
 html, body { transition: background-color 0.4s ease, color 0.4s ease; }
@@ -284,23 +290,25 @@ html, body {
   font-feature-settings: "tnum";
 }
 
-/* ─── Cursor ─── */
+/* ─── Cursor (magnetic, theme-aware) ─── */
 #custom-cursor {
   position: fixed;
   top: 0; left: 0;
-  width: 40px; height: 40px;
-  border: 1.5px solid rgba(0,102,255,0.6);
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--accent);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-  mix-blend-mode: difference;
+  transition: width 0.35s cubic-bezier(0.16,1,0.3,1),
+              height 0.35s cubic-bezier(0.16,1,0.3,1),
+              background 0.3s ease,
+              border-color 0.3s ease;
+  background: transparent;
 }
-#custom-cursor.cursor-hover {
-  width: 70px; height: 70px;
+#custom-cursor.cursor-snap {
+  width: 64px; height: 64px;
+  background: rgba(0,102,255,0.08);
   border-color: var(--accent);
-  background: rgba(0,102,255,0.1);
 }
 #cursor-dot {
   position: fixed;
@@ -310,6 +318,8 @@ html, body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  transform: translate(-50%, -50%);
   transition: opacity 0.2s ease;
+}
+@media (pointer: coarse) {
+  #custom-cursor, #cursor-dot { display: none !important; }
 }

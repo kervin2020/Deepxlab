@@ -96,13 +96,13 @@ export default function ImpactStats() {
               key={i}
               className="relative p-8 md:p-10 flex flex-col justify-between min-h-[280px] md:min-h-[340px] group cursor-default"
               style={{
-                background: "rgba(5,5,5,0.55)",
+                background: "var(--card-veil)",
                 backdropFilter: "blur(2px)",
                 WebkitBackdropFilter: "blur(2px)",
                 transition: "background 0.3s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(7,7,15,0.75)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(5,5,5,0.55)")}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--card-veil-hover)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--card-veil)")}
             >
               {/* Index */}
               <span

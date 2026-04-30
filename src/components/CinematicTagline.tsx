@@ -36,7 +36,7 @@ export default function CinematicTagline() {
     >
       {/* Soft veil so the tagline reads cleanly over the 3D */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: "radial-gradient(ellipse 70% 70% at 50% 50%, rgba(5,5,5,0.55) 0%, transparent 80%)",
+        background: "radial-gradient(ellipse 70% 70% at 50% 50%, var(--soft-veil) 0%, transparent 80%)",
       }} />
 
       <div className="relative z-10">
