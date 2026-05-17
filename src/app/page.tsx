@@ -17,17 +17,17 @@ export default function Home() {
     <>
       <Hero />
       <ExpertiseMarquee />
-      <SectionReveal index="02"><ImpactStats /></SectionReveal>
-      <SectionReveal index="03"><CinematicTagline /></SectionReveal>
-      <SectionReveal index="04"><Departments /></SectionReveal>
-      <SectionReveal index="05"><CinematicCases /></SectionReveal>
-      <SectionReveal index="06">
+      <SectionReveal><ImpactStats /></SectionReveal>
+      <SectionReveal><CinematicTagline /></SectionReveal>
+      <SectionReveal><Departments /></SectionReveal>
+      <SectionReveal><CinematicCases /></SectionReveal>
+      <SectionReveal>
         <div id="team">
           <Founders />
         </div>
       </SectionReveal>
-      <SectionReveal index="07"><Values /></SectionReveal>
-      <SectionReveal index="08"><CTA /></SectionReveal>
+      <SectionReveal><Values /></SectionReveal>
+      <SectionReveal><CTA /></SectionReveal>
       <SectionReveal><ContactForm /></SectionReveal>
     </>
   );

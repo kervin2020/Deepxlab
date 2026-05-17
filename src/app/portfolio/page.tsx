@@ -87,7 +87,6 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--soft-veil)" }} />
         <div className="relative max-w-[1440px] mx-auto px-5 md:px-12">
           <div className="flex items-center gap-4 mb-10">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">01</span>
             <span className="w-12 h-px bg-[var(--accent)]" />
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{c.eyebrow}</span>
           </div>
@@ -122,7 +121,6 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--section-veil)" }} />
         <div className="relative max-w-[1200px] mx-auto px-5 md:px-12">
           <div className="flex items-center gap-4 mb-10">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">02</span>
             <span className="w-12 h-px bg-[var(--accent)]" />
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{c.approachEyebrow}</span>
           </div>
@@ -151,7 +149,6 @@ export default function PortfolioPage() {
       <section className="relative py-24 md:py-32 border-t border-[var(--border)]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-12">
           <div className="flex items-center gap-4 mb-10">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">03</span>
             <span className="w-12 h-px bg-[var(--accent)]" />
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{c.testimEyebrow}</span>
           </div>
