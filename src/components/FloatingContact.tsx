@@ -20,7 +20,7 @@ export default function FloatingContact() {
 
   return (
     <a
-      href="#contact"
+      href="/contact"
       data-cursor
       className="fixed z-40 bottom-6 right-6 md:bottom-8 md:right-8 group flex items-center gap-3 pl-5 pr-4 py-3.5 bg-[var(--accent)] text-white shadow-[0_8px_30px_rgba(0,102,255,0.4)] hover:shadow-[0_12px_40px_rgba(0,102,255,0.6)] transition-all duration-500"
       style={{

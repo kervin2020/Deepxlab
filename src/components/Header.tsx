@@ -91,18 +91,18 @@ export default function Header() {
           </div>
 
           <Link
-            href="/#manifesto"
+            href="/portfolio"
             className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
           >
-            {t.nav_approche}
+            {t.cases_section}
             <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
           </Link>
 
           <Link
-            href="/#cases"
+            href="/about"
             className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
           >
-            {t.cases_section}
+            {t.man_section}
             <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
           </Link>
         </nav>
@@ -162,7 +162,7 @@ export default function Header() {
           </button>
 
           <Link
-            href="/#cta"
+            href="/contact"
             className="hidden sm:inline-flex group items-center gap-2 px-4 py-2 text-[12px] border border-[var(--border-strong)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
           >
             {t.nav_contact}
@@ -228,18 +228,18 @@ export default function Header() {
             )}
 
             <Link
-              href="/#manifesto"
-              onClick={() => setMobileOpen(false)}
-              className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
-            >
-              {t.nav_approche}
-            </Link>
-            <Link
-              href="/#cases"
+              href="/portfolio"
               onClick={() => setMobileOpen(false)}
               className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
             >
               {t.cases_section}
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setMobileOpen(false)}
+              className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
+            >
+              {t.man_section}
             </Link>
 
             <div className="mt-8 pt-6 border-t border-[var(--border)] flex flex-col gap-6">
@@ -273,7 +273,7 @@ export default function Header() {
               </div>
 
               <Link
-                href="/#cta"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-[14px] bg-[var(--accent)] text-black font-medium hover:bg-[var(--text)] transition-colors"
               >
