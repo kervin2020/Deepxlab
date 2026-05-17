@@ -2,6 +2,7 @@
 
 import { useT } from "@/i18n/provider";
 import ContactForm from "@/components/ContactForm";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 // WhatsApp Business — replace with the real number when provided by Kervin.
 // Keep the +509XXXXXXXX placeholder format so wa.me builds correctly even
@@ -168,15 +169,26 @@ export default function ContactPage() {
             <span className="w-12 h-px bg-[var(--accent)]" />
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{c.eyebrow}</span>
           </div>
-          <h1
-            className="text-[clamp(2.5rem,7vw,6rem)] font-bold uppercase tracking-[-0.025em] leading-[0.95] text-[var(--text)] max-w-5xl"
-            style={{ fontFamily: '"Clash Display", sans-serif' }}
-          >
-            {c.title}
-          </h1>
-          <p className="mt-10 text-[16px] md:text-[19px] text-[var(--text-muted)] leading-[1.7] max-w-3xl">
-            {c.intro}
-          </p>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <h1
+                className="text-[clamp(2.5rem,7vw,6rem)] font-bold uppercase tracking-[-0.025em] leading-[0.95] text-[var(--text)]"
+                style={{ fontFamily: '"Clash Display", sans-serif' }}
+              >
+                {c.title}
+              </h1>
+              <p className="mt-10 text-[16px] md:text-[19px] text-[var(--text-muted)] leading-[1.7] max-w-2xl">
+                {c.intro}
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <ImagePlaceholder
+                label="Visuel équipe / atelier — à venir"
+                variant="lifestyle"
+                aspect="4/5"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

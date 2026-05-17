@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 // Five real client projects DeepXLab has delivered.
 // Categories and short descriptions are placeholders to be refined as case
@@ -142,24 +143,29 @@ function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
           </div>
         </div>
 
-        {/* Right: giant stat */}
+        {/* Right: project image placeholder — real capture / screenshot to be added later */}
         <div
-          className="text-center md:text-right"
+          className="w-full"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(40px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s" }}
         >
-          <div
-            className="font-bold leading-none"
-            style={{
-              fontFamily: '"Clash Display", sans-serif',
-              fontSize: "clamp(5rem, 12vw, 11rem)",
-              color: c.accent,
-              opacity: 0.9,
-            }}
-          >
-            {c.stat}
-          </div>
-          <div className="text-[14px] text-[var(--text-muted)] mt-3 max-w-xs ml-auto">
-            {c.statLabel}
+          <ImagePlaceholder
+            label={`Capture projet ${c.title} — à venir`}
+            variant="photo"
+            aspect="4/3"
+          />
+          <div className="flex items-center gap-3 mt-4">
+            <span
+              className="text-[24px] font-bold leading-none"
+              style={{
+                fontFamily: '"Clash Display", sans-serif',
+                color: c.accent,
+              }}
+            >
+              {c.stat}
+            </span>
+            <span className="text-[13px] text-[var(--text-muted)]">
+              {c.statLabel}
+            </span>
           </div>
         </div>
       </div>
