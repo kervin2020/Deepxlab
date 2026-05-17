@@ -11,12 +11,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DeepXlab — Groupe technologique multidisciplinaire",
+  title: "DeepXlab — Solutions digitales & éducation STEM pour Haïti",
   description:
-    "DeepXlab conçoit, développe et opère des plateformes logicielles, des infrastructures matérielles et des systèmes de sécurité sur mesure. Six expertises intégrées. Boston · Port-au-Prince.",
+    "DeepXlab — startup haïtienne basée à Port-au-Prince et Boston. Sites web, e-commerce, applications sur mesure, BCS (ERP propriétaire) et cours privés de robotique STEM. Nou bati ak, pa pou.",
   openGraph: {
-    title: "DeepXlab — Groupe technologique multidisciplinaire",
-    description: "Six expertises intégrées pour des organisations qui ne tolèrent pas les compromis.",
+    title: "DeepXlab — Solutions digitales & éducation STEM pour Haïti",
+    description: "Two active expertises. An ecosystem under construction. Port-au-Prince × Boston.",
     type: "website",
   },
 };

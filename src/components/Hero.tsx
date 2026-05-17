@@ -82,10 +82,10 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Official brand slogan — kept in English (universal brand mark)
+  // Brand slogan — localised per language (slogan_l1 / slogan_l2 in translations.ts)
   const titleLines: { text: string; accent?: boolean }[][] = [
-    [{ text: "FROM UNKNOWN" }],
-    [{ text: "TO POSSIBLE.", accent: true }],
+    [{ text: t.slogan_l1 }],
+    [{ text: t.slogan_l2, accent: true }],
   ];
 
   return (
@@ -138,21 +138,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Top-right meta */}
-      <div
-        className="absolute top-[100px] md:top-[120px] right-5 md:right-12 z-40 hidden md:flex items-center gap-4 reveal"
-        style={{ animationDelay: "0.3s" }}
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
-          Index
-        </span>
-        <span
-          className="text-[10px] uppercase tracking-[0.3em] text-[var(--text)]"
-          style={{ fontFamily: '"Clash Display", sans-serif' }}
-        >
-          01 / 06
-        </span>
-      </div>
 
       {/* Main content */}
       <div className="relative z-30 max-w-[1440px] mx-auto px-5 md:px-12 pt-[180px] md:pt-[220px] pb-24 min-h-screen flex flex-col justify-between">
@@ -173,7 +158,7 @@ export default function Hero() {
             <div className="md:col-span-6 md:col-start-1">
               <p className="text-[16px] md:text-[19px] text-[var(--text-muted)] leading-[1.7] mb-8 max-w-md">
                 <span className="text-[var(--text)]" style={{ fontFamily: '"Clash Display", sans-serif', letterSpacing: "0.02em" }}>
-                  Custom Technology Solutions.
+                  {t.hero_overline}
                 </span>
                 <br />
                 <span className="text-[var(--text-muted)]">{t.hero_desc}</span>

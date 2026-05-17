@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useT } from "@/i18n/provider";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 type ServiceKey = "svc_dev" | "svc_stem" | "svc_consulting";
 
@@ -58,12 +59,17 @@ export default function ServicePage({ serviceKey }: { serviceKey: ServiceKey }) 
             {s.offerings.map((o, i) => (
               <div
                 key={o.t}
-                className="bg-[var(--bg)] p-8 md:p-10 min-h-[220px] flex flex-col"
+                className="bg-[var(--bg)] p-8 md:p-10 flex flex-col gap-5"
               >
-                <div className="text-[11px] font-mono text-[var(--accent)] tracking-[0.2em] mb-6">
+                <ImagePlaceholder
+                  label={`${t.ph_service_prefix} — ${o.t}`}
+                  variant="illustration"
+                  aspect="16/10"
+                />
+                <div className="text-[11px] font-mono text-[var(--accent)] tracking-[0.2em]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-xl md:text-[22px] tracking-[-0.02em] leading-tight font-medium mb-3 text-bone">
+                <h3 className="text-xl md:text-[22px] tracking-[-0.02em] leading-tight font-medium text-bone">
                   {o.t}
                 </h3>
                 <p className="text-[14px] text-ash leading-relaxed">{o.d}</p>

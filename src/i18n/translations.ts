@@ -17,15 +17,15 @@ const fr = {
   lang_label: "Langue",
 
   // Hero
-  hero_tag: "Groupe technologique multidisciplinaire en solutions technologiques",
+  hero_tag: "Solutions digitales & éducation STEM pour Haïti et la diaspora.",
   hero_lines: [
-    "Concevoir la technologie critique.",
-    "Résoudre vos problèmes complexes.",
-    "Opérer ce que d'autres n'osent pas.",
-    "Bâtir des systèmes de confiance.",
+    "Construire avec les Haïtiens.",
+    "Tester sur le terrain.",
+    "Livrer ce qui tient.",
+    "Bâtir l'écosystème, étape par étape.",
   ],
   hero_desc:
-    "Six expertises intégrées. Une seule équipe. Une seule responsabilité contractuelle — du premier prototype à l'exploitation continue.",
+    "Deux expertises actives — Software & Digital, STEM Education. Une philosophie : Technology With, Not For. Nou bati ak, pa pou.",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Sécurité",
@@ -33,53 +33,33 @@ const fr = {
 
   // Marquee
   marquee_items: [
-    "Logiciel sur mesure",
-    "Infrastructure réseau",
-    "Cybersécurité",
-    "IoT & systèmes embarqués",
-    "Intelligence artificielle",
-    "Design d'interfaces",
-    "Production audiovisuelle",
-    "R&D appliquée",
-    "Kits éducatifs",
-    "Déploiement cloud",
-    "Surveillance & contrôle d'accès",
-    "Conseil technologique",
+    "Sites vitrine",
+    "Sites e-commerce",
+    "Applications web sur mesure",
+    "BCS — Business Control System",
+    "Maintenance mensuelle",
+    "Cours privés robotique",
+    "Ateliers STEM",
+    "Curriculum créole & français",
+    "Approche terrain",
+    "Build-in-public",
+    "Port-au-Prince × Boston",
+    "Nou bati ak, pa pou",
   ],
 
   // Divisions
   div_section: "Expertises",
-  div_title: "Six expertises intégrées. Une exécution unifiée.",
+  div_title: "Deux expertises actives. Un écosystème en construction.",
   div_items: [
     {
-      name: "Éducation & STEM",
-      desc: "Programmes éducatifs structurés, kits propriétaires et laboratoires clé en main pour écoles et institutions.",
-      services: ["Kits Arduino & ESP32", "Curricula STEM", "Plateformes LMS", "Laboratoires mobiles", "Formation enseignants"],
+      name: "Software & Digital Solutions",
+      desc: "Sites web, e-commerce, applications sur mesure et notre ERP propriétaire BCS — conçus pour les contraintes réelles d'Haïti et de la diaspora.",
+      services: ["Sites vitrine", "Sites e-commerce", "Applications web sur mesure", "BCS — Business Control System", "Maintenance mensuelle"],
     },
     {
-      name: "Solutions entreprise & IT",
-      desc: "Conception, déploiement et maintenance de systèmes logiciels et d'infrastructures réseau pour entreprises de toute taille.",
-      services: ["ERP & CRM", "Infrastructure réseau", "Cloud & DevOps", "Support managé 24/7", "Migration de systèmes"],
-    },
-    {
-      name: "Sécurité & Systèmes intelligents",
-      desc: "Systèmes de surveillance, contrôle d'accès et cybersécurité intégrés pour sites sensibles et organisations critiques.",
-      services: ["Vidéosurveillance IA", "Contrôle d'accès biométrique", "Cybersécurité offensive/défensive", "Audit & conformité", "SOC managé"],
-    },
-    {
-      name: "Design & Communication visuelle",
-      desc: "Identité de marque, interfaces utilisateur et systèmes de design pour produits numériques et communication corporate.",
-      services: ["Branding & identité", "UI/UX Design", "Systèmes de design", "Motion design", "Direction artistique"],
-    },
-    {
-      name: "Contenu & Médias",
-      desc: "Production audiovisuelle, stratégie de contenu et communication digitale pour marques et institutions.",
-      services: ["Production vidéo", "Photographie", "Stratégie de contenu", "Réseaux sociaux", "Communication corporate"],
-    },
-    {
-      name: "Recherche & Développement",
-      desc: "Recherche appliquée en intelligence artificielle, IoT et systèmes embarqués pour produits propriétaires et clients.",
-      services: ["IA & Machine Learning", "IoT & embarqué", "Prototypage rapide", "Brevets & PI", "Publications"],
+      name: "STEM Education",
+      desc: "Cours privés de robotique et programmation pour enfants et jeunes haïtiens. Curriculum en créole et français. Ateliers pour écoles et familles.",
+      services: ["Cours privés robotique", "Programmation pour jeunes", "Ateliers scolaires", "Curriculum créole & français", "Accompagnement clubs"],
     },
   ],
 
@@ -160,18 +140,18 @@ const fr = {
 
   // Stats
   stat_items: [
-    { val: "06", label: "Expertises intégrées" },
+    { val: "02", label: "Expertises actives" },
     { val: "04", label: "Langues opérationnelles" },
-    { val: "24/7", label: "Continuité opérationnelle" },
-    { val: "∞", label: "Sans frontière" },
+    { val: "2026", label: "Année de fondation" },
+    { val: "HT×US", label: "Port-au-Prince × Boston" },
   ],
 
   // Manifesto
   man_section: "Qui sommes-nous",
   man_text_1:
-    "DeepXlab conçoit, développe et opère des plateformes logicielles, des infrastructures matérielles et des systèmes de sécurité sur mesure. Une seule équipe pluridisciplinaire, du premier prototype à l'exploitation continue.",
+    "DeepXlab construit l'écosystème technologique d'Haïti, étape par étape. On commence aujourd'hui avec deux expertises actives — Software & Digital et STEM Education — qui génèrent du revenu et financent la suite.",
   man_text_2:
-    "Nous travaillons pour les organisations qui exigent de la technologie qu'elle tienne sous contrainte réelle — réglementaire, opérationnelle, géographique.",
+    "Notre philosophie : Technology With, Not For. Nou bati ak, pa pou. On va sur le terrain, on interviewe de vraies personnes, on teste nos prototypes avec de vrais utilisateurs avant de scaler.",
   man_pillars: [
     { title: "Rigueur", desc: "Chaque livrable est documenté, testé et signé. La qualité n'est pas un objectif, c'est une condition." },
     { title: "Autonomie", desc: "Nos clients ne dépendent pas d'une boîte noire. Nous formons leurs équipes et transmettons la maîtrise." },
@@ -380,13 +360,14 @@ const fr = {
 
   // Case studies
   cases_section: "Références",
-  cases_title: "Des projets qui tiennent sous contrainte réelle.",
-  cases_desc: "Projets livrés en environnements critiques. Noms clients confidentiels.",
+  cases_title: "Premiers projets livrés. Confiance gagnée sur le terrain.",
+  cases_desc: "Projets livrés pour des clients en Haïti et dans la diaspora. Études de cas détaillées à venir.",
   cases_items: [
-    { tag: "Banque & Finance", title: "Plateforme transactionnelle régionale", metric: "4M+ transactions/mois", desc: "Refonte complète du cœur transactionnel d'une banque caribéenne. Architecture événementielle, conformité PCI-DSS, disponibilité 99.99%." },
-    { tag: "Santé", title: "Dossier patient électronique national", metric: "120 établissements connectés", desc: "Système centralisé pour un réseau hospitalier régional. Interopérabilité HL7/FHIR, chiffrement bout-en-bout." },
-    { tag: "Gouvernement", title: "Plateforme de services publics", metric: "800k citoyens actifs", desc: "Portail unifié d'accès aux services administratifs. Authentification forte, signature électronique, intégration multi-ministères." },
-    { tag: "Éducation", title: "Laboratoires STEM clé en main", metric: "45 écoles équipées", desc: "Déploiement de kits pédagogiques propriétaires, plateforme LMS et formation des enseignants dans trois pays." },
+    { tag: "Client Armotech", title: "Armotech", metric: "Livré", desc: "Projet web livré pour Armotech. Étude de cas détaillée à venir." },
+    { tag: "Client Jeda Store", title: "Jeda Store", metric: "Livré", desc: "Plateforme e-commerce livrée pour Jeda Store. Étude de cas détaillée à venir." },
+    { tag: "Projet e-library", title: "e-library", metric: "Livré", desc: "Plateforme éducative numérique livrée. Étude de cas détaillée à venir." },
+    { tag: "Client Roots of Renewal", title: "Roots of Renewal", metric: "Livré", desc: "Projet web livré pour Roots of Renewal. Étude de cas détaillée à venir." },
+    { tag: "Client Corvington", title: "Corvington", metric: "Livré", desc: "Projet web livré pour Corvington. Étude de cas détaillée à venir." },
   ],
 
   // Tech stack
@@ -404,27 +385,56 @@ const fr = {
   // Cinematic redesign — additional copy
   slogan_l1: "DE L'INCONNU",
   slogan_l2: "AU POSSIBLE.",
-  slogan_sub: "Solutions Technologiques sur Mesure.",
-  tagline_lines: ["SIX EXPERTISES.", "UNE ÉQUIPE.", "ZÉRO COMPROMIS."],
+  slogan_sub: "Nou bati ak, pa pou. — We build with, not for.",
+  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
   stat_subs: [
-    "Plateforme caribéenne · PCI-DSS",
-    "Interopérabilité HL7/FHIR",
-    "Portail services publics",
-    "STEM · 3 pays",
+    "Projet client livré",
+    "Plateforme e-commerce",
+    "Plateforme éducative",
+    "Projet ONG / impact",
   ],
-  cta_giant_1: "Si nous pouvons moderniser l'infrastructure d'une nation,",
-  cta_giant_2: "imaginez ce que nous pouvons faire",
-  cta_giant_3: "pour votre entreprise.",
+  cta_giant_1: "Vous avez un projet pour Haïti",
+  cta_giant_2: "ou pour la diaspora ?",
+  cta_giant_3: "Construisons-le ensemble.",
   cta_btn_primary: "Démarrer un projet",
-  cta_btn_secondary: "Consulter nos expertises",
-  hero_cta_primary: "Découvrir DeepXLab",
-  hero_cta_secondary: "Nos expertises",
+  cta_btn_secondary: "Voir nos services",
+  hero_cta_primary: "Démarrer un projet",
+  hero_cta_secondary: "Voir nos services",
   scroll_label: "Scroll",
-  impact_section: "Impact mesurable",
-  depts_section: "Nos départements",
-  depts_title: "Six expertises intégrées",
-  cases_confidential: "Noms clients confidentiels — impacts vérifiables",
+  impact_section: "DeepXLab en chiffres",
+  depts_section: "Nos expertises actives",
+  depts_title: "Deux expertises actives. Un écosystème en construction.",
+  cases_confidential: "Premiers clients livrés — Haïti et diaspora.",
   values_section: "Nos valeurs",
+
+  // Hero overline above the description
+  hero_overline: "Solutions technologiques sur mesure.",
+  // Used at the bottom of the Departments section
+  depts_future_note:
+    "D'autres axes (sécurité, design, hardware, IA, R&D, consulting) sont en développement et rejoindront notre offre commerciale à mesure que nous grandissons.",
+  // Header / nav: team page link
+  nav_team: "Notre équipe",
+  // Home page team section
+  team_section: "Notre équipe",
+  team_title: "Deux frères. Deux villes. Une mission.",
+  team_intro:
+    "Une équipe haïtienne de deux : co-fondée à Port-au-Prince et à Boston. La technique en Haïti, le commercial aux États-Unis — et la philosophie terrain qui relie les deux.",
+  team_cta: "En savoir plus sur DeepXLab",
+  // Impact stats — KPI labels & sub-labels (synced with ImpactStats numericTargets)
+  impact_stats: [
+    { label: "Projets livrés", sub: "Premiers clients Haïti × diaspora" },
+    { label: "Expertises actives", sub: "Software & Digital · STEM Education" },
+    { label: "Langues opérationnelles", sub: "Français · Kreyòl · English · Español" },
+    { label: "Année de fondation", sub: "Port-au-Prince × Boston" },
+  ],
+  // Image placeholder labels — keyed by location
+  ph_hero_team: "Photo équipe DeepXLab — à venir",
+  ph_portfolio_hero: "Mosaïque projets livrés — à venir",
+  ph_portfolio_approach: "Photo terrain — interviews / tests utilisateurs à venir",
+  ph_contact_hero: "Visuel équipe / atelier — à venir",
+  ph_project_prefix: "Capture projet",
+  ph_project_suffix: "à venir",
+  ph_service_prefix: "Visuel",
 };
 
 // ─── ENGLISH ────────────────────────────────────────────────────
@@ -440,15 +450,15 @@ const en: Dict = {
   theme_dark: "Dark mode",
   lang_label: "Language",
 
-  hero_tag: "Multidisciplinary technology group in technology solutions",
+  hero_tag: "Digital solutions & STEM education for Haiti and its diaspora.",
   hero_lines: [
-    "Engineering critical technology.",
-    "Solving your complex problems.",
-    "Operating what others won't.",
-    "Building systems of trust.",
+    "Build with Haitians.",
+    "Test on the ground.",
+    "Ship what holds.",
+    "Build the ecosystem, step by step.",
   ],
   hero_desc:
-    "Six integrated expertises. One team. One contractual responsibility — from first prototype to continuous operations.",
+    "Two active expertises — Software & Digital, STEM Education. One philosophy: Technology With, Not For. Nou bati ak, pa pou.",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Security",
@@ -456,55 +466,35 @@ const en: Dict = {
 
   slogan_l1: "FROM UNKNOWN",
   slogan_l2: "TO POSSIBLE.",
-  slogan_sub: "Custom technology solutions.",
+  slogan_sub: "Nou bati ak, pa pou. — We build with, not for.",
 
   marquee_items: [
-    "Custom software",
-    "Network infrastructure",
-    "Cybersecurity",
-    "IoT & embedded systems",
-    "Artificial intelligence",
-    "Interface design",
-    "Audiovisual production",
-    "Applied R&D",
-    "Educational kits",
-    "Cloud deployment",
-    "Surveillance & access control",
-    "Technology consulting",
+    "Marketing websites",
+    "E-commerce sites",
+    "Custom web apps",
+    "BCS — Business Control System",
+    "Monthly maintenance",
+    "Private robotics classes",
+    "STEM workshops",
+    "Curriculum in Kreyòl & French",
+    "Field-driven approach",
+    "Build-in-public",
+    "Port-au-Prince × Boston",
+    "Nou bati ak, pa pou",
   ],
 
   div_section: "Expertise",
-  div_title: "Six integrated expertises. Unified execution.",
+  div_title: "Two active expertises. An ecosystem under construction.",
   div_items: [
     {
-      name: "Education & STEM",
-      desc: "Structured educational programs, proprietary kits and turnkey labs for schools and institutions.",
-      services: ["Arduino & ESP32 kits", "STEM curricula", "LMS platforms", "Mobile labs", "Teacher training"],
+      name: "Software & Digital Solutions",
+      desc: "Websites, e-commerce, custom apps and our proprietary BCS ERP — designed for the real constraints of Haiti and its diaspora.",
+      services: ["Marketing websites", "E-commerce sites", "Custom web apps", "BCS — Business Control System", "Monthly maintenance"],
     },
     {
-      name: "Enterprise Solutions & IT",
-      desc: "Design, deployment and maintenance of software systems and network infrastructure for businesses of all sizes.",
-      services: ["ERP & CRM", "Network infrastructure", "Cloud & DevOps", "24/7 managed support", "System migration"],
-    },
-    {
-      name: "Security & Intelligent Systems",
-      desc: "Integrated surveillance, access control and cybersecurity systems for sensitive sites and critical organizations.",
-      services: ["AI video surveillance", "Biometric access control", "Offensive/defensive cybersecurity", "Audit & compliance", "Managed SOC"],
-    },
-    {
-      name: "Design & Visual Communication",
-      desc: "Brand identity, user interfaces and design systems for digital products and corporate communication.",
-      services: ["Branding & identity", "UI/UX Design", "Design systems", "Motion design", "Art direction"],
-    },
-    {
-      name: "Content & Media",
-      desc: "Audiovisual production, content strategy and digital communication for brands and institutions.",
-      services: ["Video production", "Photography", "Content strategy", "Social media", "Corporate communication"],
-    },
-    {
-      name: "Research & Development",
-      desc: "Applied research in artificial intelligence, IoT and embedded systems for proprietary products and clients.",
-      services: ["AI & Machine Learning", "IoT & embedded", "Rapid prototyping", "Patents & IP", "Publications"],
+      name: "STEM Education",
+      desc: "Private robotics and programming classes for Haitian children and youth. Curriculum in Kreyòl and French. Workshops for schools and families.",
+      services: ["Private robotics classes", "Programming for youth", "School workshops", "Curriculum in Kreyòl & French", "Robotics club mentoring"],
     },
   ],
 
@@ -579,17 +569,17 @@ const en: Dict = {
   ],
 
   stat_items: [
-    { val: "06", label: "Integrated expertises" },
+    { val: "02", label: "Active expertises" },
     { val: "04", label: "Operational languages" },
-    { val: "24/7", label: "Operational continuity" },
-    { val: "∞", label: "Borderless" },
+    { val: "2026", label: "Founding year" },
+    { val: "HT×US", label: "Port-au-Prince × Boston" },
   ],
 
   man_section: "About us",
   man_text_1:
-    "DeepXlab designs, develops and operates custom software platforms, hardware infrastructure and security systems. One multidisciplinary team, from first prototype to continuous operations.",
+    "DeepXlab is building Haiti's technology ecosystem, step by step. We start today with two active expertises — Software & Digital, STEM Education — that generate revenue and fund what comes next.",
   man_text_2:
-    "We work for organizations that demand technology that holds under real constraints — regulatory, operational, geographic.",
+    "Our philosophy: Technology With, Not For. Nou bati ak, pa pou. We go on the ground, we interview real people, and we test our prototypes with real users before we scale.",
   man_pillars: [
     { title: "Rigor", desc: "Every deliverable is documented, tested and signed. Quality is not a goal, it's a requirement." },
     { title: "Autonomy", desc: "Our clients don't depend on a black box. We train their teams and transfer mastery." },
@@ -760,13 +750,14 @@ const en: Dict = {
   ],
 
   cases_section: "References",
-  cases_title: "Projects that hold under real constraints.",
-  cases_desc: "Projects delivered in critical environments. Client names confidential.",
+  cases_title: "First projects delivered. Trust earned on the ground.",
+  cases_desc: "Projects delivered for clients in Haiti and the diaspora. Detailed case studies coming soon.",
   cases_items: [
-    { tag: "Banking & Finance", title: "Regional transactional platform", metric: "4M+ transactions/month", desc: "Full overhaul of a Caribbean bank's transactional core. Event-driven architecture, PCI-DSS compliance, 99.99% uptime." },
-    { tag: "Healthcare", title: "National electronic health record", metric: "120 facilities connected", desc: "Centralized system for a regional hospital network. HL7/FHIR interoperability, end-to-end encryption." },
-    { tag: "Government", title: "Public services platform", metric: "800k active citizens", desc: "Unified portal for administrative services. Strong authentication, electronic signature, multi-ministry integration." },
-    { tag: "Education", title: "Turnkey STEM labs", metric: "45 schools equipped", desc: "Deployment of proprietary educational kits, LMS platform and teacher training across three countries." },
+    { tag: "Client · Armotech", title: "Armotech", metric: "Delivered", desc: "Web project delivered for Armotech. Detailed case study coming soon." },
+    { tag: "Client · Jeda Store", title: "Jeda Store", metric: "Delivered", desc: "E-commerce platform delivered for Jeda Store. Detailed case study coming soon." },
+    { tag: "Project · e-library", title: "e-library", metric: "Delivered", desc: "Digital education platform delivered. Detailed case study coming soon." },
+    { tag: "Client · Roots of Renewal", title: "Roots of Renewal", metric: "Delivered", desc: "Web project delivered for Roots of Renewal. Detailed case study coming soon." },
+    { tag: "Client · Corvington", title: "Corvington", metric: "Delivered", desc: "Web project delivered for Corvington. Detailed case study coming soon." },
   ],
 
   stack_section: "Tech stack",
@@ -781,26 +772,49 @@ const en: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["SIX EXPERTISES.", "ONE TEAM.", "ZERO COMPROMISE."],
+  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
   stat_subs: [
-    "Caribbean platform · PCI-DSS",
-    "HL7/FHIR interoperability",
-    "Public services portal",
-    "STEM · 3 countries",
+    "Client project delivered",
+    "E-commerce platform",
+    "Education platform",
+    "NGO / impact project",
   ],
-  cta_giant_1: "If we can modernise the infrastructure of a nation,",
-  cta_giant_2: "imagine what we can do",
-  cta_giant_3: "for your business.",
+  cta_giant_1: "Have a project for Haiti",
+  cta_giant_2: "or for the diaspora?",
+  cta_giant_3: "Let's build it together.",
   cta_btn_primary: "Start a project",
-  cta_btn_secondary: "Explore our expertise",
-  hero_cta_primary: "Discover DeepXLab",
-  hero_cta_secondary: "Our expertise",
+  cta_btn_secondary: "See our services",
+  hero_cta_primary: "Start a project",
+  hero_cta_secondary: "See our services",
   scroll_label: "Scroll",
-  impact_section: "Measurable impact",
-  depts_section: "Our departments",
-  depts_title: "Six integrated areas of expertise",
-  cases_confidential: "Client names confidential — verifiable impact",
+  impact_section: "DeepXLab by the numbers",
+  depts_section: "Our active expertises",
+  depts_title: "Two active expertises. An ecosystem under construction.",
+  cases_confidential: "First clients delivered — Haiti and diaspora.",
   values_section: "Our values",
+
+  hero_overline: "Custom technology solutions.",
+  depts_future_note:
+    "Other axes (security, design, hardware, AI, R&D, consulting) are in development and will join our commercial offering as we grow.",
+  nav_team: "Our team",
+  team_section: "Our team",
+  team_title: "Two brothers. Two cities. One mission.",
+  team_intro:
+    "A two-person Haitian team: co-founded between Port-au-Prince and Boston. Engineering in Haiti, sales in the US — and the field philosophy that ties them together.",
+  team_cta: "Read more about DeepXLab",
+  impact_stats: [
+    { label: "Projects delivered", sub: "First clients Haiti × diaspora" },
+    { label: "Active expertises", sub: "Software & Digital · STEM Education" },
+    { label: "Operational languages", sub: "French · Kreyòl · English · Spanish" },
+    { label: "Founding year", sub: "Port-au-Prince × Boston" },
+  ],
+  ph_hero_team: "DeepXLab team photo — coming soon",
+  ph_portfolio_hero: "Delivered projects mosaic — coming soon",
+  ph_portfolio_approach: "Field photo — interviews / user tests coming soon",
+  ph_contact_hero: "Team / workshop visual — coming soon",
+  ph_project_prefix: "Project capture",
+  ph_project_suffix: "coming soon",
+  ph_service_prefix: "Visual",
 };
 
 // ─── SPANISH ────────────────────────────────────────────────────
@@ -816,15 +830,15 @@ const es: Dict = {
   theme_dark: "Modo oscuro",
   lang_label: "Idioma",
 
-  hero_tag: "Grupo tecnológico multidisciplinario en soluciones tecnológicas",
+  hero_tag: "Soluciones digitales y educación STEM para Haití y su diáspora.",
   hero_lines: [
-    "Diseñar tecnología crítica.",
-    "Resolver sus problemas complejos.",
-    "Operar lo que otros no se atreven.",
-    "Construir sistemas de confianza.",
+    "Construir con los haitianos.",
+    "Probar en el terreno.",
+    "Entregar lo que aguanta.",
+    "Construir el ecosistema, paso a paso.",
   ],
   hero_desc:
-    "Seis especialidades integradas. Un solo equipo. Una sola responsabilidad contractual — del primer prototipo a la operación continua.",
+    "Dos experticias activas — Software & Digital, Educación STEM. Una filosofía: Technology With, Not For. Nou bati ak, pa pou.",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Seguridad",
@@ -832,55 +846,35 @@ const es: Dict = {
 
   slogan_l1: "DEL DESCONOCIDO",
   slogan_l2: "AL POSIBLE.",
-  slogan_sub: "Soluciones tecnológicas a medida.",
+  slogan_sub: "Nou bati ak, pa pou. — Construimos con, no para.",
 
   marquee_items: [
-    "Software a medida",
-    "Infraestructura de red",
-    "Ciberseguridad",
-    "IoT y sistemas embebidos",
-    "Inteligencia artificial",
-    "Diseño de interfaces",
-    "Producción audiovisual",
-    "I+D aplicada",
-    "Kits educativos",
-    "Despliegue en la nube",
-    "Vigilancia y control de acceso",
-    "Consultoría tecnológica",
+    "Sitios vitrina",
+    "Sitios e-commerce",
+    "Aplicaciones web a medida",
+    "BCS — Business Control System",
+    "Mantenimiento mensual",
+    "Clases privadas de robótica",
+    "Talleres STEM",
+    "Currículo en kreyòl y francés",
+    "Enfoque de campo",
+    "Build-in-public",
+    "Puerto Príncipe × Boston",
+    "Nou bati ak, pa pou",
   ],
 
   div_section: "Experiencia",
-  div_title: "Seis especialidades integradas. Ejecución unificada.",
+  div_title: "Dos experticias activas. Un ecosistema en construcción.",
   div_items: [
     {
-      name: "Educación y STEM",
-      desc: "Programas educativos estructurados, kits propietarios y laboratorios llave en mano para escuelas e instituciones.",
-      services: ["Kits Arduino y ESP32", "Currículos STEM", "Plataformas LMS", "Laboratorios móviles", "Capacitación docente"],
+      name: "Software & Digital Solutions",
+      desc: "Sitios web, e-commerce, aplicaciones a medida y nuestro ERP propietario BCS — diseñados para las restricciones reales de Haití y su diáspora.",
+      services: ["Sitios vitrina", "Sitios e-commerce", "Aplicaciones web a medida", "BCS — Business Control System", "Mantenimiento mensual"],
     },
     {
-      name: "Soluciones empresariales e IT",
-      desc: "Diseño, despliegue y mantenimiento de sistemas de software e infraestructura de red para empresas de todos los tamaños.",
-      services: ["ERP y CRM", "Infraestructura de red", "Cloud y DevOps", "Soporte gestionado 24/7", "Migración de sistemas"],
-    },
-    {
-      name: "Seguridad y Sistemas inteligentes",
-      desc: "Sistemas integrados de vigilancia, control de acceso y ciberseguridad para sitios sensibles y organizaciones críticas.",
-      services: ["Videovigilancia IA", "Control de acceso biométrico", "Ciberseguridad ofensiva/defensiva", "Auditoría y cumplimiento", "SOC gestionado"],
-    },
-    {
-      name: "Diseño y Comunicación visual",
-      desc: "Identidad de marca, interfaces de usuario y sistemas de diseño para productos digitales y comunicación corporativa.",
-      services: ["Branding e identidad", "Diseño UI/UX", "Sistemas de diseño", "Motion design", "Dirección artística"],
-    },
-    {
-      name: "Contenido y Medios",
-      desc: "Producción audiovisual, estrategia de contenido y comunicación digital para marcas e instituciones.",
-      services: ["Producción de video", "Fotografía", "Estrategia de contenido", "Redes sociales", "Comunicación corporativa"],
-    },
-    {
-      name: "Investigación y Desarrollo",
-      desc: "Investigación aplicada en inteligencia artificial, IoT y sistemas embebidos para productos propietarios y clientes.",
-      services: ["IA y Machine Learning", "IoT y embebidos", "Prototipado rápido", "Patentes y PI", "Publicaciones"],
+      name: "Educación STEM",
+      desc: "Clases privadas de robótica y programación para niños y jóvenes haitianos. Currículo en kreyòl y francés. Talleres para escuelas y familias.",
+      services: ["Clases privadas de robótica", "Programación para jóvenes", "Talleres escolares", "Currículo en kreyòl y francés", "Acompañamiento de clubes"],
     },
   ],
 
@@ -955,17 +949,17 @@ const es: Dict = {
   ],
 
   stat_items: [
-    { val: "06", label: "Especialidades integradas" },
+    { val: "02", label: "Experticias activas" },
     { val: "04", label: "Idiomas operativos" },
-    { val: "24/7", label: "Continuidad operativa" },
-    { val: "∞", label: "Sin fronteras" },
+    { val: "2026", label: "Año de fundación" },
+    { val: "HT×US", label: "Puerto Príncipe × Boston" },
   ],
 
   man_section: "Quiénes somos",
   man_text_1:
-    "DeepXlab diseña, desarrolla y opera plataformas de software, infraestructuras de hardware y sistemas de seguridad a medida. Un solo equipo multidisciplinario, del primer prototipo a la operación continua.",
+    "DeepXlab está construyendo el ecosistema tecnológico de Haití, paso a paso. Empezamos hoy con dos experticias activas — Software & Digital y Educación STEM — que generan ingresos y financian lo que viene.",
   man_text_2:
-    "Trabajamos para organizaciones que exigen que la tecnología resista bajo restricciones reales — regulatorias, operativas, geográficas.",
+    "Nuestra filosofía: Technology With, Not For. Nou bati ak, pa pou. Vamos al terreno, entrevistamos a personas reales y probamos nuestros prototipos con usuarios reales antes de escalar.",
   man_pillars: [
     { title: "Rigor", desc: "Cada entregable está documentado, probado y firmado. La calidad no es un objetivo, es una condición." },
     { title: "Autonomía", desc: "Nuestros clientes no dependen de una caja negra. Capacitamos a sus equipos y transferimos el dominio." },
@@ -1136,13 +1130,14 @@ const es: Dict = {
   ],
 
   cases_section: "Referencias",
-  cases_title: "Proyectos que resisten bajo restricciones reales.",
-  cases_desc: "Proyectos entregados en entornos críticos. Nombres de clientes confidenciales.",
+  cases_title: "Primeros proyectos entregados. Confianza ganada en el terreno.",
+  cases_desc: "Proyectos entregados para clientes en Haití y la diáspora. Estudios de caso detallados próximamente.",
   cases_items: [
-    { tag: "Banca y Finanzas", title: "Plataforma transaccional regional", metric: "4M+ transacciones/mes", desc: "Rediseño completo del núcleo transaccional de un banco caribeño. Arquitectura orientada a eventos, cumplimiento PCI-DSS, disponibilidad 99.99%." },
-    { tag: "Salud", title: "Expediente clínico electrónico nacional", metric: "120 establecimientos conectados", desc: "Sistema centralizado para una red hospitalaria regional. Interoperabilidad HL7/FHIR, cifrado de extremo a extremo." },
-    { tag: "Gobierno", title: "Plataforma de servicios públicos", metric: "800k ciudadanos activos", desc: "Portal unificado para servicios administrativos. Autenticación fuerte, firma electrónica, integración multi-ministerio." },
-    { tag: "Educación", title: "Laboratorios STEM llave en mano", metric: "45 escuelas equipadas", desc: "Despliegue de kits pedagógicos propietarios, plataforma LMS y formación docente en tres países." },
+    { tag: "Cliente · Armotech", title: "Armotech", metric: "Entregado", desc: "Proyecto web entregado para Armotech. Estudio de caso detallado próximamente." },
+    { tag: "Cliente · Jeda Store", title: "Jeda Store", metric: "Entregado", desc: "Plataforma e-commerce entregada para Jeda Store. Estudio de caso detallado próximamente." },
+    { tag: "Proyecto · e-library", title: "e-library", metric: "Entregado", desc: "Plataforma educativa digital entregada. Estudio de caso detallado próximamente." },
+    { tag: "Cliente · Roots of Renewal", title: "Roots of Renewal", metric: "Entregado", desc: "Proyecto web entregado para Roots of Renewal. Estudio de caso detallado próximamente." },
+    { tag: "Cliente · Corvington", title: "Corvington", metric: "Entregado", desc: "Proyecto web entregado para Corvington. Estudio de caso detallado próximamente." },
   ],
 
   stack_section: "Stack tecnológico",
@@ -1157,26 +1152,49 @@ const es: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["SEIS EXPERTICIAS.", "UN EQUIPO.", "CERO COMPROMISO."],
+  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
   stat_subs: [
-    "Plataforma caribeña · PCI-DSS",
-    "Interoperabilidad HL7/FHIR",
-    "Portal de servicios públicos",
-    "STEM · 3 países",
+    "Proyecto de cliente entregado",
+    "Plataforma e-commerce",
+    "Plataforma educativa",
+    "Proyecto ONG / impacto",
   ],
-  cta_giant_1: "Si podemos modernizar la infraestructura de una nación,",
-  cta_giant_2: "imagina lo que podemos hacer",
-  cta_giant_3: "por su empresa.",
+  cta_giant_1: "¿Tienes un proyecto para Haití",
+  cta_giant_2: "o para la diáspora?",
+  cta_giant_3: "Construyámoslo juntos.",
   cta_btn_primary: "Iniciar un proyecto",
-  cta_btn_secondary: "Conocer nuestra experiencia",
-  hero_cta_primary: "Descubrir DeepXLab",
-  hero_cta_secondary: "Nuestra experiencia",
+  cta_btn_secondary: "Ver nuestros servicios",
+  hero_cta_primary: "Iniciar un proyecto",
+  hero_cta_secondary: "Ver nuestros servicios",
   scroll_label: "Scroll",
-  impact_section: "Impacto medible",
-  depts_section: "Nuestros departamentos",
-  depts_title: "Seis experticias integradas",
-  cases_confidential: "Nombres de clientes confidenciales — impacto verificable",
+  impact_section: "DeepXLab en cifras",
+  depts_section: "Nuestras experticias activas",
+  depts_title: "Dos experticias activas. Un ecosistema en construcción.",
+  cases_confidential: "Primeros clientes entregados — Haití y diáspora.",
   values_section: "Nuestros valores",
+
+  hero_overline: "Soluciones tecnológicas a medida.",
+  depts_future_note:
+    "Otros ejes (seguridad, diseño, hardware, IA, I+D, consultoría) están en desarrollo y se unirán a nuestra oferta comercial a medida que crezcamos.",
+  nav_team: "Nuestro equipo",
+  team_section: "Nuestro equipo",
+  team_title: "Dos hermanos. Dos ciudades. Una misión.",
+  team_intro:
+    "Un equipo haitiano de dos: cofundado entre Puerto Príncipe y Boston. La técnica en Haití, lo comercial en EE.UU. — y la filosofía de campo que une ambos.",
+  team_cta: "Saber más sobre DeepXLab",
+  impact_stats: [
+    { label: "Proyectos entregados", sub: "Primeros clientes Haití × diáspora" },
+    { label: "Experticias activas", sub: "Software & Digital · Educación STEM" },
+    { label: "Idiomas operativos", sub: "Francés · Kreyòl · Inglés · Español" },
+    { label: "Año de fundación", sub: "Puerto Príncipe × Boston" },
+  ],
+  ph_hero_team: "Foto equipo DeepXLab — próximamente",
+  ph_portfolio_hero: "Mosaico de proyectos entregados — próximamente",
+  ph_portfolio_approach: "Foto de campo — entrevistas / pruebas con usuarios próximamente",
+  ph_contact_hero: "Visual equipo / taller — próximamente",
+  ph_project_prefix: "Captura proyecto",
+  ph_project_suffix: "próximamente",
+  ph_service_prefix: "Visual",
 };
 
 // ─── HAITIAN CREOLE ─────────────────────────────────────────────
@@ -1192,15 +1210,15 @@ const ht: Dict = {
   theme_dark: "Mòd fonse",
   lang_label: "Lang",
 
-  hero_tag: "Gwoup teknolojik miltidisiplinè nan solisyon teknolojik",
+  hero_tag: "Solisyon dijital & edikasyon STEM pou Ayiti ak dyaspora a.",
   hero_lines: [
-    "Konsevwa teknoloji kritik.",
-    "Rezoud pwoblèm konplèks ou yo.",
-    "Opere sa lòt moun pa ka fè.",
-    "Konstwi sistèm konfyans.",
+    "Bati ak Ayisyen yo.",
+    "Teste sou teren an.",
+    "Livre sa ki kenbe.",
+    "Bati ekosistèm nan, etap pa etap.",
   ],
   hero_desc:
-    "Sis ekspètiz entegre. Yon sèl ekip. Yon sèl responsablite kontraktyèl — depi premye pwototip rive nan operasyon kontini.",
+    "De ekspètiz aktif — Software & Digital, Edikasyon STEM. Yon sèl filozofi : Technology With, Not For. Nou bati ak, pa pou.",
   hero_software: "Lojisyèl",
   hero_hardware: "Materyèl",
   hero_security: "Sekirite",
@@ -1208,55 +1226,35 @@ const ht: Dict = {
 
   slogan_l1: "SOTI NAN ENKONN",
   slogan_l2: "AL POSSIB.",
-  slogan_sub: "Solisyon teknoloji sou mezi.",
+  slogan_sub: "Nou bati ak, pa pou.",
 
   marquee_items: [
-    "Lojisyèl sou mezi",
-    "Enfrastrikti rezo",
-    "Sibèsekirite",
-    "IoT & sistèm anbake",
-    "Entèlijans atifisyèl",
-    "Konsepsyon entèfas",
-    "Pwodiksyon odyovizwèl",
-    "R&D aplike",
-    "Kit edikativ",
-    "Deplwaman nan nyaj",
-    "Siveyans & kontwòl aksè",
-    "Konsiltasyon teknolojik",
+    "Sit vitrin",
+    "Sit e-commerce",
+    "Aplikasyon wèb sou mezi",
+    "BCS — Business Control System",
+    "Antretyen chak mwa",
+    "Kou prive robotik",
+    "Atelye STEM",
+    "Kourikoulòm an kreyòl & fransè",
+    "Apwòch sou teren",
+    "Build-in-public",
+    "Pòtoprens × Boston",
+    "Nou bati ak, pa pou",
   ],
 
   div_section: "Ekspètiz",
-  div_title: "Sis ekspètiz entegre. Ekzekisyon inifye.",
+  div_title: "De ekspètiz aktif. Yon ekosistèm k ap bati.",
   div_items: [
     {
-      name: "Edikasyon & STEM",
-      desc: "Pwogram edikativ estriktire, kit propriyetè ak laboratwa kle an men pou lekòl ak enstitisyon.",
-      services: ["Kit Arduino & ESP32", "Kourikoulòm STEM", "Platfòm LMS", "Laboratwa mobil", "Fòmasyon anseyan"],
+      name: "Software & Digital Solutions",
+      desc: "Sit wèb, e-commerce, aplikasyon sou mezi ak ERP propriyetè nou BCS — fèt pou kontrent reyèl Ayiti ak dyaspora a.",
+      services: ["Sit vitrin", "Sit e-commerce", "Aplikasyon wèb sou mezi", "BCS — Business Control System", "Antretyen chak mwa"],
     },
     {
-      name: "Solisyon antrepriz & IT",
-      desc: "Konsepsyon, deplwaman ak antretyen sistèm lojisyèl ak enfrastrikti rezo pou biznis tout gwosè.",
-      services: ["ERP & CRM", "Enfrastrikti rezo", "Cloud & DevOps", "Sipò jere 24/7", "Migrasyon sistèm"],
-    },
-    {
-      name: "Sekirite & Sistèm entèlijan",
-      desc: "Sistèm siveyans, kontwòl aksè ak sibèsekirite entegre pou sit sansib ak òganizasyon kritik.",
-      services: ["Videyo siveyans IA", "Kontwòl aksè byometrik", "Sibèsekirite ofansiv/defansiv", "Odit & konfòmite", "SOC jere"],
-    },
-    {
-      name: "Konsepsyon & Kominikasyon vizyèl",
-      desc: "Idantite mak, entèfas itilizatè ak sistèm konsepsyon pou pwodui nimerik ak kominikasyon kòporatif.",
-      services: ["Branding & idantite", "Konsepsyon UI/UX", "Sistèm konsepsyon", "Motion design", "Direksyon atis"],
-    },
-    {
-      name: "Kontni & Medya",
-      desc: "Pwodiksyon odyovizwèl, estrateji kontni ak kominikasyon dijital pou mak ak enstitisyon.",
-      services: ["Pwodiksyon videyo", "Fotografi", "Estrateji kontni", "Rezo sosyal", "Kominikasyon kòporatif"],
-    },
-    {
-      name: "Rechèch & Devlopman",
-      desc: "Rechèch aplike nan entèlijans atifisyèl, IoT ak sistèm anbake pou pwodui propriyetè ak kliyan.",
-      services: ["IA & Machine Learning", "IoT & anbake", "Pwototypaj rapid", "Patant & PI", "Piblikasyon"],
+      name: "Edikasyon STEM",
+      desc: "Kou prive robotik ak pwogramasyon pou timoun ak jèn Ayisyen yo. Kourikoulòm an kreyòl ak fransè. Atelye pou lekòl ak fanmi.",
+      services: ["Kou prive robotik", "Pwogramasyon pou jèn", "Atelye lekòl", "Kourikoulòm an kreyòl & fransè", "Akonpayman klèb"],
     },
   ],
 
@@ -1331,17 +1329,17 @@ const ht: Dict = {
   ],
 
   stat_items: [
-    { val: "06", label: "Ekspètiz entegre" },
+    { val: "02", label: "Ekspètiz aktif" },
     { val: "04", label: "Lang operasyonèl" },
-    { val: "24/7", label: "Kontinwite operasyonèl" },
-    { val: "∞", label: "San fwontyè" },
+    { val: "2026", label: "Ane fondasyon" },
+    { val: "HT×US", label: "Pòtoprens × Boston" },
   ],
 
   man_section: "Kiyès nou ye",
   man_text_1:
-    "DeepXlab konsevwa, devlope epi opere platfòm lojisyèl, enfrastrikti materyèl ak sistèm sekirite sou mezi. Yon sèl ekip miltidisiplinè, depi premye pwototip rive nan operasyon kontini.",
+    "DeepXlab ap bati ekosistèm teknolojik Ayiti, etap pa etap. Nou kòmanse jodi a ak de ekspètiz aktif — Software & Digital ak Edikasyon STEM — ki jenere lajan epi finanse sa k ap vini an.",
   man_text_2:
-    "Nou travay pou òganizasyon ki egzije teknoloji ki kenbe anba kontrènt reyèl — regilatwa, operasyonèl, jewografik.",
+    "Filozofi nou : Technology With, Not For. Nou bati ak, pa pou. Nou ale sou teren an, nou entèvyou vrè moun, epi nou teste pwototip nou ak vrè itilizatè anvan nou agrandi.",
   man_pillars: [
     { title: "Rigè", desc: "Chak livrab dokimante, teste epi siyen. Kalite pa yon objektif, se yon kondisyon." },
     { title: "Otonomi", desc: "Kliyan nou yo pa depann de yon bwat nwa. Nou fòme ekip yo epi transfere metriz." },
@@ -1512,13 +1510,14 @@ const ht: Dict = {
   ],
 
   cases_section: "Referans",
-  cases_title: "Pwojè ki kenbe anba kontrènt reyèl.",
-  cases_desc: "Pwojè livre nan anviwonman kritik. Non kliyan konfidansyèl.",
+  cases_title: "Premye pwojè livre. Konfyans ki genyen sou teren an.",
+  cases_desc: "Pwojè livre pou kliyan ann Ayiti ak nan dyaspora a. Etid ka detaye ap vini talè.",
   cases_items: [
-    { tag: "Bank ak Finans", title: "Platfòm tranzaksyonèl rejyonal", metric: "4M+ tranzaksyon/mwa", desc: "Refonte konplè nwayo tranzaksyonèl yon bank karibeyen. Achitèkti orijante evènman, konfòmite PCI-DSS, disponiblite 99.99%." },
-    { tag: "Sante", title: "Dosye pasyan elektwonik nasyonal", metric: "120 etablisman konekte", desc: "Sistèm santralize pou yon rezo lopital rejyonal. Entèoperabilite HL7/FHIR, chifreman bout-a-bout." },
-    { tag: "Gouvènman", title: "Platfòm sèvis piblik", metric: "800k sitwayen aktif", desc: "Pòtay inifye pou sèvis administratif. Otantifikasyon fò, siyati elektwonik, entegrasyon milti-ministè." },
-    { tag: "Edikasyon", title: "Laboratwa STEM kle an men", metric: "45 lekòl ekipe", desc: "Deplwaman kit pedagojik propriyetè, platfòm LMS ak fòmasyon anseyan nan twa peyi." },
+    { tag: "Kliyan · Armotech", title: "Armotech", metric: "Livre", desc: "Pwojè wèb livre pou Armotech. Etid ka detaye ap vini talè." },
+    { tag: "Kliyan · Jeda Store", title: "Jeda Store", metric: "Livre", desc: "Platfòm e-commerce livre pou Jeda Store. Etid ka detaye ap vini talè." },
+    { tag: "Pwojè · e-library", title: "e-library", metric: "Livre", desc: "Platfòm edikativ nimerik livre. Etid ka detaye ap vini talè." },
+    { tag: "Kliyan · Roots of Renewal", title: "Roots of Renewal", metric: "Livre", desc: "Pwojè wèb livre pou Roots of Renewal. Etid ka detaye ap vini talè." },
+    { tag: "Kliyan · Corvington", title: "Corvington", metric: "Livre", desc: "Pwojè wèb livre pou Corvington. Etid ka detaye ap vini talè." },
   ],
 
   stack_section: "Stack teknik",
@@ -1533,26 +1532,49 @@ const ht: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["SIS EKSPÈTIZ.", "YON EKIP.", "ZEWO KONPWOMI."],
+  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
   stat_subs: [
-    "Platfòm Karayib · PCI-DSS",
-    "Entewopèrabilite HL7/FHIR",
-    "Pòtay sèvis piblik",
-    "STEM · 3 peyi",
+    "Pwojè kliyan livre",
+    "Platfòm e-commerce",
+    "Platfòm edikativ",
+    "Pwojè ONG / enpak",
   ],
-  cta_giant_1: "Si nou ka modènize enfrastrikti yon nasyon,",
-  cta_giant_2: "imajine sa nou ka fè",
-  cta_giant_3: "pou biznis ou.",
+  cta_giant_1: "Èske w gen yon pwojè pou Ayiti",
+  cta_giant_2: "oswa pou dyaspora a ?",
+  cta_giant_3: "Annou bati l ansanm.",
   cta_btn_primary: "Lanse yon pwojè",
-  cta_btn_secondary: "Eksplore ekspètiz nou",
-  hero_cta_primary: "Dekouvri DeepXLab",
-  hero_cta_secondary: "Ekspètiz nou",
+  cta_btn_secondary: "Wè sèvis nou yo",
+  hero_cta_primary: "Lanse yon pwojè",
+  hero_cta_secondary: "Wè sèvis nou yo",
   scroll_label: "Defile",
-  impact_section: "Enpak mezirab",
-  depts_section: "Depatman nou yo",
-  depts_title: "Sis ekspètiz entegre",
-  cases_confidential: "Non kliyan konfidansyèl — enpak verifyab",
+  impact_section: "DeepXLab nan chif",
+  depts_section: "Ekspètiz aktif nou yo",
+  depts_title: "De ekspètiz aktif. Yon ekosistèm k ap bati.",
+  cases_confidential: "Premye kliyan livre — Ayiti ak dyaspora.",
   values_section: "Valè nou yo",
+
+  hero_overline: "Solisyon teknoloji sou mezi.",
+  depts_future_note:
+    "Lòt aks (sekirite, design, hardware, IA, R&D, consulting) ap nan devlopman epi yo pral antre nan òf komèsyal nou pandan n ap grandi.",
+  nav_team: "Ekip nou",
+  team_section: "Ekip nou",
+  team_title: "De frè. De vil. Yon sèl misyon.",
+  team_intro:
+    "Yon ekip ayisyen de moun : ko-fonde ant Pòtoprens ak Boston. Teknik ann Ayiti, komèsyal Etazini — ak filozofi teren ki lye yo de a.",
+  team_cta: "Aprann plis sou DeepXLab",
+  impact_stats: [
+    { label: "Pwojè livre", sub: "Premye kliyan Ayiti × dyaspora" },
+    { label: "Ekspètiz aktif", sub: "Software & Digital · Edikasyon STEM" },
+    { label: "Lang operasyonèl", sub: "Fransè · Kreyòl · Anglè · Panyòl" },
+    { label: "Ane fondasyon", sub: "Pòtoprens × Boston" },
+  ],
+  ph_hero_team: "Foto ekip DeepXLab — ap vini",
+  ph_portfolio_hero: "Mozayik pwojè livre — ap vini",
+  ph_portfolio_approach: "Foto sou teren — entèvyou / tès itilizatè ap vini",
+  ph_contact_hero: "Vizyèl ekip / atelye — ap vini",
+  ph_project_prefix: "Kaptè pwojè",
+  ph_project_suffix: "ap vini",
+  ph_service_prefix: "Vizyèl",
 };
 
 export const dictionaries: Record<Lang, Dict> = { FR: fr, EN: en, ES: es, HT: ht };

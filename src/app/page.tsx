@@ -6,6 +6,7 @@ import ImpactStats from "@/components/ImpactStats";
 import CinematicTagline from "@/components/CinematicTagline";
 import Departments from "@/components/Departments";
 import CinematicCases from "@/components/CinematicCases";
+import Founders from "@/components/Founders";
 import Values from "@/components/Values";
 import CTA from "@/components/CTA";
 import ContactForm from "@/components/ContactForm";
@@ -16,12 +17,17 @@ export default function Home() {
     <>
       <Hero />
       <ExpertiseMarquee />
-      <SectionReveal index="02"><ImpactStats /></SectionReveal>
-      <SectionReveal index="03"><CinematicTagline /></SectionReveal>
-      <SectionReveal index="04"><Departments /></SectionReveal>
-      <SectionReveal index="05"><CinematicCases /></SectionReveal>
-      <SectionReveal index="06"><Values /></SectionReveal>
-      <SectionReveal index="07"><CTA /></SectionReveal>
+      <SectionReveal><ImpactStats /></SectionReveal>
+      <SectionReveal><CinematicTagline /></SectionReveal>
+      <SectionReveal><Departments /></SectionReveal>
+      <SectionReveal><CinematicCases /></SectionReveal>
+      <SectionReveal>
+        <div id="team">
+          <Founders />
+        </div>
+      </SectionReveal>
+      <SectionReveal><Values /></SectionReveal>
+      <SectionReveal><CTA /></SectionReveal>
       <SectionReveal><ContactForm /></SectionReveal>
     </>
   );

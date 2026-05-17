@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/i18n/provider";
 
-// Numeric metrics tied to verifiable case studies. Labels come from i18n
-// (cases_items metric/title) so language changes propagate automatically.
+// Honest, verifiable KPIs for a young startup (founded 2026).
+// Numeric values + colors live here; the localised labels come from
+// translations.ts (impact_stats) so language switches translate them.
 const numericTargets = [
-  { value: 4000000, suffix: "+", color: "var(--accent)", caseIdx: 0 },
-  { value: 120, suffix: "+", color: "var(--accent-2)", caseIdx: 1 },
-  { value: 800000, suffix: "+", color: "var(--accent)", caseIdx: 2 },
-  { value: 45, suffix: "", color: "var(--accent-2)", caseIdx: 3 },
+  { value: 5, suffix: "+", color: "var(--accent)" },
+  { value: 2, suffix: "", color: "var(--accent-2)" },
+  { value: 4, suffix: "", color: "var(--accent)" },
+  { value: 2026, suffix: "", color: "var(--accent-2)" },
 ];
 
 function Counter({ target, suffix, triggered }: { target: number; suffix: string; triggered: boolean }) {
@@ -35,7 +36,7 @@ function Counter({ target, suffix, triggered }: { target: number; suffix: string
 
   const formatted = count >= 1000000
     ? (count / 1000000).toFixed(1).replace(".", ",") + "M"
-    : count >= 1000
+    : count >= 10000
     ? count.toLocaleString("fr-FR")
     : count.toString();
 
@@ -47,15 +48,11 @@ export default function ImpactStats() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
-  // Compose stats from i18n: cases provide the metric label/title, stat_subs the sub-label
-  const stats = numericTargets.map((nt, i) => {
-    const c = t.cases_items?.[nt.caseIdx];
-    return {
-      ...nt,
-      label: c?.metric || "",
-      sub: t.stat_subs?.[i] || "",
-    };
-  });
+  const stats = numericTargets.map((nt, i) => ({
+    ...nt,
+    label: t.impact_stats?.[i]?.label || "",
+    sub: t.impact_stats?.[i]?.sub || "",
+  }));
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -86,7 +83,7 @@ export default function ImpactStats() {
         <div className="flex items-center gap-4 mb-16 md:mb-24">
           <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">02</span>
           <span className="w-12 h-px bg-[var(--border-strong)]" />
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">Impact mesurable</span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{t.impact_section}</span>
         </div>
 
         {/* Stats grid — translucent cards so 3D scene shows through */}
