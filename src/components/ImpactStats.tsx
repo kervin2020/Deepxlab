@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useT } from "@/i18n/provider";
 
-// Numeric metrics tied to verifiable case studies. Labels come from i18n
-// (cases_items metric/title) so language changes propagate automatically.
+// Honest, verifiable KPIs for a young startup (founded 2026).
+// No inflated claims — every number can be checked against reality.
+// Labels and sub-labels are defined here directly to keep the four KPIs
+// independent from the project list (cases_items).
 const numericTargets = [
-  { value: 4000000, suffix: "+", color: "var(--accent)", caseIdx: 0 },
-  { value: 120, suffix: "+", color: "var(--accent-2)", caseIdx: 1 },
-  { value: 800000, suffix: "+", color: "var(--accent)", caseIdx: 2 },
-  { value: 45, suffix: "", color: "var(--accent-2)", caseIdx: 3 },
+  { value: 5, suffix: "+", color: "var(--accent)", label: "Projets livrés", sub: "Premiers clients Haïti × diaspora" },
+  { value: 2, suffix: "", color: "var(--accent-2)", label: "Expertises actives", sub: "Software & Digital · STEM Education" },
+  { value: 4, suffix: "", color: "var(--accent)", label: "Langues opérationnelles", sub: "Français · Kreyòl · English · Español" },
+  { value: 2026, suffix: "", color: "var(--accent-2)", label: "Année de fondation", sub: "Port-au-Prince × Boston" },
 ];
 
 function Counter({ target, suffix, triggered }: { target: number; suffix: string; triggered: boolean }) {
@@ -35,7 +36,7 @@ function Counter({ target, suffix, triggered }: { target: number; suffix: string
 
   const formatted = count >= 1000000
     ? (count / 1000000).toFixed(1).replace(".", ",") + "M"
-    : count >= 1000
+    : count >= 10000
     ? count.toLocaleString("fr-FR")
     : count.toString();
 
@@ -43,19 +44,10 @@ function Counter({ target, suffix, triggered }: { target: number; suffix: string
 }
 
 export default function ImpactStats() {
-  const { t } = useT();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
-  // Compose stats from i18n: cases provide the metric label/title, stat_subs the sub-label
-  const stats = numericTargets.map((nt, i) => {
-    const c = t.cases_items?.[nt.caseIdx];
-    return {
-      ...nt,
-      label: c?.metric || "",
-      sub: t.stat_subs?.[i] || "",
-    };
-  });
+  const stats = numericTargets;
 
   useEffect(() => {
     const el = sectionRef.current;

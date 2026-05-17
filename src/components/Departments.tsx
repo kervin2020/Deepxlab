@@ -136,7 +136,7 @@ function DeptCard({ dept, delay }: { dept: Dept; delay: number }) {
 export default function Departments() {
   const { t } = useT();
   // Build department list from i18n div_items + visual icons
-  const departments: Dept[] = (t.div_items || []).slice(0, 6).map((d, i) => ({
+  const departments: Dept[] = (t.div_items || []).map((d, i) => ({
     num: String(i + 1).padStart(2, "0"),
     name: d.name,
     desc: d.desc,
@@ -163,12 +163,19 @@ export default function Departments() {
           </h2>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
+        {/* Grid — 2 active expertises, prominent display */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)]">
           {departments.map((d, i) => (
             <DeptCard key={d.num} dept={d} delay={i * 0.08} />
           ))}
         </div>
+
+        {/* Sober mention of future axes — no invented product names */}
+        <p className="mt-12 md:mt-16 text-[13px] md:text-[14px] text-[var(--text-muted)] leading-relaxed max-w-2xl">
+          D'autres axes (sécurité, design, hardware, IA, R&D, consulting) sont en
+          développement et rejoindront notre offre commerciale à mesure que nous
+          grandissons.
+        </p>
       </div>
     </section>
   );

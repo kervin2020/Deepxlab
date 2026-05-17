@@ -2,50 +2,65 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// Five real client projects DeepXLab has delivered.
+// Categories and short descriptions are placeholders to be refined as case
+// studies are written. No invented metrics — the giant token is the project
+// category, not a fake KPI.
 const cases = [
   {
     id: "01",
-    sector: "Secteur financier · Caraïbes",
-    title: "Plateforme transactionnelle régionale",
-    desc: "Refonte complète du cœur transactionnel d'une banque caribéenne. Architecture événementielle, conformité PCI-DSS, disponibilité 99.99%.",
-    stat: "4M+",
-    statLabel: "transactions traitées chaque mois",
-    tags: ["Architecture événementielle", "PCI-DSS", "99.99% uptime"],
+    sector: "Client · Armotech",
+    title: "Armotech",
+    desc: "Projet web livré pour Armotech. Étude de cas détaillée à venir.",
+    stat: "WEB",
+    statLabel: "Projet livré · client Armotech",
+    tags: ["Site web", "Client livré"],
     accent: "#0066FF",
     bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.08) 0%, transparent 70%)",
   },
   {
     id: "02",
-    sector: "Santé · Réseau hospitalier régional",
-    title: "Dossier patient électronique national",
-    desc: "Système centralisé pour un réseau hospitalier régional. Interopérabilité HL7/FHIR, chiffrement bout-en-bout.",
-    stat: "120+",
-    statLabel: "établissements de santé connectés",
-    tags: ["HL7/FHIR", "Chiffrement E2E", "Multi-sites"],
+    sector: "Client · Jeda Store",
+    title: "Jeda Store",
+    desc: "Plateforme e-commerce livrée pour Jeda Store. Étude de cas détaillée à venir.",
+    stat: "E-COM",
+    statLabel: "Plateforme e-commerce livrée",
+    tags: ["E-commerce", "Boutique en ligne"],
     accent: "#00FFB2",
     bg: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,255,178,0.06) 0%, transparent 70%)",
   },
   {
     id: "03",
-    sector: "Services publics · Administration",
-    title: "Plateforme de services publics citoyens",
-    desc: "Portail unifié d'accès aux services administratifs. Authentification forte, signature électronique, intégration multi-ministères.",
-    stat: "800k",
-    statLabel: "citoyens actifs sur la plateforme",
-    tags: ["Auth forte", "Signature électronique", "Multi-ministères"],
+    sector: "Projet · e-library",
+    title: "e-library",
+    desc: "Plateforme éducative numérique livrée. Étude de cas détaillée à venir.",
+    stat: "EDU",
+    statLabel: "Plateforme éducative livrée",
+    tags: ["Éducation", "Plateforme numérique"],
     accent: "#0066FF",
     bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.06) 0%, transparent 70%)",
   },
   {
     id: "04",
-    sector: "Éducation · STEM · 3 pays",
-    title: "Laboratoires STEM clé en main",
-    desc: "Déploiement de kits pédagogiques propriétaires, plateforme LMS et formation des enseignants dans trois pays.",
-    stat: "45",
-    statLabel: "écoles équipées en 3 pays",
-    tags: ["Arduino/ESP32", "LMS propriétaire", "Formation enseignants"],
+    sector: "Client · Roots of Renewal",
+    title: "Roots of Renewal",
+    desc: "Projet web livré pour Roots of Renewal. Étude de cas détaillée à venir.",
+    stat: "ONG",
+    statLabel: "Projet impact / ONG livré",
+    tags: ["Site institutionnel", "Impact"],
     accent: "#00FFB2",
     bg: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,255,178,0.06) 0%, transparent 70%)",
+  },
+  {
+    id: "05",
+    sector: "Client · Corvington",
+    title: "Corvington",
+    desc: "Projet web livré pour Corvington. Étude de cas détaillée à venir.",
+    stat: "WEB",
+    statLabel: "Projet livré · client Corvington",
+    tags: ["Site web", "Client livré"],
+    accent: "#0066FF",
+    bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.06) 0%, transparent 70%)",
   },
 ];
 
@@ -167,10 +182,10 @@ export default function CinematicCases() {
             className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase tracking-[-0.02em] text-[var(--text)] mb-4"
             style={{ fontFamily: '"Clash Display", sans-serif' }}
           >
-            Des projets qui tiennent<br />sous contrainte réelle.
+            Premiers projets livrés.<br />Confiance gagnée sur le terrain.
           </h2>
           <p className="text-[12px] text-[var(--text-muted)] uppercase tracking-[0.2em]">
-            Noms clients confidentiels — impacts vérifiables
+            Premiers clients livrés — Haïti et diaspora.
           </p>
         </div>
       </div>
