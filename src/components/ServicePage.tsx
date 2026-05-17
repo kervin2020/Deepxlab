@@ -62,7 +62,7 @@ export default function ServicePage({ serviceKey }: { serviceKey: ServiceKey }) 
                 className="bg-[var(--bg)] p-8 md:p-10 flex flex-col gap-5"
               >
                 <ImagePlaceholder
-                  label={`Visuel — ${o.t}`}
+                  label={`${t.ph_service_prefix} — ${o.t}`}
                   variant="illustration"
                   aspect="16/10"
                 />

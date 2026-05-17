@@ -63,7 +63,7 @@ const COPY = {
 } as const;
 
 export default function AboutPage() {
-  const { lang } = useT();
+  const { lang, t } = useT();
   const c = COPY[lang] || COPY.FR;
 
   return (
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <ImagePlaceholder
-                label="Photo équipe DeepXLab — à venir"
+                label={t.ph_hero_team}
                 variant="lifestyle"
                 aspect="4/5"
               />

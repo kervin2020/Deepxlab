@@ -77,7 +77,7 @@ const COPY = {
 } as const;
 
 export default function PortfolioPage() {
-  const { lang } = useT();
+  const { lang, t } = useT();
   const c = COPY[lang] || COPY.FR;
 
   return (
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
             </div>
             <div className="lg:col-span-5">
               <ImagePlaceholder
-                label="Mosaïque projets livrés — à venir"
+                label={t.ph_portfolio_hero}
                 variant="abstract"
                 aspect="4/5"
               />
@@ -139,7 +139,7 @@ export default function PortfolioPage() {
               </p>
             </div>
             <ImagePlaceholder
-              label="Photo terrain — interviews / tests utilisateurs à venir"
+              label={t.ph_portfolio_approach}
               variant="lifestyle"
               aspect="4/3"
             />

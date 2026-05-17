@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/provider";
 
 // Honest, verifiable KPIs for a young startup (founded 2026).
-// No inflated claims — every number can be checked against reality.
-// Labels and sub-labels are defined here directly to keep the four KPIs
-// independent from the project list (cases_items).
+// Numeric values + colors live here; the localised labels come from
+// translations.ts (impact_stats) so language switches translate them.
 const numericTargets = [
-  { value: 5, suffix: "+", color: "var(--accent)", label: "Projets livrés", sub: "Premiers clients Haïti × diaspora" },
-  { value: 2, suffix: "", color: "var(--accent-2)", label: "Expertises actives", sub: "Software & Digital · STEM Education" },
-  { value: 4, suffix: "", color: "var(--accent)", label: "Langues opérationnelles", sub: "Français · Kreyòl · English · Español" },
-  { value: 2026, suffix: "", color: "var(--accent-2)", label: "Année de fondation", sub: "Port-au-Prince × Boston" },
+  { value: 5, suffix: "+", color: "var(--accent)" },
+  { value: 2, suffix: "", color: "var(--accent-2)" },
+  { value: 4, suffix: "", color: "var(--accent)" },
+  { value: 2026, suffix: "", color: "var(--accent-2)" },
 ];
 
 function Counter({ target, suffix, triggered }: { target: number; suffix: string; triggered: boolean }) {
@@ -44,10 +44,15 @@ function Counter({ target, suffix, triggered }: { target: number; suffix: string
 }
 
 export default function ImpactStats() {
+  const { t } = useT();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
 
-  const stats = numericTargets;
+  const stats = numericTargets.map((nt, i) => ({
+    ...nt,
+    label: t.impact_stats?.[i]?.label || "",
+    sub: t.impact_stats?.[i]?.sub || "",
+  }));
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -78,7 +83,7 @@ export default function ImpactStats() {
         <div className="flex items-center gap-4 mb-16 md:mb-24">
           <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">02</span>
           <span className="w-12 h-px bg-[var(--border-strong)]" />
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">Impact mesurable</span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{t.impact_section}</span>
         </div>
 
         {/* Stats grid — translucent cards so 3D scene shows through */}

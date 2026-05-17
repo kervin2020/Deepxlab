@@ -406,6 +406,35 @@ const fr = {
   depts_title: "Deux expertises actives. Un écosystème en construction.",
   cases_confidential: "Premiers clients livrés — Haïti et diaspora.",
   values_section: "Nos valeurs",
+
+  // Hero overline above the description
+  hero_overline: "Solutions technologiques sur mesure.",
+  // Used at the bottom of the Departments section
+  depts_future_note:
+    "D'autres axes (sécurité, design, hardware, IA, R&D, consulting) sont en développement et rejoindront notre offre commerciale à mesure que nous grandissons.",
+  // Header / nav: team page link
+  nav_team: "Notre équipe",
+  // Home page team section
+  team_section: "Notre équipe",
+  team_title: "Deux frères. Deux villes. Une mission.",
+  team_intro:
+    "Une équipe haïtienne de deux : co-fondée à Port-au-Prince et à Boston. La technique en Haïti, le commercial aux États-Unis — et la philosophie terrain qui relie les deux.",
+  team_cta: "En savoir plus sur DeepXLab",
+  // Impact stats — KPI labels & sub-labels (synced with ImpactStats numericTargets)
+  impact_stats: [
+    { label: "Projets livrés", sub: "Premiers clients Haïti × diaspora" },
+    { label: "Expertises actives", sub: "Software & Digital · STEM Education" },
+    { label: "Langues opérationnelles", sub: "Français · Kreyòl · English · Español" },
+    { label: "Année de fondation", sub: "Port-au-Prince × Boston" },
+  ],
+  // Image placeholder labels — keyed by location
+  ph_hero_team: "Photo équipe DeepXLab — à venir",
+  ph_portfolio_hero: "Mosaïque projets livrés — à venir",
+  ph_portfolio_approach: "Photo terrain — interviews / tests utilisateurs à venir",
+  ph_contact_hero: "Visuel équipe / atelier — à venir",
+  ph_project_prefix: "Capture projet",
+  ph_project_suffix: "à venir",
+  ph_service_prefix: "Visuel",
 };
 
 // ─── ENGLISH ────────────────────────────────────────────────────
@@ -763,6 +792,29 @@ const en: Dict = {
   depts_title: "Two active expertises. An ecosystem under construction.",
   cases_confidential: "First clients delivered — Haiti and diaspora.",
   values_section: "Our values",
+
+  hero_overline: "Custom technology solutions.",
+  depts_future_note:
+    "Other axes (security, design, hardware, AI, R&D, consulting) are in development and will join our commercial offering as we grow.",
+  nav_team: "Our team",
+  team_section: "Our team",
+  team_title: "Two brothers. Two cities. One mission.",
+  team_intro:
+    "A two-person Haitian team: co-founded between Port-au-Prince and Boston. Engineering in Haiti, sales in the US — and the field philosophy that ties them together.",
+  team_cta: "Read more about DeepXLab",
+  impact_stats: [
+    { label: "Projects delivered", sub: "First clients Haiti × diaspora" },
+    { label: "Active expertises", sub: "Software & Digital · STEM Education" },
+    { label: "Operational languages", sub: "French · Kreyòl · English · Spanish" },
+    { label: "Founding year", sub: "Port-au-Prince × Boston" },
+  ],
+  ph_hero_team: "DeepXLab team photo — coming soon",
+  ph_portfolio_hero: "Delivered projects mosaic — coming soon",
+  ph_portfolio_approach: "Field photo — interviews / user tests coming soon",
+  ph_contact_hero: "Team / workshop visual — coming soon",
+  ph_project_prefix: "Project capture",
+  ph_project_suffix: "coming soon",
+  ph_service_prefix: "Visual",
 };
 
 // ─── SPANISH ────────────────────────────────────────────────────
@@ -1120,6 +1172,29 @@ const es: Dict = {
   depts_title: "Dos experticias activas. Un ecosistema en construcción.",
   cases_confidential: "Primeros clientes entregados — Haití y diáspora.",
   values_section: "Nuestros valores",
+
+  hero_overline: "Soluciones tecnológicas a medida.",
+  depts_future_note:
+    "Otros ejes (seguridad, diseño, hardware, IA, I+D, consultoría) están en desarrollo y se unirán a nuestra oferta comercial a medida que crezcamos.",
+  nav_team: "Nuestro equipo",
+  team_section: "Nuestro equipo",
+  team_title: "Dos hermanos. Dos ciudades. Una misión.",
+  team_intro:
+    "Un equipo haitiano de dos: cofundado entre Puerto Príncipe y Boston. La técnica en Haití, lo comercial en EE.UU. — y la filosofía de campo que une ambos.",
+  team_cta: "Saber más sobre DeepXLab",
+  impact_stats: [
+    { label: "Proyectos entregados", sub: "Primeros clientes Haití × diáspora" },
+    { label: "Experticias activas", sub: "Software & Digital · Educación STEM" },
+    { label: "Idiomas operativos", sub: "Francés · Kreyòl · Inglés · Español" },
+    { label: "Año de fundación", sub: "Puerto Príncipe × Boston" },
+  ],
+  ph_hero_team: "Foto equipo DeepXLab — próximamente",
+  ph_portfolio_hero: "Mosaico de proyectos entregados — próximamente",
+  ph_portfolio_approach: "Foto de campo — entrevistas / pruebas con usuarios próximamente",
+  ph_contact_hero: "Visual equipo / taller — próximamente",
+  ph_project_prefix: "Captura proyecto",
+  ph_project_suffix: "próximamente",
+  ph_service_prefix: "Visual",
 };
 
 // ─── HAITIAN CREOLE ─────────────────────────────────────────────
@@ -1477,6 +1552,29 @@ const ht: Dict = {
   depts_title: "De ekspètiz aktif. Yon ekosistèm k ap bati.",
   cases_confidential: "Premye kliyan livre — Ayiti ak dyaspora.",
   values_section: "Valè nou yo",
+
+  hero_overline: "Solisyon teknoloji sou mezi.",
+  depts_future_note:
+    "Lòt aks (sekirite, design, hardware, IA, R&D, consulting) ap nan devlopman epi yo pral antre nan òf komèsyal nou pandan n ap grandi.",
+  nav_team: "Ekip nou",
+  team_section: "Ekip nou",
+  team_title: "De frè. De vil. Yon sèl misyon.",
+  team_intro:
+    "Yon ekip ayisyen de moun : ko-fonde ant Pòtoprens ak Boston. Teknik ann Ayiti, komèsyal Etazini — ak filozofi teren ki lye yo de a.",
+  team_cta: "Aprann plis sou DeepXLab",
+  impact_stats: [
+    { label: "Pwojè livre", sub: "Premye kliyan Ayiti × dyaspora" },
+    { label: "Ekspètiz aktif", sub: "Software & Digital · Edikasyon STEM" },
+    { label: "Lang operasyonèl", sub: "Fransè · Kreyòl · Anglè · Panyòl" },
+    { label: "Ane fondasyon", sub: "Pòtoprens × Boston" },
+  ],
+  ph_hero_team: "Foto ekip DeepXLab — ap vini",
+  ph_portfolio_hero: "Mozayik pwojè livre — ap vini",
+  ph_portfolio_approach: "Foto sou teren — entèvyou / tès itilizatè ap vini",
+  ph_contact_hero: "Vizyèl ekip / atelye — ap vini",
+  ph_project_prefix: "Kaptè pwojè",
+  ph_project_suffix: "ap vini",
+  ph_service_prefix: "Vizyèl",
 };
 
 export const dictionaries: Record<Lang, Dict> = { FR: fr, EN: en, ES: es, HT: ht };

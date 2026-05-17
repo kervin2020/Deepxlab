@@ -173,7 +173,7 @@ export default function Hero() {
             <div className="md:col-span-6 md:col-start-1">
               <p className="text-[16px] md:text-[19px] text-[var(--text-muted)] leading-[1.7] mb-8 max-w-md">
                 <span className="text-[var(--text)]" style={{ fontFamily: '"Clash Display", sans-serif', letterSpacing: "0.02em" }}>
-                  Custom Technology Solutions.
+                  {t.hero_overline}
                 </span>
                 <br />
                 <span className="text-[var(--text-muted)]">{t.hero_desc}</span>

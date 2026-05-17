@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ImagePlaceholder from "./ImagePlaceholder";
+import { useT } from "@/i18n/provider";
 
 // Five real client projects DeepXLab has delivered.
 // Categories and short descriptions are placeholders to be refined as case
@@ -68,6 +69,7 @@ const cases = [
 function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const { t } = useT();
 
   useEffect(() => {
     const el = ref.current;
@@ -149,7 +151,7 @@ function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
           style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateX(40px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s" }}
         >
           <ImagePlaceholder
-            label={`Capture projet ${c.title} — à venir`}
+            label={`${t.ph_project_prefix} ${c.title} — ${t.ph_project_suffix}`}
             variant="photo"
             aspect="4/3"
           />
@@ -174,6 +176,7 @@ function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
 }
 
 export default function CinematicCases() {
+  const { t } = useT();
   return (
     <section id="references">
       {/* Header */}
@@ -182,16 +185,16 @@ export default function CinematicCases() {
           <div className="flex items-center gap-4 mb-8">
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">04</span>
             <span className="w-12 h-px bg-[var(--border-strong)]" />
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">Références</span>
+            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{t.cases_section}</span>
           </div>
           <h2
-            className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase tracking-[-0.02em] text-[var(--text)] mb-4"
+            className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase tracking-[-0.02em] text-[var(--text)] mb-4 max-w-4xl"
             style={{ fontFamily: '"Clash Display", sans-serif' }}
           >
-            Premiers projets livrés.<br />Confiance gagnée sur le terrain.
+            {t.cases_title}
           </h2>
           <p className="text-[12px] text-[var(--text-muted)] uppercase tracking-[0.2em]">
-            Premiers clients livrés — Haïti et diaspora.
+            {t.cases_confidential}
           </p>
         </div>
       </div>

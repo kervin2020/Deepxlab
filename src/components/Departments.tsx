@@ -2,14 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useT } from "@/i18n/provider";
-import ImagePlaceholder from "./ImagePlaceholder";
-
-// Per-department placeholder hints for the future real images.
-// FR copy; localising the label can come later if needed.
-const DEPT_IMAGE_LABELS = [
-  "Visuel Software & Digital — photo terrain à venir",
-  "Visuel STEM Education — photo cours / atelier à venir",
-];
 
 // SVG icons for the 6 departments — kept in code (not i18n) since they're visual
 const departmentIcons = [
@@ -57,7 +49,7 @@ const departmentIcons = [
   ),
 ];
 
-type Dept = { num: string; name: string; desc: string; services: string[]; icon: React.ReactNode; imageLabel: string };
+type Dept = { num: string; name: string; desc: string; services: string[]; icon: React.ReactNode };
 
 function DeptCard({ dept, delay }: { dept: Dept; delay: number }) {
   const [hovered, setHovered] = useState(false);
@@ -87,14 +79,6 @@ function DeptCard({ dept, delay }: { dept: Dept; delay: number }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image placeholder — real photo / illustration goes here */}
-      <ImagePlaceholder
-        label={dept.imageLabel}
-        variant="lifestyle"
-        aspect="16/9"
-        className="mb-2"
-      />
-
       {/* Top bar */}
       <div className="dept-bar h-[2px] w-8 bg-[var(--border-strong)] mb-1" />
 
@@ -158,7 +142,6 @@ export default function Departments() {
     desc: d.desc,
     services: d.services,
     icon: departmentIcons[i] || departmentIcons[0],
-    imageLabel: DEPT_IMAGE_LABELS[i] || `Visuel département ${i + 1} — à venir`,
   }));
 
   return (
@@ -189,9 +172,7 @@ export default function Departments() {
 
         {/* Sober mention of future axes — no invented product names */}
         <p className="mt-12 md:mt-16 text-[13px] md:text-[14px] text-[var(--text-muted)] leading-relaxed max-w-2xl">
-          D'autres axes (sécurité, design, hardware, IA, R&D, consulting) sont en
-          développement et rejoindront notre offre commerciale à mesure que nous
-          grandissons.
+          {t.depts_future_note}
         </p>
       </div>
     </section>

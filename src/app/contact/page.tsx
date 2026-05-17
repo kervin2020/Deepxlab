@@ -120,7 +120,7 @@ function FormIcon() {
 }
 
 export default function ContactPage() {
-  const { lang } = useT();
+  const { lang, t } = useT();
   const c = COPY[lang] || COPY.FR;
   const hasRealWhatsapp = !WHATSAPP_NUMBER.includes("X");
   const waHref = hasRealWhatsapp ? `https://wa.me/${WHATSAPP_DIGITS}` : "#";
@@ -183,7 +183,7 @@ export default function ContactPage() {
             </div>
             <div className="lg:col-span-5">
               <ImagePlaceholder
-                label="Visuel équipe / atelier — à venir"
+                label={t.ph_contact_hero}
                 variant="lifestyle"
                 aspect="4/5"
               />
