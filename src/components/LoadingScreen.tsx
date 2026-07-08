@@ -22,7 +22,8 @@ function useIsLight() {
      2. sweep (1.2s)    : a glowing line sweeps across, sharpens the logo
      3. hold (1.4s)     : logo is fully visible — clear and crisp
      4. fade-out (0.8s) : screen dissolves to reveal the page
-   Total ~ 4.2s — long enough to read, short enough to stay snappy.
+   Total ~ 2.4s — kept short: on slow connections the intro must not
+   stand between the visitor and the content.
    ───────────────────────────────────────────────────────────────────── */
 
 type Phase = "init" | "fade-in" | "sweep" | "hold" | "fade-out" | "gone";
@@ -35,10 +36,10 @@ export default function LoadingScreen() {
   useEffect(() => {
     const timeline = [
       { phase: "fade-in" as Phase, at: 50 },
-      { phase: "sweep" as Phase, at: 850 },
-      { phase: "hold" as Phase, at: 2050 },
-      { phase: "fade-out" as Phase, at: 3450 },
-      { phase: "gone" as Phase, at: 4250 },
+      { phase: "sweep" as Phase, at: 500 },
+      { phase: "hold" as Phase, at: 1300 },
+      { phase: "fade-out" as Phase, at: 1900 },
+      { phase: "gone" as Phase, at: 2400 },
     ];
     const timers = timeline.map((step) =>
       setTimeout(() => setPhase(step.phase), step.at)

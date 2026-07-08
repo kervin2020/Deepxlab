@@ -25,7 +25,7 @@ const fr = {
     "Bâtir l'écosystème, étape par étape.",
   ],
   hero_desc:
-    "Deux expertises actives — Software & Digital, STEM Education. Une philosophie : Technology With, Not For. Nou bati ak, pa pou.",
+    "Software · STEM Education",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Sécurité",
@@ -49,7 +49,7 @@ const fr = {
 
   // Divisions
   div_section: "Expertises",
-  div_title: "Deux expertises actives. Un écosystème en construction.",
+  div_title: "Un écosystème en construction.",
   div_items: [
     {
       name: "Software & Digital Solutions",
@@ -149,13 +149,13 @@ const fr = {
   // Manifesto
   man_section: "Qui sommes-nous",
   man_text_1:
-    "DeepXlab construit l'écosystème technologique d'Haïti, étape par étape. On commence aujourd'hui avec deux expertises actives — Software & Digital et STEM Education — qui génèrent du revenu et financent la suite.",
+    "On est deux frères — Kervin à Port-au-Prince, Kenny à Boston. On a commencé par ce qu'on sait faire : des sites et des apps qui tiennent, et des cours de robotique pour les jeunes. Chaque projet livré finance le suivant.",
   man_text_2:
-    "Notre philosophie : Technology With, Not For. Nou bati ak, pa pou. On va sur le terrain, on interviewe de vraies personnes, on teste nos prototypes avec de vrais utilisateurs avant de scaler.",
+    "Notre façon de travailler tient en une phrase : nou bati ak, pa pou — on construit avec les gens, pas à leur place. On va sur le terrain, on écoute, on teste avec de vrais utilisateurs avant d'aller plus loin.",
   man_pillars: [
-    { title: "Rigueur", desc: "Chaque livrable est documenté, testé et signé. La qualité n'est pas un objectif, c'est une condition." },
-    { title: "Autonomie", desc: "Nos clients ne dépendent pas d'une boîte noire. Nous formons leurs équipes et transmettons la maîtrise." },
-    { title: "Engagement", desc: "Nous restons aux côtés de nos clients sur le long terme. Un déploiement n'est jamais une fin de relation." },
+    { title: "Rigueur", desc: "On livre quand ça marche, pas quand c'est la date. Tout est testé, documenté — et vous gardez le code." },
+    { title: "Autonomie", desc: "Pas de boîte noire : on forme vos équipes pour que vous restiez maîtres de vos outils." },
+    { title: "Engagement", desc: "On reste là après la mise en ligne. Un projet livré, c'est une relation qui commence." },
   ],
 
   // Signature
@@ -170,8 +170,8 @@ const fr = {
   global_title: "Opérations sans frontière.",
 
   // Problem
-  prob_title: "Vous avez un problème que personne n'arrive à résoudre.",
-  prob_sub: "C'est précisément ce que nous préférons.",
+  prob_title: "Un projet en tête qui n'avance pas ?",
+  prob_sub: "C'est exactement le genre de défi qu'on aime. Racontez-nous.",
   prob_cta: "Parlons-en",
 
   // CTA
@@ -179,7 +179,7 @@ const fr = {
   cta_title_1: "Travaillons ensemble",
   cta_title_2: "sur ce qui vient ensuite.",
   cta_desc:
-    "Nos équipes accompagnent les organisations qui opèrent dans des environnements exigeants et qui attendent d'un partenaire technologique rigueur, autonomie et engagement long terme.",
+    "Racontez-nous votre projet en quelques lignes. C'est Kervin ou Kenny qui vous répond — pas un robot — sous 24h ouvrées.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Consulter nos expertises",
   cta_contacts: [
@@ -360,6 +360,7 @@ const fr = {
 
   // Case studies
   cases_section: "Références",
+  cases_visit: "Visiter le site",
   cases_title: "Premiers projets livrés. Confiance gagnée sur le terrain.",
   cases_desc: "Projets livrés pour des clients en Haïti et dans la diaspora. Études de cas détaillées à venir.",
   cases_items: [
@@ -386,7 +387,7 @@ const fr = {
   slogan_l1: "DE L'INCONNU",
   slogan_l2: "AU POSSIBLE.",
   slogan_sub: "Nou bati ak, pa pou. — We build with, not for.",
-  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
+  tagline_lines: ["NOUS RÉSOLVONS DES PROBLÈMES", "AVEC DES DONNÉES FIABLES,", "COLLECTÉES SUR LE TERRAIN."],
   stat_subs: [
     "Projet client livré",
     "Plateforme e-commerce",
@@ -401,11 +402,16 @@ const fr = {
   hero_cta_primary: "Démarrer un projet",
   hero_cta_secondary: "Voir nos services",
   scroll_label: "Scroll",
-  impact_section: "DeepXLab en chiffres",
-  depts_section: "Nos expertises actives",
-  depts_title: "Deux expertises actives. Un écosystème en construction.",
+  impact_section: "DeepXlab en chiffres",
+  depts_section: "Expertises actives",
+  depts_title: "Un écosystème en construction.",
   cases_confidential: "Premiers clients livrés — Haïti et diaspora.",
   values_section: "Nos valeurs",
+  values_items: [
+    { letter: "R", title: "Rigueur", desc: "On livre quand ça marche, pas quand c'est la date. Tout est testé, documenté — et vous gardez le code." },
+    { letter: "A", title: "Autonomie", desc: "Pas de boîte noire : on forme vos équipes pour que vous restiez maîtres de vos outils." },
+    { letter: "E", title: "Engagement", desc: "On reste là après la mise en ligne. Un projet livré, c'est une relation qui commence." },
+  ],
 
   // Hero overline above the description
   hero_overline: "Solutions technologiques sur mesure.",
@@ -419,7 +425,7 @@ const fr = {
   team_title: "Deux frères. Deux villes. Une mission.",
   team_intro:
     "Une équipe haïtienne de deux : co-fondée à Port-au-Prince et à Boston. La technique en Haïti, le commercial aux États-Unis — et la philosophie terrain qui relie les deux.",
-  team_cta: "En savoir plus sur DeepXLab",
+  team_cta: "En savoir plus sur DeepXlab",
   // Impact stats — KPI labels & sub-labels (synced with ImpactStats numericTargets)
   impact_stats: [
     { label: "Projets livrés", sub: "Premiers clients Haïti × diaspora" },
@@ -428,7 +434,7 @@ const fr = {
     { label: "Année de fondation", sub: "Port-au-Prince × Boston" },
   ],
   // Image placeholder labels — keyed by location
-  ph_hero_team: "Photo équipe DeepXLab — à venir",
+  ph_hero_team: "Photo équipe DeepXlab — à venir",
   ph_portfolio_hero: "Mosaïque projets livrés — à venir",
   ph_portfolio_approach: "Photo terrain — interviews / tests utilisateurs à venir",
   ph_contact_hero: "Visuel équipe / atelier — à venir",
@@ -458,7 +464,7 @@ const en: Dict = {
     "Build the ecosystem, step by step.",
   ],
   hero_desc:
-    "Two active expertises — Software & Digital, STEM Education. One philosophy: Technology With, Not For. Nou bati ak, pa pou.",
+    "Software · STEM Education",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Security",
@@ -484,7 +490,7 @@ const en: Dict = {
   ],
 
   div_section: "Expertise",
-  div_title: "Two active expertises. An ecosystem under construction.",
+  div_title: "An ecosystem under construction.",
   div_items: [
     {
       name: "Software & Digital Solutions",
@@ -577,13 +583,13 @@ const en: Dict = {
 
   man_section: "About us",
   man_text_1:
-    "DeepXlab is building Haiti's technology ecosystem, step by step. We start today with two active expertises — Software & Digital, STEM Education — that generate revenue and fund what comes next.",
+    "We're two brothers — Kervin in Port-au-Prince, Kenny in Boston. We started with what we know how to do: websites and apps that hold up, and robotics classes for young Haitians. Every project we ship funds the next one.",
   man_text_2:
-    "Our philosophy: Technology With, Not For. Nou bati ak, pa pou. We go on the ground, we interview real people, and we test our prototypes with real users before we scale.",
+    "How we work fits in one sentence: nou bati ak, pa pou — we build with people, not for them. We go on the ground, we listen, and we test with real users before going further.",
   man_pillars: [
-    { title: "Rigor", desc: "Every deliverable is documented, tested and signed. Quality is not a goal, it's a requirement." },
-    { title: "Autonomy", desc: "Our clients don't depend on a black box. We train their teams and transfer mastery." },
-    { title: "Commitment", desc: "We stand by our clients for the long term. A deployment is never the end of a relationship." },
+    { title: "Rigor", desc: "We ship when it works, not when the deadline says so. Everything is tested, documented — and you keep the code." },
+    { title: "Autonomy", desc: "No black box: we train your team so you stay in control of your own tools." },
+    { title: "Commitment", desc: "We stick around after launch. A delivered project is a relationship that's just starting." },
   ],
 
   sig_pillars: [
@@ -595,15 +601,15 @@ const en: Dict = {
   global_section: "Global presence",
   global_title: "Borderless operations.",
 
-  prob_title: "You have a problem no one can solve.",
-  prob_sub: "That's precisely what we prefer.",
+  prob_title: "Got a project that's been stuck for months?",
+  prob_sub: "That's exactly the kind of challenge we like. Tell us about it.",
   prob_cta: "Let's talk",
 
   cta_section: "Contact",
   cta_title_1: "Let's work together",
   cta_title_2: "on what comes next.",
   cta_desc:
-    "Our teams support organizations operating in demanding environments that expect rigor, autonomy and long-term commitment from a technology partner.",
+    "Tell us about your project in a few lines. Kervin or Kenny will answer you — not a robot — within one business day.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Explore our expertise",
   cta_contacts: [
@@ -750,6 +756,7 @@ const en: Dict = {
   ],
 
   cases_section: "References",
+  cases_visit: "Visit the live site",
   cases_title: "First projects delivered. Trust earned on the ground.",
   cases_desc: "Projects delivered for clients in Haiti and the diaspora. Detailed case studies coming soon.",
   cases_items: [
@@ -772,7 +779,7 @@ const en: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
+  tagline_lines: ["WE SOLVE PROBLEMS", "WITH RELIABLE DATA,", "GATHERED ON THE GROUND."],
   stat_subs: [
     "Client project delivered",
     "E-commerce platform",
@@ -787,11 +794,16 @@ const en: Dict = {
   hero_cta_primary: "Start a project",
   hero_cta_secondary: "See our services",
   scroll_label: "Scroll",
-  impact_section: "DeepXLab by the numbers",
-  depts_section: "Our active expertises",
-  depts_title: "Two active expertises. An ecosystem under construction.",
+  impact_section: "DeepXlab by the numbers",
+  depts_section: "Active expertises",
+  depts_title: "An ecosystem under construction.",
   cases_confidential: "First clients delivered — Haiti and diaspora.",
   values_section: "Our values",
+  values_items: [
+    { letter: "R", title: "Rigor", desc: "We ship when it works, not when the deadline says so. Everything is tested, documented — and you keep the code." },
+    { letter: "A", title: "Autonomy", desc: "No black box: we train your team so you stay in control of your own tools." },
+    { letter: "E", title: "Commitment", desc: "We stick around after launch. A delivered project is a relationship that's just starting." },
+  ],
 
   hero_overline: "Custom technology solutions.",
   depts_future_note:
@@ -801,14 +813,14 @@ const en: Dict = {
   team_title: "Two brothers. Two cities. One mission.",
   team_intro:
     "A two-person Haitian team: co-founded between Port-au-Prince and Boston. Engineering in Haiti, sales in the US — and the field philosophy that ties them together.",
-  team_cta: "Read more about DeepXLab",
+  team_cta: "Read more about DeepXlab",
   impact_stats: [
     { label: "Projects delivered", sub: "First clients Haiti × diaspora" },
     { label: "Active expertises", sub: "Software & Digital · STEM Education" },
     { label: "Operational languages", sub: "French · Kreyòl · English · Spanish" },
     { label: "Founding year", sub: "Port-au-Prince × Boston" },
   ],
-  ph_hero_team: "DeepXLab team photo — coming soon",
+  ph_hero_team: "DeepXlab team photo — coming soon",
   ph_portfolio_hero: "Delivered projects mosaic — coming soon",
   ph_portfolio_approach: "Field photo — interviews / user tests coming soon",
   ph_contact_hero: "Team / workshop visual — coming soon",
@@ -838,7 +850,7 @@ const es: Dict = {
     "Construir el ecosistema, paso a paso.",
   ],
   hero_desc:
-    "Dos experticias activas — Software & Digital, Educación STEM. Una filosofía: Technology With, Not For. Nou bati ak, pa pou.",
+    "Software · STEM Education",
   hero_software: "Software",
   hero_hardware: "Hardware",
   hero_security: "Seguridad",
@@ -864,7 +876,7 @@ const es: Dict = {
   ],
 
   div_section: "Experiencia",
-  div_title: "Dos experticias activas. Un ecosistema en construcción.",
+  div_title: "Un ecosistema en construcción.",
   div_items: [
     {
       name: "Software & Digital Solutions",
@@ -957,13 +969,13 @@ const es: Dict = {
 
   man_section: "Quiénes somos",
   man_text_1:
-    "DeepXlab está construyendo el ecosistema tecnológico de Haití, paso a paso. Empezamos hoy con dos experticias activas — Software & Digital y Educación STEM — que generan ingresos y financian lo que viene.",
+    "Somos dos hermanos — Kervin en Puerto Príncipe, Kenny en Boston. Empezamos con lo que sabemos hacer: sitios y aplicaciones que aguantan, y clases de robótica para jóvenes haitianos. Cada proyecto entregado financia el siguiente.",
   man_text_2:
-    "Nuestra filosofía: Technology With, Not For. Nou bati ak, pa pou. Vamos al terreno, entrevistamos a personas reales y probamos nuestros prototipos con usuarios reales antes de escalar.",
+    "Nuestra forma de trabajar cabe en una frase: nou bati ak, pa pou — construimos con la gente, no en su lugar. Vamos al terreno, escuchamos y probamos con usuarios reales antes de seguir adelante.",
   man_pillars: [
-    { title: "Rigor", desc: "Cada entregable está documentado, probado y firmado. La calidad no es un objetivo, es una condición." },
-    { title: "Autonomía", desc: "Nuestros clientes no dependen de una caja negra. Capacitamos a sus equipos y transferimos el dominio." },
-    { title: "Compromiso", desc: "Permanecemos al lado de nuestros clientes a largo plazo. Un despliegue nunca es el fin de una relación." },
+    { title: "Rigor", desc: "Entregamos cuando funciona, no cuando lo dice la fecha. Todo está probado, documentado — y el código es suyo." },
+    { title: "Autonomía", desc: "Sin cajas negras: capacitamos a su equipo para que usted siga siendo dueño de sus herramientas." },
+    { title: "Compromiso", desc: "Seguimos ahí después del lanzamiento. Un proyecto entregado es una relación que apenas comienza." },
   ],
 
   sig_pillars: [
@@ -975,15 +987,15 @@ const es: Dict = {
   global_section: "Presencia mundial",
   global_title: "Operaciones sin fronteras.",
 
-  prob_title: "Tiene un problema que nadie puede resolver.",
-  prob_sub: "Eso es precisamente lo que preferimos.",
+  prob_title: "¿Tiene un proyecto estancado desde hace meses?",
+  prob_sub: "Ese es exactamente el tipo de reto que nos gusta. Cuéntenos.",
   prob_cta: "Hablemos",
 
   cta_section: "Contacto",
   cta_title_1: "Trabajemos juntos",
   cta_title_2: "en lo que viene después.",
   cta_desc:
-    "Nuestros equipos acompañan a las organizaciones que operan en entornos exigentes y que esperan de un socio tecnológico rigor, autonomía y compromiso a largo plazo.",
+    "Cuéntenos su proyecto en pocas líneas. Le responderá Kervin o Kenny — no un robot — en menos de 24h hábiles.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Consultar nuestras especialidades",
   cta_contacts: [
@@ -1130,6 +1142,7 @@ const es: Dict = {
   ],
 
   cases_section: "Referencias",
+  cases_visit: "Visitar el sitio",
   cases_title: "Primeros proyectos entregados. Confianza ganada en el terreno.",
   cases_desc: "Proyectos entregados para clientes en Haití y la diáspora. Estudios de caso detallados próximamente.",
   cases_items: [
@@ -1152,7 +1165,7 @@ const es: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
+  tagline_lines: ["RESOLVEMOS PROBLEMAS", "CON DATOS CONFIABLES,", "RECOGIDOS EN EL TERRENO."],
   stat_subs: [
     "Proyecto de cliente entregado",
     "Plataforma e-commerce",
@@ -1167,11 +1180,16 @@ const es: Dict = {
   hero_cta_primary: "Iniciar un proyecto",
   hero_cta_secondary: "Ver nuestros servicios",
   scroll_label: "Scroll",
-  impact_section: "DeepXLab en cifras",
-  depts_section: "Nuestras experticias activas",
-  depts_title: "Dos experticias activas. Un ecosistema en construcción.",
+  impact_section: "DeepXlab en cifras",
+  depts_section: "Experticias activas",
+  depts_title: "Un ecosistema en construcción.",
   cases_confidential: "Primeros clientes entregados — Haití y diáspora.",
   values_section: "Nuestros valores",
+  values_items: [
+    { letter: "R", title: "Rigor", desc: "Entregamos cuando funciona, no cuando lo dice la fecha. Todo está probado, documentado — y el código es suyo." },
+    { letter: "A", title: "Autonomía", desc: "Sin cajas negras: capacitamos a su equipo para que usted siga siendo dueño de sus herramientas." },
+    { letter: "E", title: "Compromiso", desc: "Seguimos ahí después del lanzamiento. Un proyecto entregado es una relación que apenas comienza." },
+  ],
 
   hero_overline: "Soluciones tecnológicas a medida.",
   depts_future_note:
@@ -1181,14 +1199,14 @@ const es: Dict = {
   team_title: "Dos hermanos. Dos ciudades. Una misión.",
   team_intro:
     "Un equipo haitiano de dos: cofundado entre Puerto Príncipe y Boston. La técnica en Haití, lo comercial en EE.UU. — y la filosofía de campo que une ambos.",
-  team_cta: "Saber más sobre DeepXLab",
+  team_cta: "Saber más sobre DeepXlab",
   impact_stats: [
     { label: "Proyectos entregados", sub: "Primeros clientes Haití × diáspora" },
     { label: "Experticias activas", sub: "Software & Digital · Educación STEM" },
     { label: "Idiomas operativos", sub: "Francés · Kreyòl · Inglés · Español" },
     { label: "Año de fundación", sub: "Puerto Príncipe × Boston" },
   ],
-  ph_hero_team: "Foto equipo DeepXLab — próximamente",
+  ph_hero_team: "Foto equipo DeepXlab — próximamente",
   ph_portfolio_hero: "Mosaico de proyectos entregados — próximamente",
   ph_portfolio_approach: "Foto de campo — entrevistas / pruebas con usuarios próximamente",
   ph_contact_hero: "Visual equipo / taller — próximamente",
@@ -1218,7 +1236,7 @@ const ht: Dict = {
     "Bati ekosistèm nan, etap pa etap.",
   ],
   hero_desc:
-    "De ekspètiz aktif — Software & Digital, Edikasyon STEM. Yon sèl filozofi : Technology With, Not For. Nou bati ak, pa pou.",
+    "Software · STEM Education",
   hero_software: "Lojisyèl",
   hero_hardware: "Materyèl",
   hero_security: "Sekirite",
@@ -1244,7 +1262,7 @@ const ht: Dict = {
   ],
 
   div_section: "Ekspètiz",
-  div_title: "De ekspètiz aktif. Yon ekosistèm k ap bati.",
+  div_title: "Yon ekosistèm k ap bati.",
   div_items: [
     {
       name: "Software & Digital Solutions",
@@ -1337,13 +1355,13 @@ const ht: Dict = {
 
   man_section: "Kiyès nou ye",
   man_text_1:
-    "DeepXlab ap bati ekosistèm teknolojik Ayiti, etap pa etap. Nou kòmanse jodi a ak de ekspètiz aktif — Software & Digital ak Edikasyon STEM — ki jenere lajan epi finanse sa k ap vini an.",
+    "Nou se de frè — Kervin nan Pòtoprens, Kenny nan Boston. Nou kòmanse ak sa nou konn fè : sit ak aplikasyon ki kenbe, ak kou robotik pou jèn ayisyen. Chak pwojè nou livre finanse pwochen an.",
   man_text_2:
-    "Filozofi nou : Technology With, Not For. Nou bati ak, pa pou. Nou ale sou teren an, nou entèvyou vrè moun, epi nou teste pwototip nou ak vrè itilizatè anvan nou agrandi.",
+    "Fason nou travay kenbe nan yon sèl fraz : nou bati ak, pa pou — nou bati ak moun yo, nou pa bati nan plas yo. Nou ale sou teren an, nou koute, epi nou teste ak vrè itilizatè anvan nou ale pi lwen.",
   man_pillars: [
-    { title: "Rigè", desc: "Chak livrab dokimante, teste epi siyen. Kalite pa yon objektif, se yon kondisyon." },
-    { title: "Otonomi", desc: "Kliyan nou yo pa depann de yon bwat nwa. Nou fòme ekip yo epi transfere metriz." },
-    { title: "Angajman", desc: "Nou rete bò kote kliyan nou yo sou long tèm. Yon deplwaman pa janm fen yon relasyon." },
+    { title: "Rigè", desc: "Nou livre lè li mache, pa lè dat la di sa. Tout bagay teste, dokimante — epi kòd la rete pou ou." },
+    { title: "Otonomi", desc: "Pa gen bwat nwa : nou fòme ekip ou pou ou rete mèt zouti ou yo." },
+    { title: "Angajman", desc: "Nou rete la apre lansman an. Yon pwojè livre se yon relasyon k ap kòmanse." },
   ],
 
   sig_pillars: [
@@ -1355,15 +1373,15 @@ const ht: Dict = {
   global_section: "Prezans mondyal",
   global_title: "Operasyon san fwontyè.",
 
-  prob_title: "Ou gen yon pwoblèm pèsonn pa ka rezoud.",
-  prob_sub: "Se egzakteman sa nou prefere.",
+  prob_title: "Ou gen yon pwojè ki bloke depi kèk mwa ?",
+  prob_sub: "Se egzakteman kalite defi nou renmen. Rakonte nou.",
   prob_cta: "Ann pale",
 
   cta_section: "Kontak",
   cta_title_1: "Ann travay ansanm",
   cta_title_2: "sou sa k ap vini apre.",
   cta_desc:
-    "Ekip nou yo akonpanye òganizasyon ki opere nan anviwonman egzijan epi ki atann rigè, otonomi ak angajman alontèm nan men yon patnè teknolojik.",
+    "Rakonte nou pwojè ou nan kèk liy. Se Kervin oswa Kenny k ap reponn ou — pa yon robo — nan 24è.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Konsilte ekspètiz nou",
   cta_contacts: [
@@ -1510,6 +1528,7 @@ const ht: Dict = {
   ],
 
   cases_section: "Referans",
+  cases_visit: "Vizite sit la",
   cases_title: "Premye pwojè livre. Konfyans ki genyen sou teren an.",
   cases_desc: "Pwojè livre pou kliyan ann Ayiti ak nan dyaspora a. Etid ka detaye ap vini talè.",
   cases_items: [
@@ -1532,7 +1551,7 @@ const ht: Dict = {
   ],
 
   // Cinematic redesign — additional copy
-  tagline_lines: ["TECHNOLOGY WITH,", "NOT FOR.", "NOU BATI AK, PA POU."],
+  tagline_lines: ["NOU REZOUD PWOBLÈM", "AK DONE FYAB,", "NOU RANMASE SOU TEREN AN."],
   stat_subs: [
     "Pwojè kliyan livre",
     "Platfòm e-commerce",
@@ -1547,11 +1566,16 @@ const ht: Dict = {
   hero_cta_primary: "Lanse yon pwojè",
   hero_cta_secondary: "Wè sèvis nou yo",
   scroll_label: "Defile",
-  impact_section: "DeepXLab nan chif",
-  depts_section: "Ekspètiz aktif nou yo",
-  depts_title: "De ekspètiz aktif. Yon ekosistèm k ap bati.",
+  impact_section: "DeepXlab nan chif",
+  depts_section: "Ekspètiz aktif",
+  depts_title: "Yon ekosistèm k ap bati.",
   cases_confidential: "Premye kliyan livre — Ayiti ak dyaspora.",
   values_section: "Valè nou yo",
+  values_items: [
+    { letter: "R", title: "Rigè", desc: "Nou livre lè li mache, pa lè dat la di sa. Tout bagay teste, dokimante — epi kòd la rete pou ou." },
+    { letter: "A", title: "Otonomi", desc: "Pa gen bwat nwa : nou fòme ekip ou pou ou rete mèt zouti ou yo." },
+    { letter: "E", title: "Angajman", desc: "Nou rete la apre lansman an. Yon pwojè livre se yon relasyon k ap kòmanse." },
+  ],
 
   hero_overline: "Solisyon teknoloji sou mezi.",
   depts_future_note:
@@ -1561,14 +1585,14 @@ const ht: Dict = {
   team_title: "De frè. De vil. Yon sèl misyon.",
   team_intro:
     "Yon ekip ayisyen de moun : ko-fonde ant Pòtoprens ak Boston. Teknik ann Ayiti, komèsyal Etazini — ak filozofi teren ki lye yo de a.",
-  team_cta: "Aprann plis sou DeepXLab",
+  team_cta: "Aprann plis sou DeepXlab",
   impact_stats: [
     { label: "Pwojè livre", sub: "Premye kliyan Ayiti × dyaspora" },
     { label: "Ekspètiz aktif", sub: "Software & Digital · Edikasyon STEM" },
     { label: "Lang operasyonèl", sub: "Fransè · Kreyòl · Anglè · Panyòl" },
     { label: "Ane fondasyon", sub: "Pòtoprens × Boston" },
   ],
-  ph_hero_team: "Foto ekip DeepXLab — ap vini",
+  ph_hero_team: "Foto ekip DeepXlab — ap vini",
   ph_portfolio_hero: "Mozayik pwojè livre — ap vini",
   ph_portfolio_approach: "Foto sou teren — entèvyou / tès itilizatè ap vini",
   ph_contact_hero: "Vizyèl ekip / atelye — ap vini",

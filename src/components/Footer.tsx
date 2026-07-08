@@ -53,8 +53,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] text-ash uppercase tracking-widest">
-          <span>© {year} DEEPXLAB — {t.foot_rights}</span>
-          <span>Deployed worldwide</span>
+          <span>© {year} DeepXlab — {t.foot_rights}</span>
+          <span>Port-au-Prince × Boston</span>
         </div>
       </div>
     </footer>

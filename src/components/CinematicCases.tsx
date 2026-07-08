@@ -4,19 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { useT } from "@/i18n/provider";
 
-// Five real client projects DeepXLab has delivered.
-// Categories and short descriptions are placeholders to be refined as case
-// studies are written. No invented metrics — the giant token is the project
-// category, not a fake KPI.
+// Real client projects DeepXlab has delivered — each links to the live site.
+// No invented metrics: the giant token is the project category, not a fake KPI.
 const cases = [
   {
     id: "01",
     sector: "Client · Armotech",
-    title: "Armotech",
-    desc: "Projet web livré pour Armotech. Étude de cas détaillée à venir.",
+    title: "Armotech Security Services",
+    desc: "Site corporatif pour une société de sécurité : présentation des services, contact client et structure pensée pour générer des leads.",
     stat: "WEB",
-    statLabel: "Projet livré · client Armotech",
-    tags: ["Site web", "Client livré"],
+    statLabel: "Site corporatif en ligne",
+    tags: ["Site web", "Sécurité privée"],
+    url: "https://www.armotechsecurityservices.com/",
     accent: "#0066FF",
     bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.08) 0%, transparent 70%)",
   },
@@ -24,43 +23,71 @@ const cases = [
     id: "02",
     sector: "Client · Jeda Store",
     title: "Jeda Store",
-    desc: "Plateforme e-commerce livrée pour Jeda Store. Étude de cas détaillée à venir.",
+    desc: "Plateforme e-commerce pour produits électroniques : catalogue, commandes via WhatsApp, design responsive et multilingue.",
     stat: "E-COM",
     statLabel: "Plateforme e-commerce livrée",
     tags: ["E-commerce", "Boutique en ligne"],
+    url: null,
     accent: "#00FFB2",
     bg: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,255,178,0.06) 0%, transparent 70%)",
   },
   {
     id: "03",
-    sector: "Projet · e-library",
-    title: "e-library",
-    desc: "Plateforme éducative numérique livrée. Étude de cas détaillée à venir.",
-    stat: "EDU",
-    statLabel: "Plateforme éducative livrée",
-    tags: ["Éducation", "Plateforme numérique"],
+    sector: "Client · Corvington",
+    title: "Corvington Security Services",
+    desc: "Vitrine professionnelle pour une société de sécurité : présentation de l'offre, structure SEO et génération de leads.",
+    stat: "WEB",
+    statLabel: "Site corporatif en ligne",
+    tags: ["Site web", "Sécurité privée"],
+    url: "https://www.corvingtonsecurityservices.com/",
     accent: "#0066FF",
     bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.06) 0%, transparent 70%)",
   },
   {
     id: "04",
     sector: "Client · Roots of Renewal",
-    title: "Roots of Renewal",
-    desc: "Projet web livré pour Roots of Renewal. Étude de cas détaillée à venir.",
+    title: "Roots of Renewal Bata",
+    desc: "Site pour un projet à impact : présentation de la mission, des actions sur le terrain et des moyens de contribuer.",
     stat: "ONG",
-    statLabel: "Projet impact / ONG livré",
+    statLabel: "Projet impact / ONG en ligne",
     tags: ["Site institutionnel", "Impact"],
+    url: "https://rootsofrenewalbata.vercel.app/",
     accent: "#00FFB2",
     bg: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,255,178,0.06) 0%, transparent 70%)",
   },
   {
     id: "05",
-    sector: "Client · Corvington",
-    title: "Corvington",
-    desc: "Projet web livré pour Corvington. Étude de cas détaillée à venir.",
+    sector: "Client · CafeLux",
+    title: "CafeLux",
+    desc: "Site vitrine : identité de marque, présentation des produits et expérience visuelle soignée pour positionner la marque sur le web.",
     stat: "WEB",
-    statLabel: "Projet livré · client Corvington",
+    statLabel: "Site vitrine en ligne",
+    tags: ["Site vitrine", "Branding"],
+    url: "https://cafelux-cafe-lux.vercel.app/",
+    accent: "#0066FF",
+    bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.06) 0%, transparent 70%)",
+  },
+  {
+    id: "06",
+    sector: "Client · BelParyaj",
+    title: "BelParyaj — Sports",
+    desc: "Section sports d'une plateforme de paris : événements en direct, structure pensée pour la rapidité d'usage.",
+    stat: "APP",
+    statLabel: "Plateforme web en ligne",
+    tags: ["Application web", "Temps réel"],
+    url: "https://belparyaj.vercel.app/sports",
+    accent: "#00FFB2",
+    bg: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,255,178,0.06) 0%, transparent 70%)",
+  },
+  {
+    id: "07",
+    sector: "Client · Gran Bawon",
+    title: "Gran Bawon",
+    desc: "Site web livré et en ligne. Étude de cas détaillée à venir.",
+    stat: "WEB",
+    statLabel: "Site en ligne",
     tags: ["Site web", "Client livré"],
+    url: "https://gran-bawon.vercel.app/",
     accent: "#0066FF",
     bg: "radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0,102,255,0.06) 0%, transparent 70%)",
   },
@@ -143,6 +170,33 @@ function CaseScene({ c, index }: { c: typeof cases[0]; index: number }) {
               </span>
             ))}
           </div>
+
+          {c.url && (
+            <a
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor
+              className="group mt-8 inline-flex items-center gap-3 px-6 py-3.5 border text-[12px] uppercase tracking-[0.1em] font-medium"
+              style={{
+                borderColor: c.accent,
+                color: c.accent,
+                opacity: visible ? 1 : 0,
+                transition: "opacity 0.6s ease 0.5s, background 0.3s ease, color 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = c.accent;
+                e.currentTarget.style.color = "#050505";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = c.accent;
+              }}
+            >
+              {t.cases_visit}
+              <span className="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
+          )}
         </div>
 
         {/* Right: project image placeholder — real capture / screenshot to be added later */}

@@ -29,7 +29,20 @@ export default function CustomCursor() {
 
     const SELECT = "a, button, [data-cursor], input, select, textarea, label";
 
+    // Keep the ring invisible until the mouse actually moves — otherwise
+    // it sits parked at (0,0) in the top-left corner on first paint.
+    ring.style.opacity = "0";
+    dot.style.opacity = "0";
+    let hasMoved = false;
+
     const onMove = (e: MouseEvent) => {
+      if (!hasMoved) {
+        hasMoved = true;
+        ringPos.current = { x: e.clientX, y: e.clientY };
+        dotPos.current = { x: e.clientX, y: e.clientY };
+        ring.style.opacity = "";
+        dot.style.opacity = "";
+      }
       // Dot always follows cursor exactly
       dotTarget.current.x = e.clientX;
       dotTarget.current.y = e.clientY;

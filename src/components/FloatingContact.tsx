@@ -29,7 +29,7 @@ export default function FloatingContact() {
         pointerEvents: visible ? "auto" : "none",
         fontFamily: "Inter, sans-serif",
       }}
-      aria-label="Start a project"
+      aria-label={t.cta_btn_primary}
     >
       <span className="relative flex w-2 h-2">
         <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />

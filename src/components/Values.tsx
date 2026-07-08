@@ -1,26 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const values = [
-  {
-    letter: "R",
-    title: "Rigueur",
-    desc: "Chaque livrable est documenté, testé et signé. La qualité n'est pas un objectif — c'est une condition.",
-  },
-  {
-    letter: "A",
-    title: "Autonomie",
-    desc: "Nos clients ne dépendent pas d'une boîte noire. Nous formons leurs équipes et transmettons la maîtrise.",
-  },
-  {
-    letter: "E",
-    title: "Engagement",
-    desc: "Nous restons aux côtés de nos clients sur le long terme. Un déploiement n'est jamais une fin de relation.",
-  },
-];
+import { useT } from "@/i18n/provider";
 
 export default function Values() {
+  const { t } = useT();
+  const values = t.values_items;
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -42,7 +27,7 @@ export default function Values() {
         <div className="flex items-center gap-4 mb-16">
           <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">05</span>
           <span className="w-12 h-px bg-[var(--border-strong)]" />
-          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">Nos valeurs</span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--text-muted)]">{t.values_section}</span>
         </div>
 
         <div className="grid md:grid-cols-3 gap-px bg-[rgba(255,255,255,0.05)]">

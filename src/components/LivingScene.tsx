@@ -637,7 +637,7 @@ function shapeValuesPillars(): Float32Array {
   return arr;
 }
 
-// ── 15. POSSIBLE — the X monogram (DeepXLab brand: from unknown to possible)
+// ── 15. POSSIBLE — the X monogram (DeepXlab brand: from unknown to possible)
 function shapeMonogramX(): Float32Array {
   const arr = new Float32Array(N * 3);
   let idx = 0;

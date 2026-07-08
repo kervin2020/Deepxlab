@@ -6,13 +6,15 @@ import { useT } from "@/i18n/provider";
 /* Premium contact form. Submits to mailto (works without backend);
    can be wired to a /api/contact endpoint later. */
 
+/* Aligned with what we actually sell today (see /services) — the old list
+   (IT infrastructure, smart security, SaaS…) contradicted the “two active
+   expertises” positioning. */
 const projectTypes = [
-  { fr: "Logiciel sur mesure", en: "Custom software", es: "Software a medida", ht: "Lojisyèl sou mezi" },
-  { fr: "Infrastructure IT", en: "IT infrastructure", es: "Infraestructura IT", ht: "Enfrastrikti IT" },
-  { fr: "Sécurité intelligente", en: "Smart security", es: "Seguridad inteligente", ht: "Sekirite entelijan" },
-  { fr: "Recherche & R&D", en: "Research & R&D", es: "Investigación y R&D", ht: "Rechèch ak R&D" },
-  { fr: "Plateformes SaaS", en: "SaaS platforms", es: "Plataformas SaaS", ht: "Platfòm SaaS" },
-  { fr: "Hardware & STEM", en: "Hardware & STEM", es: "Hardware y STEM", ht: "Materyèl ak STEM" },
+  { fr: "Site vitrine ou institutionnel", en: "Showcase / institutional website", es: "Sitio web institucional", ht: "Sit vitrin oswa enstitisyonèl" },
+  { fr: "Site e-commerce", en: "E-commerce website", es: "Tienda en línea", ht: "Sit e-commerce" },
+  { fr: "Application web ou mobile sur mesure", en: "Custom web or mobile app", es: "Aplicación web o móvil a medida", ht: "Aplikasyon web oswa mobil sou mezi" },
+  { fr: "Kits STEM ou cours de robotique", en: "STEM kits or robotics classes", es: "Kits STEM o clases de robótica", ht: "Kit STEM oswa kou robotik" },
+  { fr: "Consulting IT pour PME", en: "IT consulting for SMBs", es: "Consultoría IT para pymes", ht: "Konsiltasyon IT pou PME" },
   { fr: "Autre", en: "Other", es: "Otro", ht: "Lòt" },
 ];
 
@@ -37,8 +39,8 @@ export default function ContactForm() {
       type: "Type de projet",
       message: "Décrivez votre besoin",
       send: "Envoyer le message",
-      sent: "Message envoyé.",
-      sentSub: "Nous revenons vers vous sous 24h.",
+      sent: "Votre messagerie va s'ouvrir.",
+      sentSub: "Le message est pré-rempli — il ne reste qu'à cliquer sur envoyer. Si rien ne s'ouvre, écrivez-nous directement à contact@deepxlab.com, on répond sous 24h.",
     },
     EN: {
       title: "Start a project",
@@ -49,8 +51,8 @@ export default function ContactForm() {
       type: "Project type",
       message: "Describe your need",
       send: "Send message",
-      sent: "Message sent.",
-      sentSub: "We will reply within 24 hours.",
+      sent: "Your email app is opening.",
+      sentSub: "The message is pre-filled — just hit send. If nothing opens, email us directly at contact@deepxlab.com, we reply within 24 hours.",
     },
     ES: {
       title: "Iniciar un proyecto",
@@ -61,8 +63,8 @@ export default function ContactForm() {
       type: "Tipo de proyecto",
       message: "Describa su necesidad",
       send: "Enviar mensaje",
-      sent: "Mensaje enviado.",
-      sentSub: "Le responderemos dentro de 24 horas.",
+      sent: "Se abrirá su aplicación de correo.",
+      sentSub: "El mensaje ya está listo — solo falta enviarlo. Si no se abre nada, escríbanos directamente a contact@deepxlab.com, respondemos en 24 horas.",
     },
     HT: {
       title: "Lanse yon pwojè",
@@ -73,8 +75,8 @@ export default function ContactForm() {
       type: "Kalite pwojè",
       message: "Dekri bezwen ou",
       send: "Voye mesaj la",
-      sent: "Mesaj voye.",
-      sentSub: "N ap reponn nan 24è.",
+      sent: "Aplikasyon email ou pral ouvri.",
+      sentSub: "Mesaj la deja pare — ou jis bezwen voye l. Si anyen pa ouvri, ekri nou dirèkteman nan contact@deepxlab.com, n ap reponn nan 24è.",
     },
   };
   const L = labels[lang] || labels.FR;

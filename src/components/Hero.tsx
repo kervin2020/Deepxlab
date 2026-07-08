@@ -24,10 +24,14 @@ function AnimatedTitle({
     <h1
       className="text-[clamp(2.4rem,8.2vw,8.5rem)] leading-[0.95] tracking-[-0.02em] font-bold uppercase"
       style={{ fontFamily: '"Clash Display", sans-serif' }}
+      aria-label={lines
+        .map((line) => line.map((s) => s.text).join(" "))
+        .join(" ")}
     >
       {lines.map((line, li) => (
         <span
           key={li}
+          aria-hidden="true"
           className="flex flex-wrap items-end overflow-hidden"
           style={{ columnGap: "0.28em", rowGap: "0.05em" }}
         >
@@ -166,7 +170,7 @@ export default function Hero() {
               <div className="flex flex-wrap gap-3">
                 <MagneticButton strength={0.32} radius={120}>
                   <a
-                    href="#impact"
+                    href="#contact"
                     className="group relative inline-flex items-center gap-3 px-7 py-4 border border-[var(--text)] text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase font-medium overflow-hidden"
                     data-cursor
                     style={{ fontFamily: "Inter, sans-serif" }}
@@ -182,7 +186,7 @@ export default function Hero() {
                 </MagneticButton>
                 <MagneticButton strength={0.25} radius={90}>
                   <a
-                    href="#departements"
+                    href="#departments"
                     className="group inline-flex items-center gap-3 px-7 py-4 text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-300 text-[13px] tracking-[0.05em] uppercase"
                     data-cursor
                   >
@@ -196,7 +200,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <div
-          className="flex flex-col items-center gap-3 mx-auto"
+          className="hidden md:flex flex-col items-center gap-3 mx-auto"
           style={{
             animation: "fade-in-up 0.8s ease 1.8s both",
             opacity: scrolled ? 0 : 1,

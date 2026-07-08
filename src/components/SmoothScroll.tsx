@@ -32,9 +32,28 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     const onResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", onResize);
 
+    // Route same-page anchor clicks through Lenis — native hash jumps
+    // are swallowed by the smooth-scroll loop, so links like #contact
+    // would otherwise do nothing.
+    const onAnchorClick = (e: MouseEvent) => {
+      const link = (e.target as Element).closest?.('a[href*="#"]');
+      if (!link) return;
+      const href = link.getAttribute("href") ?? "";
+      const hashIndex = href.indexOf("#");
+      const path = href.slice(0, hashIndex);
+      if (path && path !== window.location.pathname) return;
+      const target = document.getElementById(href.slice(hashIndex + 1));
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -80 });
+      history.replaceState(null, "", href.slice(hashIndex));
+    };
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
       gsap.ticker.remove(tickerFn);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("click", onAnchorClick);
       lenis.destroy();
     };
   }, []);

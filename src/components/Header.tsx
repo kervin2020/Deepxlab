@@ -99,14 +99,6 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/#team"
-            className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
-          >
-            {t.nav_team}
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[var(--accent)] group-hover:w-full transition-all duration-300" />
-          </Link>
-
-          <Link
             href="/about"
             className="text-[13px] text-bone hover:text-bone transition-colors relative group py-2"
           >
@@ -241,13 +233,6 @@ export default function Header() {
               className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
             >
               {t.cases_section}
-            </Link>
-            <Link
-              href="/#team"
-              onClick={() => setMobileOpen(false)}
-              className="text-[18px] text-bone hover:text-[var(--accent)] py-4 border-b border-[var(--border)] transition-colors"
-            >
-              {t.nav_team}
             </Link>
             <Link
               href="/about"

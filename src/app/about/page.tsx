@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { useT } from "@/i18n/provider";
 import Manifesto from "@/components/Manifesto";
-import Founders from "@/components/Founders";
 import Values from "@/components/Values";
 
 const COPY = {
   FR: {
     eyebrow: "À propos",
-    title: "Qui est DeepXLab.",
+    title: "Qui est DeepXlab.",
     intro:
-      "DeepXLab est une startup haïtienne fondée en mai 2026, basée à Port-au-Prince et à Boston. Notre mission : construire l'écosystème technologique d'Haïti, étape par étape — en partant des deux expertises qui génèrent du revenu aujourd'hui pour financer la suite.",
+      "DeepXlab est une startup haïtienne fondée en mai 2026, basée à Port-au-Prince et à Boston. Notre mission : construire l'écosystème technologique d'Haïti, étape par étape — en partant des deux expertises qui génèrent du revenu aujourd'hui pour financer la suite.",
     visionEyebrow: "Notre vision",
     visionTitle: "La Silicon Valley d'Haïti, construite avec les Haïtiens.",
     visionBody:
@@ -22,9 +21,9 @@ const COPY = {
   },
   EN: {
     eyebrow: "About",
-    title: "Who is DeepXLab.",
+    title: "Who is DeepXlab.",
     intro:
-      "DeepXLab is a Haitian startup founded in May 2026, based in Port-au-Prince and Boston. Our mission: build Haiti's technology ecosystem, step by step — starting with the two expertises that generate revenue today to fund what comes next.",
+      "DeepXlab is a Haitian startup founded in May 2026, based in Port-au-Prince and Boston. Our mission: build Haiti's technology ecosystem, step by step — starting with the two expertises that generate revenue today to fund what comes next.",
     visionEyebrow: "Our vision",
     visionTitle: "Haiti's Silicon Valley, built with Haitians.",
     visionBody:
@@ -35,9 +34,9 @@ const COPY = {
   },
   ES: {
     eyebrow: "Acerca de",
-    title: "Quién es DeepXLab.",
+    title: "Quién es DeepXlab.",
     intro:
-      "DeepXLab es una startup haitiana fundada en mayo de 2026, con sede en Puerto Príncipe y Boston. Nuestra misión: construir el ecosistema tecnológico de Haití, paso a paso — empezando por las dos experticias que generan ingresos hoy para financiar lo que viene.",
+      "DeepXlab es una startup haitiana fundada en mayo de 2026, con sede en Puerto Príncipe y Boston. Nuestra misión: construir el ecosistema tecnológico de Haití, paso a paso — empezando por las dos experticias que generan ingresos hoy para financiar lo que viene.",
     visionEyebrow: "Nuestra visión",
     visionTitle: "El Silicon Valley de Haití, construido con los haitianos.",
     visionBody:
@@ -48,9 +47,9 @@ const COPY = {
   },
   HT: {
     eyebrow: "Sou nou",
-    title: "Kiyès DeepXLab ye.",
+    title: "Kiyès DeepXlab ye.",
     intro:
-      "DeepXLab se yon startup ayisyen ki fonde nan me 2026, ki baze ant Pòtoprens ak Boston. Misyon nou : bati ekosistèm teknolojik Ayiti, etap pa etap — nou kòmanse ak de ekspètiz ki jenere lajan jodi a pou finanse sa k ap vini an.",
+      "DeepXlab se yon startup ayisyen ki fonde nan me 2026, ki baze ant Pòtoprens ak Boston. Misyon nou : bati ekosistèm teknolojik Ayiti, etap pa etap — nou kòmanse ak de ekspètiz ki jenere lajan jodi a pou finanse sa k ap vini an.",
     visionEyebrow: "Vizyon nou",
     visionTitle: "Silicon Valley Ayiti, bati ak Ayisyen yo.",
     visionBody:
@@ -88,7 +87,6 @@ export default function AboutPage() {
       </section>
 
       <Manifesto />
-      <Founders />
       <Values />
 
       {/* Vision narrative */}
