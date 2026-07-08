@@ -149,7 +149,7 @@ const fr = {
   // Manifesto
   man_section: "Qui sommes-nous",
   man_text_1:
-    "On est deux frères — Kervin à Port-au-Prince, Kenny à Boston. On a commencé par ce qu'on sait faire : des sites et des apps qui tiennent, et des cours de robotique pour les jeunes. Chaque projet livré finance le suivant.",
+    "DeepXlab est né entre Port-au-Prince et Boston. On a commencé par ce qu'on sait faire : des sites et des apps qui tiennent, et des cours de robotique pour les jeunes. Chaque projet livré finance le suivant.",
   man_text_2:
     "Notre façon de travailler tient en une phrase : nou bati ak, pa pou — on construit avec les gens, pas à leur place. On va sur le terrain, on écoute, on teste avec de vrais utilisateurs avant d'aller plus loin.",
   man_pillars: [
@@ -179,7 +179,7 @@ const fr = {
   cta_title_1: "Travaillons ensemble",
   cta_title_2: "sur ce qui vient ensuite.",
   cta_desc:
-    "Racontez-nous votre projet en quelques lignes. C'est Kervin ou Kenny qui vous répond — pas un robot — sous 24h ouvrées.",
+    "Racontez-nous votre projet en quelques lignes. Une vraie personne de l'équipe vous répond — pas un robot — sous 24h ouvrées.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Consulter nos expertises",
   cta_contacts: [
@@ -422,7 +422,7 @@ const fr = {
   nav_team: "Notre équipe",
   // Home page team section
   team_section: "Notre équipe",
-  team_title: "Deux frères. Deux villes. Une mission.",
+  team_title: "Deux villes. Une mission.",
   team_intro:
     "Une équipe haïtienne de deux : co-fondée à Port-au-Prince et à Boston. La technique en Haïti, le commercial aux États-Unis — et la philosophie terrain qui relie les deux.",
   team_cta: "En savoir plus sur DeepXlab",
@@ -583,7 +583,7 @@ const en: Dict = {
 
   man_section: "About us",
   man_text_1:
-    "We're two brothers — Kervin in Port-au-Prince, Kenny in Boston. We started with what we know how to do: websites and apps that hold up, and robotics classes for young Haitians. Every project we ship funds the next one.",
+    "DeepXlab was born between Port-au-Prince and Boston. We started with what we know how to do: websites and apps that hold up, and robotics classes for young Haitians. Every project we ship funds the next one.",
   man_text_2:
     "How we work fits in one sentence: nou bati ak, pa pou — we build with people, not for them. We go on the ground, we listen, and we test with real users before going further.",
   man_pillars: [
@@ -609,7 +609,7 @@ const en: Dict = {
   cta_title_1: "Let's work together",
   cta_title_2: "on what comes next.",
   cta_desc:
-    "Tell us about your project in a few lines. Kervin or Kenny will answer you — not a robot — within one business day.",
+    "Tell us about your project in a few lines. A real person from the team will answer you — not a robot — within one business day.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Explore our expertise",
   cta_contacts: [
@@ -810,7 +810,7 @@ const en: Dict = {
     "Other axes (security, design, hardware, AI, R&D, consulting) are in development and will join our commercial offering as we grow.",
   nav_team: "Our team",
   team_section: "Our team",
-  team_title: "Two brothers. Two cities. One mission.",
+  team_title: "Two cities. One mission.",
   team_intro:
     "A two-person Haitian team: co-founded between Port-au-Prince and Boston. Engineering in Haiti, sales in the US — and the field philosophy that ties them together.",
   team_cta: "Read more about DeepXlab",
@@ -969,7 +969,7 @@ const es: Dict = {
 
   man_section: "Quiénes somos",
   man_text_1:
-    "Somos dos hermanos — Kervin en Puerto Príncipe, Kenny en Boston. Empezamos con lo que sabemos hacer: sitios y aplicaciones que aguantan, y clases de robótica para jóvenes haitianos. Cada proyecto entregado financia el siguiente.",
+    "DeepXlab nació entre Puerto Príncipe y Boston. Empezamos con lo que sabemos hacer: sitios y aplicaciones que aguantan, y clases de robótica para jóvenes haitianos. Cada proyecto entregado financia el siguiente.",
   man_text_2:
     "Nuestra forma de trabajar cabe en una frase: nou bati ak, pa pou — construimos con la gente, no en su lugar. Vamos al terreno, escuchamos y probamos con usuarios reales antes de seguir adelante.",
   man_pillars: [
@@ -995,7 +995,7 @@ const es: Dict = {
   cta_title_1: "Trabajemos juntos",
   cta_title_2: "en lo que viene después.",
   cta_desc:
-    "Cuéntenos su proyecto en pocas líneas. Le responderá Kervin o Kenny — no un robot — en menos de 24h hábiles.",
+    "Cuéntenos su proyecto en pocas líneas. Le responderá una persona real del equipo — no un robot — en menos de 24h hábiles.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Consultar nuestras especialidades",
   cta_contacts: [
@@ -1196,7 +1196,7 @@ const es: Dict = {
     "Otros ejes (seguridad, diseño, hardware, IA, I+D, consultoría) están en desarrollo y se unirán a nuestra oferta comercial a medida que crezcamos.",
   nav_team: "Nuestro equipo",
   team_section: "Nuestro equipo",
-  team_title: "Dos hermanos. Dos ciudades. Una misión.",
+  team_title: "Dos ciudades. Una misión.",
   team_intro:
     "Un equipo haitiano de dos: cofundado entre Puerto Príncipe y Boston. La técnica en Haití, lo comercial en EE.UU. — y la filosofía de campo que une ambos.",
   team_cta: "Saber más sobre DeepXlab",
@@ -1355,7 +1355,7 @@ const ht: Dict = {
 
   man_section: "Kiyès nou ye",
   man_text_1:
-    "Nou se de frè — Kervin nan Pòtoprens, Kenny nan Boston. Nou kòmanse ak sa nou konn fè : sit ak aplikasyon ki kenbe, ak kou robotik pou jèn ayisyen. Chak pwojè nou livre finanse pwochen an.",
+    "DeepXlab fèt ant Pòtoprens ak Boston. Nou kòmanse ak sa nou konn fè : sit ak aplikasyon ki kenbe, ak kou robotik pou jèn ayisyen. Chak pwojè nou livre finanse pwochen an.",
   man_text_2:
     "Fason nou travay kenbe nan yon sèl fraz : nou bati ak, pa pou — nou bati ak moun yo, nou pa bati nan plas yo. Nou ale sou teren an, nou koute, epi nou teste ak vrè itilizatè anvan nou ale pi lwen.",
   man_pillars: [
@@ -1381,7 +1381,7 @@ const ht: Dict = {
   cta_title_1: "Ann travay ansanm",
   cta_title_2: "sou sa k ap vini apre.",
   cta_desc:
-    "Rakonte nou pwojè ou nan kèk liy. Se Kervin oswa Kenny k ap reponn ou — pa yon robo — nan 24è.",
+    "Rakonte nou pwojè ou nan kèk liy. Se yon vrè moun nan ekip la k ap reponn ou — pa yon robo — nan 24è.",
   cta_btn: "contact@deepxlab.com",
   cta_link: "Konsilte ekspètiz nou",
   cta_contacts: [

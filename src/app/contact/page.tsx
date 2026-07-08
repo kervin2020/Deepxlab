@@ -3,7 +3,7 @@
 import { useT } from "@/i18n/provider";
 import ContactForm from "@/components/ContactForm";
 
-// WhatsApp Business — replace with the real number when provided by Kervin.
+// WhatsApp Business — replace with the real company number when available.
 // Keep the +509XXXXXXXX placeholder format so wa.me builds correctly even
 // before the real number is wired in.
 const WHATSAPP_NUMBER = "+509XXXXXXXX";
