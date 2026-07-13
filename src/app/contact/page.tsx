@@ -3,10 +3,8 @@
 import { useT } from "@/i18n/provider";
 import ContactForm from "@/components/ContactForm";
 
-// WhatsApp Business — replace with the real company number when available.
-// Keep the +509XXXXXXXX placeholder format so wa.me builds correctly even
-// before the real number is wired in.
-const WHATSAPP_NUMBER = "+509XXXXXXXX";
+// WhatsApp Business — ligne entreprise Digicel Haïti.
+const WHATSAPP_NUMBER = "+509 3479 1781";
 const WHATSAPP_DIGITS = WHATSAPP_NUMBER.replace(/[^\d]/g, "");
 
 const COPY = {
